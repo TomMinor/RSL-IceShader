@@ -1,0 +1,40 @@
+#testscene.rib
+Display "testscene.tiff" "file" "rgb"
+
+Projection "perspective" "fov" [ 75 ]
+PixelSamples 16 4
+
+Translate 0 0 3
+Rotate -18 1 0 0 
+
+WorldBegin
+        LightSource "ambientlight" 1 "intensity" [ 2 ]
+        LightSource "shadowspot" 2
+                "from" [ -2 4 -5 ]
+                "to" [ 0 0 0 ]
+                "intensity" [ 32 ]
+                "coneangle" [0.9]
+                "conedeltaangle" [0.05]
+                #"shadowname" ["raytrace"]      
+
+        TransformBegin
+                Surface "icecube"# "diffuseColour" [0.7 0.9 1.000]
+
+                Translate 0 0.1 0
+                Rotate 120 0 1 0
+                #Attribute "visibility" "transmission" [ "Os"]
+                #Geometry "superquad" "east" 0.13 "north" 0.13
+                AttributeBegin
+                        Sphere 1 -1 1 360
+                AttributeEnd
+        TransformEnd
+
+
+        Color [ 0.2 0.2 0.2 ]
+        Surface "plastic"
+        Patch "bilinear" "P" [ -32 -1 -32
+                                32 -1 -32
+                               -32 -1 32
+                                32 -1 32 ]
+
+WorldEnd
