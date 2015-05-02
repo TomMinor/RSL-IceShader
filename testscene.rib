@@ -7,34 +7,63 @@ PixelSamples 16 4
 Translate 0 0 3
 Rotate -18 1 0 0 
 
+
 WorldBegin
-        LightSource "ambientlight" 1 "intensity" [ 2 ]
+Attribute "identifier" "name" "Light"
+ Attribute "visibility" "trace" 1 # make objects visible to rays
+      Attribute "trace" "bias" 0.005
+        LightSource "ambientlight" 1 "intensity" [ 1 ]
         LightSource "shadowspot" 2
                 "from" [ -2 4 -5 ]
                 "to" [ 0 0 0 ]
                 "intensity" [ 32 ]
                 "coneangle" [0.9]
                 "conedeltaangle" [0.05]
-                #"shadowname" ["raytrace"]      
 
         TransformBegin
-                Surface "icecube"# "diffuseColour" [0.7 0.9 1.000]
+                Surface "icecube"# "color opacity" [1 1 1]
 
                 Translate 0 0.1 0
-                Rotate 120 0 1 0
-                #Attribute "visibility" "transmission" [ "Os"]
-                #Geometry "superquad" "east" 0.13 "north" 0.13
+                #Rotate 120 0 1 0
+
+
                 AttributeBegin
                         Sphere 1 -1 1 360
+                        
+                        Translate 0 1 0
+                        Rotate 90 1 0 0
+
+                        #Cylinder 1.5 .4 2 360
                 AttributeEnd
         TransformEnd
 
-
-        Color [ 0.2 0.2 0.2 ]
         Surface "plastic"
+        Color [ 0 0 1 ]
         Patch "bilinear" "P" [ -32 -1 -32
                                 32 -1 -32
                                -32 -1 32
                                 32 -1 32 ]
+
+        Color [ 0.2 0.2 1 ]
+        PointsPolygons
+      [ 4 ]
+      [ 0 1 2 3 ]
+      "P" [
+        549.5999755859375 0.0 559.2000122070312
+        556.0 548.7999877929688 559.2000122070312
+        556.0 548.7999877929688 0.0
+        552.7999877929688 0.0 0.0
+      ]
+
+    Color [0.0 0.5 0.0]
+    PointsPolygons
+      [ 4 ]
+      [ 0 1 2 3 ]
+      "P" [
+        0.0 0.0 0.0
+        0.0 548.7999877929688 0.0
+        0.0 548.7999877929688 559.2000122070312
+        0.0 0.0 559.2000122070312
+      ]
 
 WorldEnd

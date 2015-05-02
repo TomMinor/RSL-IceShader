@@ -1,0 +1,47 @@
+This is BibTeX, Version 0.99c (Web2C 7.5.6)
+The top-level auxiliary file: report.aux
+The style file: plain-annote.bst
+Database file #1: bib_icereport.bib
+Warning--to sort, need author or key in superquad
+You've used 12 entries,
+            2163 wiz_defined-function locations,
+            593 strings with 7142 characters,
+and the built_in function-call counts, 5613 in all, are:
+= -- 585
+> -- 264
+< -- 8
++ -- 109
+- -- 92
+* -- 410
+:= -- 854
+add.period$ -- 46
+call.type$ -- 12
+change.case$ -- 82
+chr.to.int$ -- 0
+cite$ -- 13
+duplicate$ -- 226
+empty$ -- 424
+format.name$ -- 92
+if$ -- 1245
+int.to.chr$ -- 0
+int.to.str$ -- 12
+missing$ -- 11
+newline$ -- 64
+num.names$ -- 22
+pop$ -- 89
+preamble$ -- 1
+purify$ -- 70
+quote$ -- 0
+skip$ -- 172
+stack$ -- 0
+substring$ -- 339
+swap$ -- 80
+text.length$ -- 8
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 48
+warning$ -- 1
+while$ -- 48
+width$ -- 14
+write$ -- 172
+(There was 1 warning)
