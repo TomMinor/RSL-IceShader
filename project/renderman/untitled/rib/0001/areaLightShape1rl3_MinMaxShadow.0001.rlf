@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="areaLightShape1rl3_MinMaxShadow">
+    <InjectablePayloads>
+        <Payload Id="lambert3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lambert4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="initialShadingGroup" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lambert2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="pCube2/polySurface1/polySurface4/polySurfaceShape5" PayloadId="lambert2SG"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface6/polySurface8/polySurfaceShape9" PayloadId="lambert3SG"/>
+        <Binding Key="pSphere1/pSphereShape1" PayloadId="initialShadingGroup"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface5/polySurfaceShape6" PayloadId="lambert4SG"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface6/polySurface7/polySurfaceShape8" PayloadId="lambert4SG"/>
+        <Binding Key="pCube2/polySurface2/polySurfaceShape3" PayloadId="lambert4SG"/>
+    </TightBindings>
+</RenderManLookFile>

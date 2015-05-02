@@ -1,0 +1,5 @@
+\contentsline {chapter}{Introduction}{2}
+\contentsline {chapter}{Initial Research}{3}
+\contentsline {section}{\numberline {1.1}Primary - Experiments with real ice cube and light}{3}
+\contentsline {section}{\numberline {1.2}Secondary - Relevant papers}{3}
+\contentsline {section}{\numberline {1.3}Reading the documentation and tutorials}{3}

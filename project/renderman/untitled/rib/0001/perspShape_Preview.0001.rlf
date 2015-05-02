@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="perspShape_Preview">
+    <InjectablePayloads>
+        <Payload Id="lambert3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/untitled/shaders/lambert3_rfm" "color lambert3_c" [1 0 0] "float lambert3_dc" [0.8] "string lambert3_SSPassid" [""] "string lambert3_SSConversionClass" [""] "string lambert3_rman__SSOutputFile" [""] "string lambert3_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/untitled/shaders/lambert3_rfm_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lambert4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/untitled/shaders/lambert4_rfm" "color lambert4_c" [1 1 1] "float lambert4_dc" [0.8] "string lambert4_SSPassid" [""] "string lambert4_SSConversionClass" [""] "string lambert4_rman__SSOutputFile" [""] "string lambert4_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/untitled/shaders/lambert4_rfm_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="initialShadingGroup" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/untitled/shaders/lambert1_rfm" "color lambert1_c" [1 1 1] "float lambert1_dc" [0.8] "string lambert1_SSPassid" [""] "string lambert1_SSConversionClass" [""] "string lambert1_rman__SSOutputFile" [""] "string lambert1_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/untitled/shaders/lambert1_rfm_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lambert2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/untitled/shaders/lambert2_rfm" "color lambert2_c" [0.0501584 0.180267 0.420033] "float lambert2_dc" [0.8] "string lambert2_SSPassid" [""] "string lambert2_SSConversionClass" [""] "string lambert2_rman__SSOutputFile" [""] "string lambert2_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/untitled/shaders/lambert2_rfm_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="pCube2/polySurface1/polySurface4/polySurfaceShape5" PayloadId="lambert2SG"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface6/polySurface8/polySurfaceShape9" PayloadId="lambert3SG"/>
+        <Binding Key="pSphere1/pSphereShape1" PayloadId="initialShadingGroup"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface5/polySurfaceShape6" PayloadId="lambert4SG"/>
+        <Binding Key="pCube2/polySurface1/polySurface3/polySurface6/polySurface7/polySurfaceShape8" PayloadId="lambert4SG"/>
+        <Binding Key="pCube2/polySurface2/polySurfaceShape3" PayloadId="lambert4SG"/>
+    </TightBindings>
+</RenderManLookFile>

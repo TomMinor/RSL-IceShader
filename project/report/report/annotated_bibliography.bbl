@@ -1,0 +1,71 @@
+\begin{thebibliography}{1}
+
+\bibitem{anderson:primal}
+E.~J. Anderson.
+\newblock A new primal algorithm for semi-infinite linear programming.
+\newblock In E.~J. Anderson and A.~B. Philpott, editors, {\em Proceedings of an
+  International Symposium on Infinite Dimensional Linear Programming,
+  Cambridge, September 1984}, Berlin, 1985. Springer-Verlag.
+
+\bibitem{billups.watson:probability-one}
+S.~C. Billups and L.~T. Watson.
+\newblock A probability-one homotopy algorithm for nonsmooth equations and
+  mixed complementarity problems.
+\newblock UCD/CCM Report No. 165, University of Colorado at Denver, Denver,
+  Colorado, September 2000.
+ \begin{quotation}\noindent {This paper extends the probability-one homotopy
+  algorithm of Chow-Yorke and Li, which solves $C^2$ systems of equations. The
+  resulting algorithm is capable of solving semismooth systems of equations.
+  The basis of the algorithm is to "smooth" the nonsmooth system of equations
+  using a smoothing parameter that is a function of the homotopy parameter. }
+  \end{quotation}
+\bibitem{dearaujo:statistically}
+Jose Vicente~Granato {de Araujo}.
+\newblock {\em A Statistically Based Procedure for Calibration of Water
+  Distribution Systems}.
+\newblock PhD thesis, Oklahoma State University, Stillwater, Oklahoma, May
+  1992.
+ \begin{quotation}\noindent This Ph.D. thesis discusses a statistically based
+  calibration method for water distribution systems. The author gives an
+  in-depth analysis of the calibration procedure discussing analytical methods,
+  optimization methods, and uncertainty analysis for estimating demands and
+  C-factors. A linear regression technique for estimating the C-factors is
+  discussed. Also, a procedure for transferring uncertainties in input data to
+  the parameter estimation is explained. \end{quotation}
+\bibitem{conn.scheinberg.ea:recent}
+Thomas~M. Liebling and Dominique de~Werra, editors.
+\newblock {\em Recent progress in unconstrained nonlinear optimization without
+  derivatives}, North-Holland, 1997. Mathematical Programming Society.
+
+\bibitem{mifflin:semismooth}
+R.~Mifflin.
+\newblock Semismooth and semiconvex functions in constrained optimization.
+\newblock {\em Siam Journal on Control}, 15:957--972, 1977.
+ \begin{quotation}\noindent This is the first appearance in the literature of
+  the concept of a semismooth function. Semismooth functions are closed under
+  addition and composition, and also guarantee the local convergence of
+  nonsmooth generalizations of Newton's method. \end{quotation}
+
+\bibitem{savic.walters:genetic}
+D.~A. Savic and G.~A. Walters.
+\newblock Genetic algorithm techniques for calibrating network models.
+\newblock Technical Report 95/12, University of Exeter, 1995.
+ \begin{quotation}\noindent Savic seems to have spent much time and effort in
+  using genetic algorithms in water system design. In this paper he discusses
+  genetic algorithms and gives a brief overview, he discusses how he used a
+  genetic algorithm to calibrate a small water system. He talks about what he
+  was trying to find (c-factors and demands) and how he used a genetic
+  algorithm to do this. \end{quotation}
+\bibitem{winter.periaux.ea:genetic}
+G.~Winter, J.~Periaux, M.~Galan, and P.~Cuesta.
+\newblock {\em Genetic Algorithms in Engineering and Computer Science}.
+\newblock John Wiley and Sons, Chickester, England, 1995.
+ \begin{quotation}\noindent This book contains a general overview of genetic
+  algorithms as well as a few other topics such as neural networks. The book
+  also talks about many applications of genetic algorithms and how researchers
+  slightly changed from standard genetic algorithms by using different
+  crossover techniques different mutations etc. It also discusses using Fuzzy
+  logic in a genetic algorithm and gives techniques to finding the best sample
+  size and mutation probability. \end{quotation}
+
+\end{thebibliography}

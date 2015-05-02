@@ -1,0 +1,51 @@
+\documentclass[10pt,a4paper,final,notitlepage]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+%\usepackage{fullpage}
+\renewcommand{\baselinestretch}{2}
+
+\makeatletter
+\newcommand*{\toccontents}{\@starttoc{toc}}
+\makeatother
+
+\newcommand{\noNumberChapter}[2]{
+    \setcounter{chapter}{#1}
+    \setcounter{section}{0}
+    \chapter*{#2}
+    \addcontentsline{toc}{chapter}{#2}
+}
+
+
+\usepackage{natbib,bibentry}
+\bibliographystyle{apalike}
+
+\begin{document}
+
+\title{Specialist Production Module\\
+	   Renderman Ice Shader}
+
+\author{Tom Minor - Level I\\
+		Software Development for Animation, Games and Effects\\
+		Bournemouth University - NCCA}
+
+\maketitle
+
+\toccontents
+
+\noNumberChapter{0}{Introduction}
+
+Arsebiscuits
+
+\nobibliography{\jobname}
+This is a complete citation in the middle of the text: 
+
+\noNumberChapter{1}{Initial Research}
+\section{Primary - Experiments with real ice cube and light}
+\section{Secondary - Relevant papers}
+\section{Reading the documentation and tutorials}
+
+The Renderman documentation was invaluable for understanding the 
+
+\end{document} 

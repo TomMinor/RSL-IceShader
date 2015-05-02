@@ -1,0 +1,310 @@
+##RenderMan RIB
+#Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
+#Sat May 02 02:18:46 BST 2015
+version 3.04
+Option "ribparse" "string varsubst" [""]
+Option "ribparse" "string varsubst" ["$"]
+IfBegin "!defined(RMSPROJ_FROM_ENV)" 
+Option "user" "string RMSPROJ" ["/home/tom/rman/iceproject/project/"]
+IfEnd 
+IfBegin "!defined(RMSTREE)" 
+Option "user" "string RMSTREE" ["/opt/pixar/RenderManStudio-19.0-maya2014/"]
+IfEnd 
+Option "searchpath" "string resource" ["${RMSPROJ}:@"]
+Option "searchpath" "string archive" ["${RMSPROJ}:."]
+Option "searchpath" "string display" ["${RMSTREE}/bin:@"]
+Option "searchpath" "string shader" ["${RMSPROJ}:${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string texture" ["${RMSPROJ}:${RMSTREE}/lib/textures/:@"]
+Option "searchpath" "string rixplugin" ["${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string dirmap" [""]
+Option "searchpath" "string rifilter" ["${RMSTREE}/lib/rif/:${RMANTREE}/etc:@"]
+Option "searchpath" "string procedural" ["${RMSTREE}/lib/plugins/:${RMSTREE}/lib/plugins:${RMANTREE}/etc:@"]
+##rifcontrol insert begin -rif RLFInjector -rifend
+FrameBegin 1
+Identity 
+Option "user" "string pass_id" ["perspShape_Preview"] "string pass_phase" ["/Job/Frames/Images"] "string pass_class" ["Preview"] "string pass_flavor" [""] "string pass_crew" [""] "string pass_camera_name" ["perspShape"] "string pass_camera_flavor" [""] "string pass_layer" ["defaultRenderLayer"] "string renderer" ["Reyes"] "int pass_features_trace" [1] "int input_color_profile" [0]
+Option "trace" "int maxdepth" [4]
+PixelVariance 0.005
+Option "bucket" "string order" ["horizontal"]
+Option "limits" "int[2] bucketsize" [16 16]
+Option "limits" "int gridsize" [256]
+Option "trace" "float decimationrate" [1]
+Option "hair" "float minwidth" [0.5]
+Option "statistics" "int level" [1]
+Option "statistics" "string filename" ["stdout"]
+Option "statistics" "string xmlfilename" ["renderman/cornell/rib/0001/perspShape_Preview.0001.xml"]
+Option "limits" "color zthreshold" [0.996 0.996 0.996]
+Option "limits" "color othreshold" [0.996 0.996 0.996]
+Option "limits" "int texturememory" [2097152]
+Option "limits" "int geocachememory" [2097152]
+Option "limits" "int proceduralmemory" [0]
+Option "limits" "int deepshadowtiles" [1000]
+Option "limits" "int deepshadowmemory" [102400]
+Option "limits" "int radiositycachememory" [102400]
+Option "limits" "int brickmemory" [10240]
+Option "shading" "int directlightingsamples" [50]
+Option "limits" "float vprelativeshadingrate" [1]
+PixelSamples 3 3
+VolumePixelSamples 3 3
+CropWindow 0 1 0 1
+Option "photon" "string lifetime" ["transient"]
+Option "photon" "int emit" [0]
+Hider "hidden" "int jitter" [1] "int sigma" [0] "float sigmablur" [1] "int minsamples" [0] "int maxsamples" [4]
+Format 1280 720 1
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 52366 -context \"renderman/cornell/images/cornell\" -notes \"(Sat May 02 02:18:46 BST 2015)\""]
+#Camera perspShape
+Clipping 0.1 10000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.5625 0.5625
+Shutter 0 0
+ConcatTransform [ 0.999994 0.000489524 -0.00345616 1.01695e-11  0 0.990118 0.140239 -8.74195e-09  -0.00349065 0.140238 -0.990112 2.91334e-09  -0.338065 -6.73207 28.0071 1 ]
+Camera "world" "float[2] shutteropening" [0 1]
+Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
+Imager "background" "color color" [0 0 0] "float alpha" [0]
+ResourceBegin 
+WorldBegin 
+##RLF ScopeBegin -name perspShape_Preview -localbinding 1 -rlffilename renderman/cornell/rib/0001/perspShape_Preview.0001.rlf -namespace 
+ScopedCoordinateSystem "world_ref"
+Attribute "visibility" "int transmission" [1] "int specular" [1] "int diffuse" [1]
+Surface "defaultsurface" 
+Attribute "user" "int shader_bindingstrength" [0]
+Attribute "trace" "int maxdiffusedepth" [1] "int maxspeculardepth" [2] "int samplemotion" [1] "float autobias" [1] "float bias" [0.001] "int displacements" [0]
+Attribute "dice" "string referencecamera" ["worldcamera"]
+ShadingRate 5
+GeometricApproximation "motionfactor" 3
+GeometricApproximation "focusfactor" 3
+Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0]
+Attribute "volume" "float depthrelativeshadingrate" [3] "string depthinterpolation" ["constant"]
+Attribute "stochastic" "int sigma" [1]
+Attribute "photon" "string causticmap" [""] "string globalmap" [""]
+Attribute "user" "string irRenderCam" ["false,0.438156,2.73787,28.6731"]
+Attribute "user" "string irRenderCamFOV" ["54.4322"]
+Attribute "user" "string irRenderCamXform" ["0.999994,0,-0.00349065,0,0.000489524,0.990118,0.140238,0,0.00345616,-0.140238,0.990112,0,0.438156,2.73787,28.6731,1"]
+Attribute "user" "string irRenderCamRatio" ["1"]
+AttributeBegin 
+Attribute "identifier" "string name" ["volumeLightShape1"]
+Transform [ 22.2641 0 -0 0  -0 4.94363e-15 -22.2641 0  0 22.2641 4.94363e-15 0  -5.20417e-18 12.5004 -5.55112e-17 1 ]
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+LightSource "renderman/cornell/shaders/volumeLightShape1_rfm" "volumeLightShape1" "string rman__dmapxp" [""] "string rman__dmapxn" [""] "string rman__dmapyp" [""] "string rman__dmapyn" [""] "string rman__dmapzp" [""] "string rman__dmapzn" [""] "string __category" ["std,pxcLight,"] "__instanceid" ["renderman/cornell/shaders/volumeLightShape1_rfm_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+AttributeEnd 
+Illuminate "volumeLightShape1" 1
+AttributeBegin 
+Attribute "identifier" "string name" ["areaLightShape1"]
+Transform [ 5.03297 0 -0 0  -0 1.11754e-15 -5.03297 0  0 5.03297 1.11754e-15 0  -5.20417e-18 23.9366 -5.55112e-17 1 ]
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+LightSource "renderman/cornell/shaders/areaLightShape1_rfm" "areaLightShape1" "float rman__ALSampleLightColor" [0] "string rman__dmaprl0" [""] "string rman__dmaprl1" [""] "string rman__dmaprl2" [""] "string rman__dmaprl3" [""] "float rman__ShadowMapGapBias" [0.1] "float rman__ShadowMapBias" [1.1236] "float rman__ShadowMapSamples" [32] "float dmapBias" [0.001] "float decayRate" [0] "float emitDiffuse" [1] "float emitSpecular" [1] "color cl" [1 1 1] 
+"float intensity" [0.57554] "float useRayTraceShadows" [1] "color shadowColor" [0 0 0] "float shadowRays" [40] "float rayDepthLimit" [10] "string rman__TransmissionSubset" ["shadow"] "string __category" ["area,nonstd,"] "__instanceid" ["renderman/cornell/shaders/areaLightShape1_rfm_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+AttributeEnd 
+Illuminate "areaLightShape1" 1
+AttributeBegin 
+Attribute "identifier" "string name" ["groundPlane_transform"]
+ConcatTransform [ 12 0 0 0  0 2.66454e-15 12 0  0 -1 2.22045e-16 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["Manipulator1"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["UniversalManip"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["CubeCompass"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pCube1"]
+ConcatTransform [ 4.77521 0 0 0  0 4.77521 0 0  0 0 4.77521 0  0 12.0397 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface1"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface3"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface6"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface7"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface9"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurfaceShape10"]
+Attribute "identifier" "float id" [11]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "user" "int receivesShadows" [1]
+Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" ["shader"]
+Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+##RLF Inject SurfaceShading -attribute sets@,lambert4SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape10.job.rib"] "float[6] bound" [-2.5 -2.5 -2.5 2.5 -2.5 4.3552] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface10"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface11"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface12"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface8"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface4"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pCube2"]
+ConcatTransform [ 1.34944 0 0.653126 0  -0 1.38608 0 0  -0.419061 -0 0.865835 0  5.61732 4.26602 -8.35876 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["pCubeShape1"]
+Attribute "identifier" "float id" [1]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "user" "int receivesShadows" [1]
+Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" ["shader"]
+Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+##RLF Inject SurfaceShading -attribute sets@,lambert2SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/pCubeShape1.job.rib"] "float[6] bound" [-2.24905 2.24905 -3.12291 3.12291 -2.39007 2.39007] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pHelix1"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 0.641623 0  -0.237783 10.2185 -9.18663 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["pHelixShape1"]
+Attribute "identifier" "float id" [2]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "user" "int receivesShadows" [1]
+Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" ["shader"]
+Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+##RLF Inject SurfaceShading -attribute sets@,lambert2SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/pHelixShape1.job.rib"] "float[6] bound" [-4.56134 4.56134 -10.6185 10.6186 -4.55234 4.55234] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pSphere1"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 5.83919 3.81338 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["pSphereShape1"]
+Attribute "identifier" "float id" [3]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "user" "int receivesShadows" [1]
+Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" ["shader"]
+Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+##RLF Inject SurfaceShading -attribute sets@,RenderManShader1SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/pSphereShape1.job.rib"] "float[6] bound" [-5.14269 5.14269 -5.14269 5.14269 -5.1427 5.14269] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["areaLight1"]
+ConcatTransform [ 5.03297 0 -0 0  -0 1.11754e-15 -5.03297 0  0 5.03297 1.11754e-15 0  -5.20417e-18 23.9366 -5.55112e-17 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["volumeLight2"]
+ConcatTransform [ 22.2641 0 -0 0  -0 4.94363e-15 -22.2641 0  0 22.2641 4.94363e-15 0  -5.20417e-18 12.5004 -5.55112e-17 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurface13"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["polySurfaceShape14"]
+Attribute "identifier" "float id" [15]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "user" "int receivesShadows" [1]
+Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" ["shader"]
+Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
+##RLF Inject SurfaceShading
+TransformBegin 
+ReadArchive "renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_0_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_0.job.rib"] "float[6] bound" [-11.938 11.938 0.101689 23.9777 -11.938 21.0803] "int __immediatesubdivide" [0]
+TransformEnd 
+TransformBegin 
+ReadArchive "renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_1_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_1.job.rib"] "float[6] bound" [-11.938 11.938 0.101689 23.9777 -11.938 21.0803] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+##RLF ScopeEnd -name perspShape_Preview
+WorldEnd 
+ResourceEnd 
+##streammarker 1
+FrameEnd 

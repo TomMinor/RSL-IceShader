@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<RenderManLookFile Version="1" Format="RenderMan Look Data" AssemblyName="perspShape_Final">
+    <InjectablePayloads>
+        <Payload Id="lambert4SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
+        <Payload Id="lambert4SG-lambert2SG-lambert3SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+Resource "lambert4SG" "attributes" "string operation" ["save"] "string subset" ["shading"]
+##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+Resource "lambert2SG" "attributes" "string operation" ["save"] "string subset" ["shading"]
+##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+Resource "lambert3SG" "attributes" "string operation" ["save"] "string subset" ["shading"]
+]]></Payload>
+    </InjectablePayloads>
+    <TightBindings>
+        <Binding Key="pCube1/pCubeShape1" PayloadId="lambert4SG"/>
+        <Binding Key="pCube2/pCubeShape2" PayloadId="lambert4SG-lambert2SG-lambert3SG"/>
+    </TightBindings>
+</RenderManLookFile>
