@@ -57,18 +57,27 @@ In this project I aimed to develop a \textit{physically based \textbf{Ice Cube S
 Todo
 
 \noNumberChapter{1}{Initial Research}
-\section{Primary - Experiments with real ice cube and light}
+\section{Experiments with real ice cube and light}
 
 
-\section{Secondary - Relevant papers}
+\section{Related research from other papers}
 
+
+\section{So what exactly is Renderman?}
+
+%% Brief overview
+%% Tutor suggested I look into superquads (insert picture)
+%% Initially used Ian Stephenson's renderman compliant renderer, Angel
+%% Due to noisy opacity and lack of shadows in quad shader, I moved onto prman
+%%
+%% Explain confusion between new RIS approach in PRMan compared to old REYES approach
+%% RSL shaders can't be used with REYES, but RIS shaders are considerably more complex even if they are physically based
 
 \section{Reading the documentation and tutorials}
-%% Tutor suggested I look into superquads (insert picture)
 
+Superquads \cite{superquad}
 
-The Renderman documentation was invaluable for understanding the
-\cite{Nishino:2012:VSF:2407746.2407747}
+Pixar's Renderman documentation \cite{rmdocs} was invaluable for understanding the huge complexity of renderer in enough detail to begin writing useful shaders for it.
 
 \noNumberChapter{2}{Production}
 \section{Initial Tests}

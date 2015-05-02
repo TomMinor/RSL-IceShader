@@ -1,11 +1,35 @@
 \begin{thebibliography}{10}
 
+\bibitem{angel}
+http://dctsystems.co.uk/renderman/angel.html.
+\newblock \url{http://dctsystems.co.uk/RenderMan/angel.html}.
+\newblock Accessed: 25th May 2015.
+ \begin{quotation}\noindent {A Renderman compliant renderer developed by Ian
+  Stephenson, I initially chose to use it because it had support for geometry
+  shaders that provided me with a simple way of creating an ice cube shape
+  through the use of superquadrics. Unfortunately, the superquad shader did not
+  work with shadows, the feature set is fairly dated compared to current PRMan
+  releases and opacity support was too noisy (which presented a problem for a
+  project that makes heavy use of translucency), forcing me to move on to using
+  Pixar's Renderman instead.} \end{quotation}
+\bibitem{prman}
+Pixar's renderman.
+\newblock \url{http://renderman.pixar.com/view/renderman}.
+\newblock Accessed: 26th May 2015.
+ \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+\bibitem{rmdocs}
+Pixar's renderman documentation.
+\newblock \url{https://renderman.pixar.com/view/documentation}.
+\newblock Accessed: 26th May 2015.
+ \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
 \bibitem{superquad}
 The super egg and other super surfaces.
 \newblock
   \url{http://www.math.harvard.edu/archive/21a_fall_09/exhibits/superegg}.
-\newblock Accessed: 2015-04-25.
- \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+\newblock Accessed: 25th May 2015.
+ \begin{quotation}\noindent {Although certain superquadrics are similiar in
+  shape to an ice cube, notably the super egg, in the end I instead decided to
+  write a displacement } \end{quotation}
 \bibitem{Deusen:2004:ENI:1103900.1103932}
 Oliver Deusen, David~S. Ebert, Ron Fedkiw, F.~Kenton Musgrave, Przemyslaw
   Prusinkiewicz, Doug Roble, Jos Stam, and Jerry Tessendorf.

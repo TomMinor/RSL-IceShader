@@ -1,47 +1,51 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
+This is BibTeX, Version 0.99d (TeX Live 2014)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: report.aux
 The style file: plain-annote.bst
 Database file #1: bib_icereport.bib
 Warning--to sort, need author or key in superquad
-You've used 12 entries,
+Warning--to sort, need author or key in rmdocs
+Warning--to sort, need author or key in angel
+Warning--to sort, need author or key in prman
+You've used 15 entries,
             2163 wiz_defined-function locations,
-            593 strings with 7142 characters,
-and the built_in function-call counts, 5613 in all, are:
-= -- 585
-> -- 264
+            605 strings with 8106 characters,
+and the built_in function-call counts, 6132 in all, are:
+= -- 636
+> -- 267
 < -- 8
-+ -- 109
++ -- 112
 - -- 92
-* -- 410
-:= -- 854
-add.period$ -- 46
-call.type$ -- 12
-change.case$ -- 82
+* -- 431
+:= -- 911
+add.period$ -- 55
+call.type$ -- 15
+change.case$ -- 91
 chr.to.int$ -- 0
-cite$ -- 13
-duplicate$ -- 226
-empty$ -- 424
+cite$ -- 19
+duplicate$ -- 247
+empty$ -- 496
 format.name$ -- 92
-if$ -- 1245
+if$ -- 1374
 int.to.chr$ -- 0
-int.to.str$ -- 12
+int.to.str$ -- 15
 missing$ -- 11
-newline$ -- 64
+newline$ -- 79
 num.names$ -- 22
-pop$ -- 89
+pop$ -- 119
 preamble$ -- 1
-purify$ -- 70
+purify$ -- 76
 quote$ -- 0
-skip$ -- 172
+skip$ -- 187
 stack$ -- 0
-substring$ -- 339
-swap$ -- 80
+substring$ -- 354
+swap$ -- 83
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 48
-warning$ -- 1
+type$ -- 60
+warning$ -- 4
 while$ -- 48
-width$ -- 14
-write$ -- 172
-(There was 1 warning)
+width$ -- 17
+write$ -- 202
+(There were 4 warnings)
