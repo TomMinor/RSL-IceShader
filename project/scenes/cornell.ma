@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: cornell.ma
-//Last modified: Sat, May 02, 2015 02:13:55 am
+//Last modified: Sat, May 02, 2015 02:41:38 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -2551,6 +2551,7 @@ createNode RenderManShader -n "RenderManShader_Ice";
 		-at "float";
 	setAttr ".sn" -type "string" "shaders/ice.slo";
 	setAttr ".si" -type "string" "float Kr -default {1}\nfloat Kt -default {1}\nfloat ior -default {1.5}\nfloat Ks -default {1}\nfloat shinyness -default {50}\n";
+	setAttr -k on ".ior" 0.95200002193450928;
 createNode shadingEngine -n "RenderManShader1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
