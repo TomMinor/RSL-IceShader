@@ -1,13 +1,13 @@
 shader_obj 5.1 1 0
 areaLightShape1_rfm 714 125 156 275 548 0 21 21 0 21 12 1
-52 1253
+52 1259
 rgb
 current
 shader
 !!anyspace!!
-/home/tom/rman/iceproject/project/renderman/cornell/shaders
+/home/tom/rman/RSL-IceShader/project/renderman/cornell/shaders
 .::/opt/pixar/RenderManStudio-19.0-maya2014//lib/shaders:/opt/pixar/RenderManStudio-19.0-maya2014//lib/slim/pxCoreV1:/opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl
-/home/tom/rman/iceproject/project/renderman/cornell/shaders/areaLightShape1_rfm.sl
+/home/tom/rman/RSL-IceShader/project/renderman/cornell/shaders/areaLightShape1_rfm.sl
 /opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl/mayaNodes/_rfmUtils.h
 
 user:pass_features_trace
@@ -52,7 +52,7 @@ AddDirect
 
 $meta_1900
 $meta___PRMAN_RELEASE__1900
-$meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Sat May  2 23:18:19 2015
+$meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Sun May  3 11:44:08 2015
 125
 0
 0
@@ -80,7 +80,7 @@ $meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Sat May  2 2
 0.1000000015
 1.123600006
 32
-0.5755400062
+0.400000006
 40
 -1
 -2
@@ -194,7 +194,7 @@ $S7 6 2 -1 6 3 0 0 0 0 1 548
 $meta_RMSSTAMP 6 2 -1 51 3 0 0 0 0 0 0
 $S8 6 2 -1 7 3 0 0 0 0 45 80
 $C0 4 2 -1 2 3 0 0 122 299 2 533
-$C1 4 2 -1 3 3 0 0 0 0 12 543
+$C1 4 2 -1 3 3 0 0 0 0 11 543
 $C3 4 2 -1 4 3 0 0 0 0 49 462
 $S11 6 2 -1 8 3 0 0 23 548 3 367
 $S22 6 2 -1 9 3 0 0 0 0 26 26
@@ -906,7 +906,7 @@ $T206 24 16 -1 0 3 0 0 545 546 546 546 -1 155
 293 50 
 294 51 
 295 40 
-296 12 
+296 13 
 297 13 
 298 13 
 299 92 
