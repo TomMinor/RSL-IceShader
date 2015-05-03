@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: cornell.ma
-//Last modified: Sun, May 03, 2015 12:26:19 am
+//Last modified: Sat, May 02, 2015 02:41:38 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -387,10 +387,6 @@ createNode mesh -n "pHelixShape1" -p "pHelix1";
 createNode transform -n "pSphere1";
 	setAttr ".t" -type "double3" 0.6093236514237681 5.8391937934746672 3.8133832672787111 ;
 createNode mesh -n "pSphereShape1" -p "pSphere1";
-	addAttr -ci true -k true -sn "rman__torattr___subdivScheme" -ln "rman__torattr___subdivScheme" 
-		-dv -1 -at "long";
-	addAttr -ci true -k true -sn "rman__torattr___subdivFacevaryingInterp" -ln "rman__torattr___subdivFacevaryingInterp" 
-		-dv -1 -at "long";
 	setAttr -k off ".v";
 	setAttr ".vir" yes;
 	setAttr ".vif" yes;
@@ -399,8 +395,6 @@ createNode mesh -n "pSphereShape1" -p "pSphere1";
 	setAttr ".dcc" -type "string" "Ambient+Diffuse";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr -k on ".rman__torattr___subdivScheme" 0;
-	setAttr -k on ".rman__torattr___subdivFacevaryingInterp" 3;
 createNode transform -n "areaLight1";
 	setAttr ".t" -type "double3" -5.2041704279304213e-18 23.936607808091939 -5.5511151231257827e-17 ;
 	setAttr ".r" -type "double3" -90 0 0 ;
@@ -1883,6 +1877,8 @@ createNode polyHelix -n "polyHelix1";
 	setAttr ".h" 20.437095060452634;
 	setAttr ".w" 9.1226865910782493;
 	setAttr ".cuv" 3;
+createNode polySphere -n "polySphere1";
+	setAttr ".r" 5.1426929701589614;
 createNode PxrDisney -n "PxrDisney4";
 createNode shadingEngine -n "PxrDisney4SG";
 	setAttr ".ihi" 0;
@@ -2300,7 +2296,7 @@ createNode RenderMan -s -n "renderManGlobals";
 	setAttr -k on ".rman__riopt__trace_decimationrate" 1;
 	setAttr -k on ".rman__riopt__limits_threads" 0;
 	setAttr -k on ".rman__riopt__Camera_shutteropening" -type "float2" 0 1 ;
-	setAttr -k on ".rman__riopt__Format_resolution" -type "long2" 960 540 ;
+	setAttr -k on ".rman__riopt__Format_resolution" -type "long2" 1280 720 ;
 	setAttr -k on ".rman__riopt__Format_pixelaspectratio" 1;
 	setAttr -k on ".rman__riopt__hair_minwidth" 0.5;
 	setAttr ".rman__riopt__rib_compression" -type "string" "none";
@@ -2547,28 +2543,15 @@ createNode RenderMan -s -n "rmanPreviewOutputGlobals0";
 	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
 	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
 createNode RenderManShader -n "RenderManShader_Ice";
-	addAttr -ci true -k true -sn "Ka" -ln "Ka" -dv 1 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "Kd" -ln "Kd" -dv 0.5 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -k true -sn "Kr" -ln "Kr" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -k true -sn "Kt" -ln "Kt" -dv 1 -smn 0 -smx 1 -at "float";
+	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.5 -smn 0 -smx 10 -at "float";
 	addAttr -ci true -k true -sn "Ks" -ln "Ks" -dv 1 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "Kr" -ln "Kr" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "Kt" -ln "Kt" -dv 0.5 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "roughness" -ln "roughness" -dv 0.05000000074505806 -smn 0 -smx 
-		1 -at "float";
 	addAttr -ci true -k true -sn "shinyness" -ln "shinyness" -dv 50 -smn 0 -smx 100 
 		-at "float";
-	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.5 -smn 0 -smx 10 -at "float";
-	addAttr -ci true -uac -k true -sn "specularColor" -ln "specularColor" -at "float3" 
-		-nc 3;
-	addAttr -ci true -k true -sn "specularColorr" -ln "specularColorR" -dv 1 -at "float" 
-		-p "specularColor";
-	addAttr -ci true -k true -sn "specularColorg" -ln "specularColorG" -dv 1 -at "float" 
-		-p "specularColor";
-	addAttr -ci true -k true -sn "specularColorb" -ln "specularColorB" -dv 1 -at "float" 
-		-p "specularColor";
 	setAttr ".sn" -type "string" "shaders/ice.slo";
-	setAttr ".si" -type "string" "float Ka -default {1}\nfloat Kd -default {0.5}\nfloat Ks -default {1}\nfloat Kr -default {0.5}\nfloat Kt -default {0.5}\nfloat roughness -default {0.05}\nfloat shinyness -default {50}\nfloat ior -default {1.5}\ncolor specularColor -default {1  1  1}\n";
-	setAttr -k on ".Ks" 0.89999997615814209;
-	setAttr -k on ".roughness" 0.25;
+	setAttr ".si" -type "string" "float Kr -default {1}\nfloat Kt -default {1}\nfloat ior -default {1.5}\nfloat Ks -default {1}\nfloat shinyness -default {50}\n";
+	setAttr -k on ".ior" 0.95200002193450928;
 createNode shadingEngine -n "RenderManShader1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -2707,8 +2690,6 @@ createNode groupId -n "groupId26";
 createNode groupParts -n "groupParts15";
 	setAttr ".ihi" 0;
 	setAttr ".ic" -type "componentList" 1 "f[2]";
-createNode polySphere -n "polySphere1";
-	setAttr ".r" 5.1426929701589614;
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
@@ -2729,6 +2710,8 @@ select -ne :renderGlobalsList1;
 select -ne :defaultRenderGlobals;
 	setAttr ".ren" -type "string" "renderMan";
 select -ne :defaultResolution;
+	setAttr ".w" 1280;
+	setAttr ".h" 720;
 	setAttr ".pa" 1;
 	setAttr ".dar" 1.7769999504089355;
 select -ne :defaultLightSet;

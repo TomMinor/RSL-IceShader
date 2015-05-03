@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sat May 02 02:18:46 BST 2015
+#Sat May 02 23:27:03 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,7 +51,7 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "hidden" "int jitter" [1] "int sigma" [0] "float sigmablur" [1] "int minsamples" [0] "int maxsamples" [4]
 Format 1280 720 1
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 52366 -context \"renderman/cornell/images/cornell\" -notes \"(Sat May 02 02:18:46 BST 2015)\""]
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 37003 -context \"renderman/cornell/images/cornell\" -notes \"(Sat May 02 23:27:03 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
@@ -77,10 +77,6 @@ Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere
 Attribute "volume" "float depthrelativeshadingrate" [3] "string depthinterpolation" ["constant"]
 Attribute "stochastic" "int sigma" [1]
 Attribute "photon" "string causticmap" [""] "string globalmap" [""]
-Attribute "user" "string irRenderCam" ["false,0.438156,2.73787,28.6731"]
-Attribute "user" "string irRenderCamFOV" ["54.4322"]
-Attribute "user" "string irRenderCamXform" ["0.999994,0,-0.00349065,0,0.000489524,0.990118,0.140238,0,0.00345616,-0.140238,0.990112,0,0.438156,2.73787,28.6731,1"]
-Attribute "user" "string irRenderCamRatio" ["1"]
 AttributeBegin 
 Attribute "identifier" "string name" ["volumeLightShape1"]
 Transform [ 22.2641 0 -0 0  -0 4.94363e-15 -22.2641 0  0 22.2641 4.94363e-15 0  -5.20417e-18 12.5004 -5.55112e-17 1 ]
@@ -306,5 +302,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Preview
 WorldEnd 
 ResourceEnd 
-##streammarker 1
+##streammarker 10
 FrameEnd 

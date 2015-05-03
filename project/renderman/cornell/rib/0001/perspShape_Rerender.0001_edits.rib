@@ -1,4 +1,0 @@
-##RenderMan RIB
-version 3.04
-Option "rerender" "int[2] lodrange" [0 3]
-##streammarker982

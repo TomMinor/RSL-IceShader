@@ -1,0 +1,67 @@
+##RenderMan RIB
+FrameBegin 1
+Format 450 300 1
+Display "t.tif" "tiff" "rgba"
+PixelSamples 3 3
+ShadingRate 1
+
+Projection "perspective" "fov" [30]
+Translate -0.1 0 3
+
+WorldBegin
+
+LightSource "ambientlight" 1 "lightcolor" [1 1 1] "intensity" .1
+# LightSource "shadowspot" 2 "from" [.35 .81 -2.35] "intensity" [12]
+#          "string shadowname" ["raytrace"] "samples" [10]
+
+Attribute "visibility" "int diffuse" [1]
+Attribute "visibility" "int specular" [1]
+Attribute "visibility" "int transmission" [0]
+Attribute "trace" "int maxspeculardepth" [4]
+
+AttributeBegin
+  Attribute "identifier" "name" ["leftMirror"]
+  Translate -0.75 -.5 -1
+  Rotate -30 0 1 0
+  Surface "shinymetal" "texturename" ["raytrace"]
+  Patch "bilinear" "P" [0 1 0   1 1 0   0 0 0   1 0 0]
+AttributeEnd
+
+AttributeBegin
+  Translate .35 -.5 -0.5
+  Rotate 60 0 1 0
+  Attribute "identifier" "name" ["rightMirror"]
+  Surface "shinymetal" "texturename" ["raytrace"]
+  Patch "bilinear" "P" [0 1 0   1 1 0   0 0 0   1 0 0]
+AttributeEnd
+
+Attribute "visibility" "int transmission" [1]
+Attribute "shade" "string transmissionhitmode" "primitive"
+
+AttributeBegin
+  Attribute "identifier" "name" ["ball1"]
+  Surface "shinymetal" "texturename" ["raytrace"]
+  Translate -.05 .2 -1
+  Sphere 0.15 -0.15 0.15  360
+AttributeEnd
+
+AttributeBegin
+  Attribute "identifier" "name" ["ball2"]
+  Color [.1 .1 1]
+  Surface "ice"
+  Translate -0.45 .065 -1
+  Sphere 0.1 -0.1 0.1  360
+AttributeEnd
+
+AttributeBegin
+  Attribute "identifier" "name" ["marble"]
+  Color [1 0 0]
+  Translate .2 -.15 -0.7
+  Rotate 25 0 0 1
+  Surface "cmarble" "float veining" [15]
+          "float Ks" [.2] "float Kd" [.2]
+  Sphere 0.15 -0.15 0.15  360
+AttributeEnd
+
+WorldEnd
+FrameEnd
