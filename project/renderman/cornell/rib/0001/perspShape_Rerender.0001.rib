@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 03 01:45:51 BST 2015
+#Sun May 03 04:27:29 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 37003 -context \"_preview\" -notes \"(Sun May 03 01:45:51 BST 2015)\""]
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 37003 -context \"_preview\" -notes \"(Sun May 03 04:27:29 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.992546 -0.0334658 -0.117185 5.45354e-11  8.24813e-09 0.961558 -0.274603 -1.08963e-09  -0.121869 -0.272556 -0.95439 4.44157e-10  -0.290724 -4.91614 43.9062 1 ]
+ConcatTransform [ 0.999848 0.000445172 -0.0174467 0  1.55311e-09 0.999675 0.0255082 0  -0.0174524 0.0255039 -0.999522 0  -0.102161 -10.7657 45.7816 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -240,7 +240,7 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphere1"]
-ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 5.83919 3.81338 1 ]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 7.38364 3.81338 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphereShape1"]
@@ -308,5 +308,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-##streammarker 490
+##streammarker 1312
 FrameEnd 

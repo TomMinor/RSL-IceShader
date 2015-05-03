@@ -12,10 +12,11 @@ ice ( float Ka = 1,    // Ambient scalar
 {
 	// Nn = faceforward(normalize(N), I, N); // Construct normal facing the camera
     normal Nn = normalize(N); 				// Don't construct a front facing normal to avoid artifacts
-    vector incidentRay = normalize (I);     /* normalized incident vector */
+    vector incidentRay = normalize(I);      /* normalized incident vector */
     vector viewDir = -incidentRay;  		/* view direction */
 
-	float eta = (incidentRay.Nn < 0) ? 1/ior : ior; /* relative index of refraction */
+ 	// (incidentRay.Nn < 0) is true when the ray is outside 
+	float eta =  (incidentRay.Nn < 0) ? 1/ior : ior; /* relative index of refraction */
     
 	Ci = 0;
 	vector reflectedDir = normalize(reflect (incidentRay, Nn)); // Get perfect reflection along normal TODO This may not need to be initialised
@@ -52,8 +53,7 @@ ice ( float Ka = 1,    // Ambient scalar
 	//color specTerm = specularColor * (refractionTerm + reflectionTerm + Ks * specular(Nn, -incidentRay, roughness));
 	color refractReflectTerm = refractionTerm + reflectionTerm;
 
-    // Ci = Os * ((ambientTerm + diffuseTerm)) + refractReflectTerm;
-    Ci = Os * (ambientTerm + (0.5 * diffuseTerm));// + refractReflectTerm;
+    Ci = Os * ((ambientTerm + diffuseTerm)) + refractReflectTerm;
     Oi = Os; 
 
     // Custom illuminance loop : Phong brdf

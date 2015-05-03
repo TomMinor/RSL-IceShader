@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: cornell.ma
-//Last modified: Sun, May 03, 2015 12:26:19 am
+//Last modified: Sun, May 03, 2015 06:32:19 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -118,13 +118,13 @@ fileInfo "osv" "Linux 3.19.3-100.fc20.x86_64 #1 SMP Fri Mar 27 16:53:47 UTC 2015
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" 0.43815567870355981 2.737866853241997 28.673059509161664 ;
-	setAttr ".r" -type "double3" 8.0616472703609521 -359.79999999991924 6.5226616436319856e-17 ;
+	setAttr ".t" -type "double3" 0.9056763920046027 9.5943800806476638 46.032475182617311 ;
+	setAttr ".r" -type "double3" 1.4616472703555412 -358.99999999989359 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 25.005360854379028;
+	setAttr ".coi" 39.023682108892849;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -385,7 +385,7 @@ createNode mesh -n "pHelixShape1" -p "pHelix1";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode transform -n "pSphere1";
-	setAttr ".t" -type "double3" 0.6093236514237681 5.8391937934746672 3.8133832672787111 ;
+	setAttr ".t" -type "double3" 0.6093236514237681 7.3836386452405627 3.8133832672787111 ;
 createNode mesh -n "pSphereShape1" -p "pSphere1";
 	addAttr -ci true -k true -sn "rman__torattr___subdivScheme" -ln "rman__torattr___subdivScheme" 
 		-dv -1 -at "long";
@@ -419,9 +419,10 @@ createNode areaLight -n "areaLightShape1" -p "areaLight1";
 	addAttr -ci true -k true -sn "rman__ALSampleLightColor" -ln "rman__ALSampleLightColor" 
 		-dv -1 -at "float";
 	setAttr -k off ".v";
-	setAttr ".in" 0.57553958892822266;
+	setAttr ".in" 0.40000000596046448;
 	setAttr ".shr" 40;
 	setAttr ".rdl" 10;
+	setAttr ".de" 1;
 	setAttr ".dr" 1024;
 	setAttr ".rman__TransmissionSubset" -type "string" "shadow";
 	setAttr -k on ".rman__ShadowMapSamples" 32;
@@ -2556,7 +2557,7 @@ createNode RenderManShader -n "RenderManShader_Ice";
 		1 -at "float";
 	addAttr -ci true -k true -sn "shinyness" -ln "shinyness" -dv 50 -smn 0 -smx 100 
 		-at "float";
-	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.5 -smn 0 -smx 10 -at "float";
+	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.5 -smn 0 -smx 1 -at "float";
 	addAttr -ci true -uac -k true -sn "specularColor" -ln "specularColor" -at "float3" 
 		-nc 3;
 	addAttr -ci true -k true -sn "specularColorr" -ln "specularColorR" -dv 1 -at "float" 
@@ -2567,8 +2568,11 @@ createNode RenderManShader -n "RenderManShader_Ice";
 		-p "specularColor";
 	setAttr ".sn" -type "string" "shaders/ice.slo";
 	setAttr ".si" -type "string" "float Ka -default {1}\nfloat Kd -default {0.5}\nfloat Ks -default {1}\nfloat Kr -default {0.5}\nfloat Kt -default {0.5}\nfloat roughness -default {0.05}\nfloat shinyness -default {50}\nfloat ior -default {1.5}\ncolor specularColor -default {1  1  1}\n";
+	setAttr -k on ".Ka" 0.55056178569793701;
+	setAttr -k on ".Kd" 1;
 	setAttr -k on ".Ks" 0.89999997615814209;
-	setAttr -k on ".roughness" 0.25;
+	setAttr -k on ".roughness" 1;
+	setAttr -k on ".ior" 0.89999997615814209;
 createNode shadingEngine -n "RenderManShader1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -2728,6 +2732,7 @@ select -ne :defaultRenderingList1;
 select -ne :renderGlobalsList1;
 select -ne :defaultRenderGlobals;
 	setAttr ".ren" -type "string" "renderMan";
+	setAttr ".ifp" -type "string" "";
 select -ne :defaultResolution;
 	setAttr ".pa" 1;
 	setAttr ".dar" 1.7769999504089355;

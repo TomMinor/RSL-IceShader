@@ -50,7 +50,7 @@ IfEnd
 version 3.04
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 Displacement "null" 
-Surface "shaders/ice" "float Ka" [0.550562] "float Kd" [1] "float Ks" [0.9] "float Kr" [1] "float Kt" [0.5] "float roughness" [0.25] "float shinyness" [50] "float ior" [0.9] "color specularColor" [1 1 1] "__instanceid" ["shaders/ice_0"]
+Surface "shaders/ice" "float Ka" [0.550562] "float Kd" [1] "float Ks" [0.9] "float Kr" [0.5] "float Kt" [0.5] "float roughness" [1] "float shinyness" [50] "float ior" [0.9] "color specularColor" [1 1 1] "__instanceid" ["shaders/ice_0"]
 VPInterior "null" 
 Interior "null" 
 Attribute "user" "int shader_bindingstrength" [0]
