@@ -25,4 +25,6 @@ http://renderman.pixar.com/view/what-the-rispec-never-told-you
 
 http://www.k-3d.org/wiki/RenderMan_Shading_Language
 
+http://www.cs.rit.edu/~jmg/courses/cgII/20051/slides/5-1-renderman.pdf
+http://www.cs.unc.edu/~olano/s2001c24/
 http://www.cs.unc.edu/~olano/s2001c24/ch01.html
