@@ -50,7 +50,11 @@ version 3.04
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 Displacement "null" 
 Matte 0
+<<<<<<< HEAD
 Surface "renderman/cornell/shaders/lambert5_rfm_1" "float lambert5_dc" [0.8] "string lambert5_SSPassid" [""] "string lambert5_SSConversionClass" [""] "string lambert5_rman__SSOutputFile" [""] "string lambert5_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/cornell/shaders/lambert5_rfm_1_1"]
+=======
+Surface "renderman/cornell/shaders/lambert5_rfm" "float lambert5_dc" [0.8] "string lambert5_SSPassid" [""] "string lambert5_SSConversionClass" [""] "string lambert5_rman__SSOutputFile" [""] "string lambert5_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/cornell/shaders/lambert5_rfm_0"]
+>>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
 VPInterior "null" 
 Interior "null" 
 Attribute "user" "int shader_bindingstrength" [0]

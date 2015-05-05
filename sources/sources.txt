@@ -22,3 +22,9 @@ http://renderman.pixar.com/view/Appnote12
 https://renderman.pixar.com/resources/RPS_17/basicAntialiasing.html
 https://books.google.co.uk/books?id=MDrv7I9fT9QC&pg=PA298&lpg=PA298&dq=rsl+brownian+noise&source=bl&ots=hma6Zqh0mz&sig=oUF26DoIFEJoiI3HGpZK0M-wyo8&hl=en&sa=X&ei=hwRFVc7mLpK1sATVg4CIDg&ved=0CCIQ6AEwAA#v=onepage&q=rsl%20brownian%20noise&f=false
 http://renderman.pixar.com/view/what-the-rispec-never-told-you
+
+http://www.k-3d.org/wiki/RenderMan_Shading_Language
+
+http://www.cs.rit.edu/~jmg/courses/cgII/20051/slides/5-1-renderman.pdf
+http://www.cs.unc.edu/~olano/s2001c24/
+http://www.cs.unc.edu/~olano/s2001c24/ch01.html

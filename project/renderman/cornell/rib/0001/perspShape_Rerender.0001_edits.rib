@@ -1,0 +1,7 @@
+<<<<<<< HEAD
+=======
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker958
+>>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
