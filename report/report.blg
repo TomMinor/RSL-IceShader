@@ -7,45 +7,46 @@ Warning--to sort, need author or key in superquad
 Warning--to sort, need author or key in rmdocs
 Warning--to sort, need author or key in angel
 Warning--to sort, need author or key in prman
-You've used 15 entries,
+Warning--can't use both author and editor fields in Apodaca:1999:ARC:555371
+You've used 18 entries,
             2163 wiz_defined-function locations,
-            605 strings with 8106 characters,
-and the built_in function-call counts, 6132 in all, are:
-= -- 636
-> -- 267
+            626 strings with 8585 characters,
+and the built_in function-call counts, 6856 in all, are:
+= -- 701
+> -- 294
 < -- 8
-+ -- 112
-- -- 92
-* -- 431
-:= -- 911
-add.period$ -- 55
-call.type$ -- 15
-change.case$ -- 91
++ -- 123
+- -- 100
+* -- 473
+:= -- 1035
+add.period$ -- 64
+call.type$ -- 18
+change.case$ -- 102
 chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 247
-empty$ -- 496
-format.name$ -- 92
-if$ -- 1374
+cite$ -- 23
+duplicate$ -- 283
+empty$ -- 565
+format.name$ -- 100
+if$ -- 1527
 int.to.chr$ -- 0
-int.to.str$ -- 15
-missing$ -- 11
-newline$ -- 79
-num.names$ -- 22
-pop$ -- 119
+int.to.str$ -- 18
+missing$ -- 17
+newline$ -- 97
+num.names$ -- 28
+pop$ -- 139
 preamble$ -- 1
-purify$ -- 76
+purify$ -- 86
 quote$ -- 0
-skip$ -- 187
+skip$ -- 206
 stack$ -- 0
-substring$ -- 354
-swap$ -- 83
+substring$ -- 369
+swap$ -- 87
 text.length$ -- 8
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 60
-warning$ -- 4
-while$ -- 48
-width$ -- 17
-write$ -- 202
-(There were 4 warnings)
+type$ -- 66
+warning$ -- 5
+while$ -- 54
+width$ -- 20
+write$ -- 239
+(There were 5 warnings)

@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 03 04:27:29 BST 2015
+#Mon May 04 22:00:51 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 37003 -context \"_preview\" -notes \"(Sun May 03 04:27:29 BST 2015)\""]
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 55252 -context \"_preview\" -notes \"(Mon May 04 22:00:51 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.999848 0.000445172 -0.0174467 0  1.55311e-09 0.999675 0.0255082 0  -0.0174524 0.0255039 -0.999522 0  -0.102161 -10.7657 45.7816 1 ]
+ConcatTransform [ 0.99863 -0.0057786 -0.0520176 -7.23304e-11  -9.98641e-09 0.993887 -0.110399 4.78514e-09  -0.052336 -0.110248 -0.992525 -1.38012e-09  0.226878 -9.97325 57.9128 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -65,6 +65,8 @@ ResourceBegin
 WorldBegin 
 ##RLF ScopeBegin -name perspShape_Rerender -localbinding 1 -rlffilename renderman/cornell/rib/0001/perspShape_Rerender.0001.rlf -namespace 
 ScopedCoordinateSystem "world_ref"
+Attribute "user" "float[17] place2dTexture1" [1 1 0 0 0
+0 0 0 1 1 4 4 0 0 0 0 0]
 Attribute "visibility" "int transmission" [1] "int specular" [1] "int diffuse" [1]
 Surface "defaultsurface" 
 Attribute "user" "int shader_bindingstrength" [0]
@@ -292,13 +294,11 @@ TransformBegin
 ReadArchive "renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_1_attr.job.rib" 
 Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_1.job.rib"] "float[6] bound" [-11.938 11.938 0.101689 23.9777 -11.938 21.0803] "int __immediatesubdivide" [0]
 TransformEnd 
+TransformBegin 
+ReadArchive "renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_2_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_2.job.rib"] "float[6] bound" [-11.938 11.938 0.101689 23.9777 -11.938 21.0803] "int __immediatesubdivide" [0]
+TransformEnd 
 AttributeEnd 
-AttributeEnd 
-AttributeEnd 
-AttributeBegin 
-Attribute "identifier" "string name" ["Manipulator2"]
-ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
-AttributeBegin 
 AttributeEnd 
 AttributeEnd 
 AttributeBegin 
@@ -308,5 +308,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-##streammarker 1312
+##streammarker 130
 FrameEnd 

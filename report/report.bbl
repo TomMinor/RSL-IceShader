@@ -30,6 +30,13 @@ The super egg and other super surfaces.
  \begin{quotation}\noindent {Although certain superquadrics are similiar in
   shape to an ice cube, notably the super egg, in the end I instead decided to
   write a displacement } \end{quotation}
+\bibitem{Apodaca:1999:ARC:555371}
+Anthony~A. Apodaca and Larry Gritz.
+\newblock {\em Advanced RenderMan: Creating CGI for Motion Picture}.
+\newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edition,
+  1999.
+ \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+
 \bibitem{Deusen:2004:ENI:1103900.1103932}
 Oliver Deusen, David~S. Ebert, Ron Fedkiw, F.~Kenton Musgrave, Przemyslaw
   Prusinkiewicz, Doug Roble, Jos Stam, and Jerry Tessendorf.
@@ -91,6 +98,18 @@ Takanori Nishino, Kei Iwasaki, Yoshinori Dobashi, and Tomoyuki Nishita.
 \newblock In {\em SIGGRAPH Asia 2012 Technical Briefs}, SA '12, pages 1:1--1:4,
   New York, NY, USA, 2012. ACM.
  \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+\bibitem{Raghavachary:1085035}
+Saty Raghavachary.
+\newblock {\em {Rendering for beginners: image synthesis using RenderMan}}.
+\newblock Elsevier, San Diego, CA, 2004.
+ \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+
+\bibitem{Stephenson:2007:ER:1215609}
+Ian Stephenson.
+\newblock {\em Essential Renderman}.
+\newblock Springer-Verlag New York, Inc., Secaucus, NJ, USA, 2007.
+ \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+
 \bibitem{Stomakhin:2013:MPM:2461912.2461948}
 Alexey Stomakhin, Craig Schroeder, Lawrence Chai, Joseph Teran, and Andrew
   Selle.

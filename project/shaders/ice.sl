@@ -1,3 +1,38 @@
+// displacement disp1_1(float freq = 5, Km = 0.01)
+// {
+//   float surface_mag, layer_mag;
+//   float ss, tt;
+//   float fuzz = 0.05;
+
+//   /* background layer */
+
+//   surface_mag = 0;
+
+//   /* rotate & repeat layers */
+
+//   rotate2d(s, t, radians(45), .5, .5, ss, tt);
+//   ss = repeat(ss, freq);
+//   tt = repeat(tt, freq);
+
+//   /* layer 1 */
+
+//   layer_mag = pulse(0.35, 0.65, fuzz, ss);
+//   surface_mag += layer_mag;
+
+//   /* layer 2 */
+
+//   layer_mag = pulse(0.35, 0.65, fuzz, tt);
+
+//   surface_mag += layer_mag;
+//   /* surface_mag = max(surface_mag, layer_mag); */ /* disp1_2 */
+//   /* surface_mag = max(surface_mag, layer_mag) + layer_mag; */ /* disp1_3 */
+
+//   /* displace */
+
+//   P += Km * surface_mag * normalize(N);
+//   N = calculatenormal(P);
+// }
+
 surface
 ice ( float Ka = 1,    // Ambient scalar
 			Kd = 0.5,  // Diffuse scalar
@@ -50,10 +85,12 @@ ice ( float Ka = 1,    // Ambient scalar
   	//--------------------------------- Calculate Result  -------------------------------------
 	color ambientTerm = Ka * ambient();
 	color diffuseTerm = Kd * diffuse(Nn);
+
 	//color specTerm = specularColor * (refractionTerm + reflectionTerm + Ks * specular(Nn, -incidentRay, roughness));
 	color refractReflectTerm = refractionTerm + reflectionTerm;
 
     Ci = Os * ((ambientTerm + diffuseTerm)) + refractReflectTerm;
+    //Ci = Os * noise(s * 16, t * 16);
     Oi = Os; 
 
     // Custom illuminance loop : Phong brdf
