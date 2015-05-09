@@ -28,3 +28,7 @@ http://www.k-3d.org/wiki/RenderMan_Shading_Language
 http://www.cs.rit.edu/~jmg/courses/cgII/20051/slides/5-1-renderman.pdf
 http://www.cs.unc.edu/~olano/s2001c24/
 http://www.cs.unc.edu/~olano/s2001c24/ch01.html
+
+http://renderman.pixar.com/view/pixar-ratatouille-shading-food
+http://www.sfdm.scad.edu/faculty/mkesson/vsfx755/wip/best/winter2010/daniel_bollwerk/Fog.html
+http://www.larrygritz.com/arman/materials.html

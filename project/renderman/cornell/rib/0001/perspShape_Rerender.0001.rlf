@@ -12,6 +12,18 @@ Interior "null"
 Attribute "user" "int shader_bindingstrength" [0]
 IfEnd 
 ]]></Payload>
+        <Payload Id="lambert6SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
+version 3.04
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Displacement "null" 
+Matte 0
+Surface "renderman/cornell/shaders/lambert6_rfm" "color lambert6_c" [0.214041 0.214041 0.214041] "float lambert6_dc" [0.8] "string lambert6_SSPassid" [""] "string lambert6_SSConversionClass" [""] "string lambert6_rman__SSOutputFile" [""] "string lambert6_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/cornell/shaders/lambert6_rfm_0"]
+Atmosphere "/home/tom/rman/arman/shaders/planetatmo" "float density" [60] "float falloff" [400] "float integstart" [0] "float integend" [100] "float rbound" [1.05] "float minstepsize" [0.01] "float maxstepsize" [2.5] "float k" [50] "float debug" [0] "float use_lighting" [1] "float atmos_type" [0] "__instanceid" ["/home/tom/rman/arman/shaders/planetatmo_0"]
+VPInterior "null" 
+Interior "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+]]></Payload>
         <Payload Id="lambert2SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
 version 3.04
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
@@ -50,31 +62,17 @@ version 3.04
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 Displacement "null" 
 Matte 0
-<<<<<<< HEAD
-Surface "renderman/cornell/shaders/lambert5_rfm_1" "float lambert5_dc" [0.8] "string lambert5_SSPassid" [""] "string lambert5_SSConversionClass" [""] "string lambert5_rman__SSOutputFile" [""] "string lambert5_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/cornell/shaders/lambert5_rfm_1_1"]
-=======
 Surface "renderman/cornell/shaders/lambert5_rfm" "float lambert5_dc" [0.8] "string lambert5_SSPassid" [""] "string lambert5_SSConversionClass" [""] "string lambert5_rman__SSOutputFile" [""] "string lambert5_rman__SSMap" [""] "string rfmSurface__bakeMap" [""] "__instanceid" ["renderman/cornell/shaders/lambert5_rfm_0"]
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
 VPInterior "null" 
 Interior "null" 
 Attribute "user" "int shader_bindingstrength" [0]
 IfEnd 
 Resource "lambert5SG" "attributes" "string operation" ["save"] "string subset" ["shading"]
 ]]></Payload>
-        <Payload Id="RenderManShader1SG" Label="" Source="1" Content="1"><![CDATA[##RenderMan RIB
-version 3.04
-IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
-Displacement "null" 
-Surface "shaders/ice" "float Ka" [0.550562] "float Kd" [1] "float Ks" [0.9] "float Kr" [0.5] "float Kt" [0.5] "float roughness" [1] "float shinyness" [50] "float ior" [0.9] "color specularColor" [1 1 1] "__instanceid" ["shaders/ice_0"]
-VPInterior "null" 
-Interior "null" 
-Attribute "user" "int shader_bindingstrength" [0]
-IfEnd 
-]]></Payload>
     </InjectablePayloads>
     <TightBindings>
         <Binding Key="polySurface13/polySurfaceShape14" PayloadId="lambert2SG-lambert3SG-lambert5SG"/>
-        <Binding Key="pSphere1/pSphereShape1" PayloadId="RenderManShader1SG"/>
+        <Binding Key="pSphere1/pSphereShape1" PayloadId="lambert6SG"/>
         <Binding Key="pCube2/pCubeShape1" PayloadId="lambert2SG"/>
         <Binding Key="pCube1/polySurface1/polySurface3/polySurface6/polySurface7/polySurface9/polySurfaceShape10" PayloadId="lambert4SG"/>
         <Binding Key="pHelix1/pHelixShape1" PayloadId="lambert2SG"/>

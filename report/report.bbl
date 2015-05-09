@@ -3,7 +3,7 @@
 \bibitem{angel}
 http://dctsystems.co.uk/renderman/angel.html.
 \newblock \url{http://dctsystems.co.uk/RenderMan/angel.html}.
-\newblock Accessed: 25th May 2015.
+\newblock Accessed: 25th April 2015.
  \begin{quotation}\noindent {A Renderman compliant renderer developed by Ian
   Stephenson, I initially chose to use it because it had support for geometry
   shaders that provided me with a simple way of creating an ice cube shape
@@ -15,18 +15,18 @@ http://dctsystems.co.uk/renderman/angel.html.
 \bibitem{prman}
 Pixar's renderman.
 \newblock \url{http://renderman.pixar.com/view/renderman}.
-\newblock Accessed: 26th May 2015.
+\newblock Accessed: 26th April 2015.
  \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
 \bibitem{rmdocs}
 Pixar's renderman documentation.
 \newblock \url{https://renderman.pixar.com/view/documentation}.
-\newblock Accessed: 26th May 2015.
+\newblock Accessed: 26th April 2015.
  \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
 \bibitem{superquad}
 The super egg and other super surfaces.
 \newblock
   \url{http://www.math.harvard.edu/archive/21a_fall_09/exhibits/superegg}.
-\newblock Accessed: 25th May 2015.
+\newblock Accessed: 25th April 2015.
  \begin{quotation}\noindent {Although certain superquadrics are similiar in
   shape to an ice cube, notably the super egg, in the end I instead decided to
   write a displacement } \end{quotation}
@@ -35,7 +35,8 @@ Anthony~A. Apodaca and Larry Gritz.
 \newblock {\em Advanced RenderMan: Creating CGI for Motion Picture}.
 \newblock Morgan Kaufmann Publishers Inc., San Francisco, CA, USA, 1st edition,
   1999.
- \begin{quotation}\noindent {MUST ADD ANNOTATION TO THIS} \end{quotation}
+ \begin{quotation}\noindent {Used for : Texture mapping basics, volume shader
+  basics, brownian noise RSL function?} \end{quotation}
 
 \bibitem{Deusen:2004:ENI:1103900.1103932}
 Oliver Deusen, David~S. Ebert, Ron Fedkiw, F.~Kenton Musgrave, Przemyslaw

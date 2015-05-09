@@ -1,20 +1,21 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2013.8.13)  1 MAY 2015 20:10
+This is pdfTeX, Version 3.1415926-2.6-1.40.14 (TeX Live 2014/dev) (format=pdflatex 2015.5.2)  7 MAY 2015 11:46
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
-**report.b
+**bib_icereport.tex
 
 ! Emergency stop.
-<*> report.b
-            
-End of file on the terminal!
+<*> bib_icereport.tex
+                     
+*** (job aborted, file error in nonstop mode)
 
  
 Here is how much of TeX's memory you used:
- 4 strings out of 256216
- 115 string characters out of 1917072
- 48804 words of memory out of 1500000
- 3390 multiletter control sequences out of 10000+200000
- 3640 words of font info for 14 fonts, out of 1200000 for 2000
- 645 hyphenation exceptions out of 8191
- 0i,0n,0p,1b,6s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 3 strings out of 493328
+ 114 string characters out of 6140734
+ 51753 words of memory out of 5000000
+ 3562 multiletter control sequences out of 15000+600000
+ 3640 words of font info for 14 fonts, out of 8000000 for 9000
+ 953 hyphenation exceptions out of 8191
+ 0i,0n,0p,1b,6s stack positions out of 5000i,500n,10000p,200000b,80000s
 !  ==> Fatal error occurred, no output PDF file produced!

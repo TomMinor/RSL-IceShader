@@ -175,29 +175,29 @@
 	    <string name="timersNote" description="Note:">Sum of component times may exceed total in multi-threaded renders.</string>
 	    <stats name="timers" kind="timers">
 		<timer name="totaltime" description="Total time">
-		    <elapsed>5.332915</elapsed>
-		    <user>12.091288</user>
-		    <system>0.183068</system>
+		    <elapsed>0.689558</elapsed>
+		    <user>2.110877</user>
+		    <system>0.109388</system>
 		</timer>
 		<timer name="ribInitTimer" description="Initial rib parsing and setup">
-		    <elapsed>0.041241</elapsed>
-		    <user>0.024701</user>
-		    <system>0.018848</system>
+		    <elapsed>0.044397</elapsed>
+		    <user>0.016229</user>
+		    <system>0.022697</system>
 		</timer>
 		<timer name="bucketTimer" description="Bucket management time">
-		    <elapsed>0.030947</elapsed>
+		    <elapsed>0.029904</elapsed>
 		</timer>
 		<timer name="allProceduralTimers" description="All procedurals">
-		    <elapsed>0.005382</elapsed>
-		    <user>0.008173</user>
-		    <system>0.001590</system>
+		    <elapsed>0.007915</elapsed>
+		    <user>0.015632</user>
+		    <system>0.001391</system>
 		</timer>
 		<timer name="shadingTimer" description="All shading">
-		    <elapsed>9.305397</elapsed>
+		    <elapsed>0.192007</elapsed>
 		</timer>
 		<stats name="shadingTimers" description="All shading" kind="timers">
 		    <timer name="setupTimer" description="Shading setup time">
-			<elapsed>0.042066</elapsed>
+			<elapsed>0.011136</elapsed>
 		    </timer>
 		    <timer name="displaceTimer" description="Displacement shading time">
 			<elapsed>0.000000</elapsed>
@@ -206,16 +206,16 @@
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="surfaceTimer" description="Surface shading time">
-			<elapsed>0.593151</elapsed>
+			<elapsed>0.180871</elapsed>
 		    </timer>
 		    <timer name="atmosTimer" description="Atmosphere shading time">
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="lightTimer" description="Light shading time">
-			<elapsed>8.600583</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="methodTimer" description="Time spent in shader methods">
-			<elapsed>0.069597</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="imagerTimer" description="Imager shading time">
 			<elapsed>0.000000</elapsed>
@@ -226,43 +226,43 @@
 		</stats>
 		<stats name="timers" kind="timers">
 		    <timer name="shadingTimer" description="Reyes shading">
-			<elapsed>3.481055</elapsed>
+			<elapsed>0.148569</elapsed>
 		    </timer>
 		    <timer name="shadingTimer" description="Ray hit shading">
-			<elapsed>5.824342</elapsed>
+			<elapsed>0.043438</elapsed>
 		    </timer>
 		</stats>
 		<timer name="rayTraceTime" description="Tracing rays">
-		    <elapsed>4.565041</elapsed>
+		    <elapsed>0.101283</elapsed>
 		</timer>
 		<timer name="hidingTimer" description="All hiding">
-		    <elapsed>1.189372</elapsed>
+		    <elapsed>1.145907</elapsed>
 		</timer>
 		<stats name="hidingTimers" description="Hider statistics" kind="timers">
 		    <timer name="tentativeHideTimer" description="Tentative hiding time">
-			<elapsed>0.004781</elapsed>
+			<elapsed>0.002725</elapsed>
 		    </timer>
 		    <timer name="preHideTimer" description="Opaque prehiding time">
-			<elapsed>0.093392</elapsed>
+			<elapsed>0.096748</elapsed>
 		    </timer>
 		    <timer name="regularHideTimer" description="Regular hiding time">
-			<elapsed>0.204904</elapsed>
+			<elapsed>0.198424</elapsed>
 		    </timer>
 		    <timer name="shadedHideTimer" description="Preshaded hiding time">
-			<elapsed>0.416592</elapsed>
+			<elapsed>0.377672</elapsed>
 		    </timer>
 		    <timer name="vpProcessingTimer" description="VP processing time">
-			<elapsed>0.469704</elapsed>
+			<elapsed>0.470339</elapsed>
 		    </timer>
 		    <stats name="vpProcessingSubTimers" kind="timers">
 			<timer name="compositeTimer" description="VP sort and composite time">
-			    <elapsed>0.113563</elapsed>
+			    <elapsed>0.109887</elapsed>
 			</timer>
 			<timer name="resolveTimer" description="VP resolve and filter time">
-			    <elapsed>0.267825</elapsed>
+			    <elapsed>0.243836</elapsed>
 			</timer>
 			<timer name="vpDisplayTimer" description="VP display time">
-			    <elapsed>0.036664</elapsed>
+			    <elapsed>0.034221</elapsed>
 			</timer>
 		    </stats>
 		</stats>
@@ -283,56 +283,56 @@
 	<stats name="memory" description="Memory usage summary" kind="section">
 	    <stats name="systemMem" description="System memory">
 		<memory name="heapMemory" description="Total heap memory">
-		    <peak>661929984</peak>
-		    <current>661929984</current>
+		    <peak>1046659072</peak>
+		    <current>1046659072</current>
 		</memory>
 		<memory name="peakResidentSize" description="Peak resident size">
-		    <peak>153804800</peak>
-		    <current>153804800</current>
+		    <peak>159387648</peak>
+		    <current>159387648</current>
 		</memory>
-		<int name="pageFaults">0</int>
-		<int name="pageReclaims">35928</int>
+		<int name="pageFaults">5</int>
+		<int name="pageReclaims">37950</int>
 		<int name="pageSwaps">0</int>
 	    </stats>
 	    <stats name="subsystems" kind="memstats">
 		<memory name="geometryMem" description="Geometry Memory">
-		    <peak>6790919</peak>
-		    <current>2696760</current>
+		    <peak>4315901</peak>
+		    <current>2428836</current>
 		</memory>
 		<memory name="gridMemByType" description="Grid memory">
-		    <peak>4924304</peak>
-		    <current>2039584</current>
+		    <peak>1088640</peak>
+		    <current>308544</current>
 		</memory>
 		<memory name="shadedGridMemByType" description="Shaded grid memory">
-		    <peak>735152</peak>
+		    <peak>516336</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="shadingMemory" description="Total shading storage">
-		    <peak>18111750</peak>
-		    <current>15112530</current>
+		    <peak>15583182</peak>
+		    <current>14817082</current>
 		</memory>
 		<memory name="rayAccelMem" description="Ray Accelerator Subsystem">
-		    <peak>5880552</peak>
-		    <current>4441072</current>
+		    <peak>10746364</peak>
+		    <current>9714244</current>
 		</memory>
 		<memory name="hsrMem" description="Hemisphere sample memory">
 		    <peak>0</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="gutCacheMem" description="Tessellation (GUT) cache">
-		    <peak>24313864</peak>
-		    <current>9437184</current>
+		    <peak>22216712</peak>
+		    <current>5242880</current>
 		</memory>
 		<memory name="radioCacheMem" description="Radiosity cache">
-		    <peak>10846216</peak>
-		    <current>10846216</current>
+		    <peak>8749064</peak>
+		    <current>8749064</current>
 		</memory>
 		<memory name="radioCachePathMem" description="Radiosity cache paths">
 		    <peak>1048600</peak>
 		    <current>1048600</current>
 		</memory>
 		<memory name="vpMemory" description="Visible points storage">
-		    <peak>748800</peak>
+		    <peak>1996800</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="vpShadeMem" description="VP shading memory">
@@ -340,8 +340,8 @@
 		    <current>0</current>
 		</memory>
 		<memory name="pooledmemory" description="Pooled Memory">
-		    <peak>16777312</peak>
-		    <current>16777312</current>
+		    <peak>37748952</peak>
+		    <current>37748952</current>
 		</memory>
 		<memory name="lightdbmemory" description="Light Database Memory">
 		    <peak>0</peak>
@@ -353,12 +353,12 @@
 		</memory>
 		<int name="lightdbsize" description="Light Database Patch Count">0</int>
 		<memory name="textureMemory" description="Texture cache">
-		    <peak>41953760</peak>
-		    <current>41953760</current>
+		    <peak>50351368</peak>
+		    <current>50351368</current>
 		</memory>
 		<memory name="deepshadowMemory" description="Deep shadow cache">
-		    <peak>47016</peak>
-		    <current>47016</current>
+		    <peak>67496</peak>
+		    <current>67496</current>
 		</memory>
 		<memory name="ptexMemory" description="PTexture cache">
 		    <peak>0</peak>
@@ -366,19 +366,19 @@
 		</memory>
 		<memory name="brickMemSum" description="Brickmap memory">
 		    <peak>60656</peak>
-		    <current>4096</current>
+		    <current>2048</current>
 		</memory>
 		<memory name="pointMemSum" description="Pointcloud memory">
-		    <peak>2069112</peak>
-		    <current>2069112</current>
+		    <peak>2105976</peak>
+		    <current>2105976</current>
 		</memory>
 		<memory name="SymbolMem" description="Ri Symbol Table memory">
-		    <peak>126264</peak>
-		    <current>126240</current>
+		    <peak>126078</peak>
+		    <current>126054</current>
 		</memory>
 		<memory name="shadeTokenMem" description="Shading system token storage memory">
-		    <peak>54508</peak>
-		    <current>54508</current>
+		    <peak>25510</peak>
+		    <current>25510</current>
 		</memory>
 		<memory name="displayMem" description="Display driver memory">
 		    <peak>0</peak>
@@ -389,17 +389,17 @@
 		    <current>0</current>
 		</memory>
 		<memory name="usrAttrMem" description="User attribute memory">
-		    <peak>2102</peak>
-		    <current>1333</current>
+		    <peak>2262</peak>
+		    <current>1493</current>
 		</memory>
 		<memory name="coordSysMem" description="Named coordinate system memory">
-		    <peak>4554</peak>
-		    <current>4362</current>
+		    <peak>4714</peak>
+		    <current>4522</current>
 		</memory>
 	    </stats>
 	    <memory name="subsystemMem" description="Subsystem memory total">
-		<peak>134373365</peak>
-		<current>106537633</current>
+		<peak>156632721</peak>
+		<current>132620803</current>
 	    </memory>
 	</stats>
 	<stats name="geometry" description="Geometry stats" kind="section">
@@ -408,8 +408,8 @@
 	    <int name="proceduralsUnloaded" description="Procedurals unloaded">0</int>
 	    <int name="proceduralsReloaded" description="Procedurals reloaded">0</int>
 	    <memory name="gprimWrapperMem" description="GPrim Wrapper Memory">
-		<peak>286720</peak>
-		<current>286720</current>
+		<peak>184320</peak>
+		<current>184320</current>
 	    </memory>
 	    <memory name="gprimInstanceWrapperMem" description="GPrim Instance Wrapper Memory">
 		<peak>2097200</peak>
@@ -421,34 +421,34 @@
 	    <int name="subdRibPolyCount" description="subd cage polygon count">400</int>
 	    <int name="curveRibVertexCount" description="curve rib vertex count">0</int>
 	    <int name="curveRibStrandCount" description="curve rib strand count">0</int>
-	    <int name="polyTriCountFine" description="raytraced poly triangle count (fine)">8904</int>
+	    <int name="polyTriCountFine" description="raytraced poly triangle count (fine)">4310</int>
 	    <int name="polyTriCountMedium" description="raytraced poly triangle count (medium)">0</int>
 	    <int name="polyTriCountCoarse" description="raytraced poly triangle count (coarse)">0</int>
-	    <int name="polyTriCountOverall" description="raytraced poly triangle count (overall)">8904</int>
-	    <int name="subdTriCountFine" description="raytraced subd triangle count (fine)">174120</int>
-	    <int name="subdTriCountMedium" description="raytraced subd triangle count (medium)">11546</int>
-	    <int name="subdTriCountCoarse" description="raytraced subd triangle count (coarse)">290</int>
-	    <int name="subdTriCountOverall" description="raytraced subd triangle count (overall)">174120</int>
+	    <int name="polyTriCountOverall" description="raytraced poly triangle count (overall)">4310</int>
+	    <int name="subdTriCountFine" description="raytraced subd triangle count (fine)">34078</int>
+	    <int name="subdTriCountMedium" description="raytraced subd triangle count (medium)">0</int>
+	    <int name="subdTriCountCoarse" description="raytraced subd triangle count (coarse)">8</int>
+	    <int name="subdTriCountOverall" description="raytraced subd triangle count (overall)">34086</int>
 	    <int name="curveTriCountFine" description="raytraced curve triangle count (fine)">0</int>
 	    <int name="curveTriCountMedium" description="raytraced curve triangle count (medium)">0</int>
 	    <int name="curveTriCountCoarse" description="raytraced curve triangle count (coarse)">0</int>
 	    <int name="curveTriCountOverall" description="raytraced curve triangle count (overall)">0</int>
 	    <float name="cameraDetailDilation" description="Geometry detail expansion from multiple cameras">1</float>
 	    <memory name="gsmMem" description="GSM memory">
-		<peak>21120</peak>
-		<current>8448</current>
+		<peak>26400</peak>
+		<current>13728</current>
 	    </memory>
 	    <memory name="matrixMem" description="Matrix memory">
-		<peak>6084</peak>
-		<current>2784</current>
+		<peak>6612</peak>
+		<current>3444</current>
 	    </memory>
 	    <range name="gprimCount" description="GPrim count">
 		<current>0</current>
-		<total>13485</total>
+		<total>6419</total>
 		<min>0</min>
-		<max>6877</max>
+		<max>2375</max>
 		<average>1</average>
-		<count>13485</count>
+		<count>6419</count>
 	    </range>
 	    <range name="gprimMasterCount" description="GPrim master count">
 		<current>0</current>
@@ -459,16 +459,16 @@
 		<count>0</count>
 	    </range>
 	    <memory name="gprimMem" description="GPrim memory">
-		<peak>827422</peak>
-		<current>226552</current>
+		<peak>341551</peak>
+		<current>64560</current>
 	    </memory>
 	    <memory name="gopStaticMem" description="Static GOP memory">
-		<peak>12232</peak>
-		<current>768</current>
+		<peak>12032</peak>
+		<current>752</current>
 	    </memory>
 	    <memory name="gopDynamicMem" description="Dynamic GOP memory">
-		<peak>337488</peak>
-		<current>16944</current>
+		<peak>126096</peak>
+		<current>7488</current>
 	    </memory>
 	    <memory name="stitchMem" description="Crack reduction memory">
 		<peak>57344</peak>
@@ -476,18 +476,18 @@
 	    </memory>
 	    <range name="vvCount" description="Vertex vector count">
 		<current>0</current>
-		<total>11461</total>
+		<total>5503</total>
 		<min>0</min>
-		<max>70</max>
+		<max>48</max>
 		<average>1</average>
-		<count>11461</count>
+		<count>5503</count>
 	    </range>
 	    <memory name="vvMem" description="Vertex vector memory">
-		<peak>247145</peak>
+		<peak>222662</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="vvOverheadMem" description="Vertex vector overhead memory">
-		<peak>11572</peak>
+		<peak>8088</peak>
 		<current>0</current>
 	    </memory>
 	    <stats name="implicitSurfacePlugins" description="Implicit surface plugins">
@@ -495,7 +495,7 @@
 		</stats>
 	    </stats>
 	    <memory name="catmarkMem" description="Catmull-Clark subdivision memory">
-		<peak>2562048</peak>
+		<peak>1121792</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="loopMem" description="Loop subdivision memory">
@@ -511,7 +511,7 @@
 		<current>0</current>
 	    </memory>
 	    <memory name="coarseTessCacheMem" description="Coarse tessellation cache memory">
-		<peak>324544</peak>
+		<peak>111804</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="nonCoarseTessCacheMem" description="Non-coarse tessellation cache memory">
@@ -533,9 +533,9 @@
 	    <stats name="procedurals" description="Per-procedural statistics" kind="geometryprocedurals">
 		<stats name="DelayedReadArchive2" description="DelayedReadArchive2">
 		    <timer name="DelayedReadArchive2" description="">
-			<elapsed>0.005382</elapsed>
-			<user>0.008173</user>
-			<system>0.001590</system>
+			<elapsed>0.007915</elapsed>
+			<user>0.015632</user>
+			<system>0.001391</system>
 		    </timer>
 		    <int name="proceduralsExpanded" description="Total expansions">7</int>
 		    <stats name="expansions" description="Expansion breakdown" kind="section">
@@ -547,7 +547,7 @@
 			<int name="proceduralsInitialLoad" description="Initial loads">7</int>
 			<int name="proceduralsReloaded" description="Reloaded">0</int>
 		    </stats>
-		    <float name="proceduralAverageDetail" description="Average detail">4.42055e+06</float>
+		    <float name="proceduralAverageDetail" description="Average detail">266956</float>
 		    <histogram name="depthHist" description="Depth at expansion">
 			<bin label="1">7</bin>
 			<bin label="2">0</bin>
@@ -587,20 +587,20 @@
 	<stats name="grids" description="Grid stats" kind="section">
 	    <stats name="combinedGrids" description="Grid Combining" kind="pulldown">
 		<stats name="reyesCombinedGrids" description="Reyes shading" kind="section">
-		    <int name="successful" description="combined successfully">455</int>
+		    <int name="successful" description="combined successfully">420</int>
 		    <int name="diverseGroups" description="grid groups with more than one gprim">0</int>
-		    <int name="rejected" description="rejected">2887</int>
+		    <int name="rejected" description="rejected">1780</int>
 		    <stats name="combinedGridRejections" description="Grid combining rejections">
-			<int name="successful" description="combined successfully">455</int>
-			<int name="tooLarge" description="grid would be too large">552</int>
-			<int name="contendedForHiding" description="grid contended for hiding in other thread">646</int>
-			<int name="diffShaderSpace" description="different shader space coordinate systems">21</int>
-			<int name="diffShaders" description="different shaders (including lights)">65</int>
-			<int name="hiddenWhileQueued" description="hidden while queued">233</int>
-			<int name="firstGrid" description="first grid in bucket">1370</int>
+			<int name="successful" description="combined successfully">420</int>
+			<int name="tooLarge" description="grid would be too large">102</int>
+			<int name="contendedForHiding" description="grid contended for hiding in other thread">521</int>
+			<int name="diffParams" description="different shader invocation parameter values">40</int>
+			<int name="diffShaders" description="different shaders (including lights)">30</int>
+			<int name="hiddenWhileQueued" description="hidden while queued">88</int>
+			<int name="firstGrid" description="first grid in bucket">999</int>
 		    </stats>
 		    <stats name="combinedGridCulprits" description="Detailed breakdown of surface shaders for rejection" kind="section">
-			<int name="renderman/cornell/shaders/lambert2_rfm" description="renderman/cornell/shaders/lambert2_rfm - different shader space coordinate systems">21</int>
+			<int name="defaultsurface" description="defaultsurface - different shader invocation parameter values">40</int>
 		    </stats>
 		</stats>
 		<stats name="rayhitCombinedGrids" description="Ray hit shading" kind="section">
@@ -615,28 +615,28 @@
 	    </stats>
 	    <stats name="gridsCount" description="Grid count">
 		<range name="rectangular" description="">
-		    <current>353</current>
-		    <total>14831</total>
+		    <current>156</current>
+		    <total>9000</total>
 		    <min>0</min>
-		    <max>4294967293</max>
+		    <max>82</max>
 		    <average>1</average>
-		    <count>14831</count>
+		    <count>9000</count>
 		</range>
 		<range name="multi" description="">
 		    <current>0</current>
-		    <total>1158</total>
+		    <total>645</total>
 		    <min>0</min>
-		    <max>9</max>
+		    <max>23</max>
 		    <average>1</average>
-		    <count>1158</count>
+		    <count>645</count>
 		</range>
 		<range name="rayhit" description="">
 		    <current>0</current>
-		    <total>120736</total>
+		    <total>26922</total>
 		    <min>0</min>
-		    <max>1728</max>
+		    <max>2131</max>
 		    <average>1</average>
-		    <count>120736</count>
+		    <count>26922</count>
 		</range>
 		<range name="triangular" description="">
 		    <current>0</current>
@@ -648,89 +648,89 @@
 		</range>
 		<range name="irregular" description="">
 		    <current>0</current>
-		    <total>6436</total>
+		    <total>2283</total>
 		    <min>0</min>
-		    <max>29</max>
+		    <max>76</max>
 		    <average>1</average>
-		    <count>6436</count>
+		    <count>2283</count>
 		</range>
 	    </stats>
 	    <stats name="gridSizeByType" description="Grid size">
 		<range name="rectangular" description="">
-		    <current>582</current>
-		    <total>1569284</total>
+		    <current>1311</current>
+		    <total>779453</total>
 		    <min>0</min>
-		    <max>866</max>
-		    <average>105.811</average>
-		    <count>14831</count>
+		    <max>1792</max>
+		    <average>86.6059</average>
+		    <count>9000</count>
 		</range>
 		<range name="multi" description="">
-		    <current>629</current>
-		    <total>404798</total>
+		    <current>1242</current>
+		    <total>102389</total>
 		    <min>0</min>
-		    <max>2592</max>
-		    <average>349.566</average>
-		    <count>1158</count>
+		    <max>4128</max>
+		    <average>158.743</average>
+		    <count>645</count>
 		</range>
 		<range name="rayhit" description="">
-		    <current>9</current>
-		    <total>362208</total>
+		    <current>24</current>
+		    <total>80766</total>
 		    <min>0</min>
-		    <max>9</max>
+		    <max>24</max>
 		    <average>3</average>
-		    <count>120736</count>
+		    <count>26922</count>
 		</range>
 		<range name="triangular" description="">
-		    <current>28</current>
-		    <total>56</total>
+		    <current>19</current>
+		    <total>35</total>
 		    <min>0</min>
-		    <max>28</max>
-		    <average>28</average>
+		    <max>19</max>
+		    <average>17.5</average>
 		    <count>2</count>
 		</range>
 		<range name="irregular" description="">
-		    <current>228</current>
-		    <total>574306</total>
+		    <current>479</current>
+		    <total>111962</total>
 		    <min>0</min>
-		    <max>1080</max>
-		    <average>89.2334</average>
-		    <count>6436</count>
+		    <max>1312</max>
+		    <average>49.0416</average>
+		    <count>2283</count>
 		</range>
 	    </stats>
 	    <stats name="shadedGridCount" description="Shaded grid count">
 		<range name="rectangular" description="">
-		    <current>2281</current>
-		    <total>2281</total>
+		    <current>1389</current>
+		    <total>1389</total>
 		    <min>0</min>
-		    <max>2281</max>
+		    <max>1389</max>
 		    <average>1</average>
-		    <count>2281</count>
+		    <count>1389</count>
 		</range>
 		<range name="irregular" description="">
-		    <current>458</current>
-		    <total>458</total>
+		    <current>294</current>
+		    <total>294</total>
 		    <min>0</min>
-		    <max>458</max>
+		    <max>294</max>
 		    <average>1</average>
-		    <count>458</count>
+		    <count>294</count>
 		</range>
 	    </stats>
 	    <stats name="shadedGridSizeByType" description="Shaded grid size">
 		<range name="rectangular" description="">
-		    <current>537</current>
-		    <total>212866</total>
+		    <current>1428</current>
+		    <total>109174</total>
 		    <min>0</min>
-		    <max>674</max>
-		    <average>93.3214</average>
-		    <count>2281</count>
+		    <max>1772</max>
+		    <average>78.599</average>
+		    <count>1389</count>
 		</range>
 		<range name="irregular" description="">
-		    <current>343</current>
-		    <total>81362</total>
+		    <current>532</current>
+		    <total>22476</total>
 		    <min>0</min>
-		    <max>972</max>
-		    <average>177.646</average>
-		    <count>458</count>
+		    <max>1259</max>
+		    <average>76.449</average>
+		    <count>294</count>
 		</range>
 	    </stats>
 	    <timer name="shadedGridCacheTime" description="Time writing shaded grid cache">
@@ -743,29 +743,29 @@
 	    <int name="shadedVolumeGridsTrivial" description="Shaded but trivial volume grids">0</int>
 	    <stats name="gridMemByType" description="Grid memory">
 		<memory name="rectangular" description="">
-		    <peak>4466600</peak>
-		    <current>2039584</current>
+		    <peak>748248</peak>
+		    <current>308544</current>
 		</memory>
 		<memory name="multi" description="">
-		    <peak>81344</peak>
+		    <peak>102008</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="triangular" description="">
-		    <peak>8064</peak>
+		    <peak>5376</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="irregular" description="">
-		    <peak>368296</peak>
+		    <peak>233008</peak>
 		    <current>0</current>
 		</memory>
 	    </stats>
 	    <stats name="shadedGridMemByType" description="Shaded grid memory">
 		<memory name="shaderRectangular" description="">
-		    <peak>448552</peak>
+		    <peak>334768</peak>
 		    <current>0</current>
 		</memory>
 		<memory name="shadedIrregular" description="">
-		    <peak>286600</peak>
+		    <peak>181568</peak>
 		    <current>0</current>
 		</memory>
 	    </stats>
@@ -777,101 +777,101 @@
 	    </stats>
 	    <stats name="nGprimsBucketed" description="Placed in a bucket">
 		<int name="original" description="">7</int>
-		<int name="split" description="">3898</int>
+		<int name="split" description="">2463</int>
 	    </stats>
 	    <stats name="nGprimsClipPlaneCulled" description="Arbitrary clip planes culled">
 	    </stats>
 	    <stats name="nGprimsOcclusionCulled" description="Occlusion culled">
-		<int name="original" description="">5</int>
-		<int name="split" description="">5995</int>
+		<int name="original" description="">4</int>
+		<int name="split" description="">1895</int>
 	    </stats>
 	    <stats name="nGprimsSplit" description="Normal split">
 		<int name="original" description="">7</int>
-		<int name="split" description="">303</int>
+		<int name="split" description="">135</int>
 	    </stats>
 	    <stats name="nGprimsDiced" description="Diced into a grid">
-		<int name="split" description="">2955</int>
+		<int name="split" description="">2120</int>
 	    </stats>
-	    <int name="nGprimsProcessed" description="Gprims extracted from buckets">24401</int>
-	    <int name="nGprimsPushedForward" description="Gprims found not to be visible">2960</int>
+	    <int name="nGprimsProcessed" description="Gprims extracted from buckets">12058</int>
+	    <int name="nGprimsPushedForward" description="Gprims found not to be visible">920</int>
 	    <int name="nGridsBFCulled" description="Grids backfaced culled">0</int>
-	    <int name="nGridsDiced" description="Grids diced">2955</int>
+	    <int name="nGridsDiced" description="Grids diced">2120</int>
 	    <int name="nGridsUndiced" description="Grids undiced">0</int>
 	    <int name="nGridsRediced" description="Grids rediced">0</int>
-	    <int name="nMGridsShaded" description="Grid groups shaded">1202</int>
-	    <int name="nGridsShaded" description="Grids shaded">2303</int>
-	    <int name="nGridsPushed" description="Grids pushed at least once">10022</int>
+	    <int name="nMGridsShaded" description="Grid groups shaded">628</int>
+	    <int name="nGridsShaded" description="Grids shaded">1569</int>
+	    <int name="nGridsPushed" description="Grids pushed at least once">5049</int>
 	    <int name="nPointsBFCulled" description="Points in backface culled grids">0</int>
-	    <int name="nPointsDiced" description="Points in diced grids">283606</int>
+	    <int name="nPointsDiced" description="Points in diced grids">132232</int>
 	    <int name="nPointsDispShadePH" description="Grids disp shaded before pre-hide">0</int>
-	    <int name="nPointsShaded" description="Points in grid groups">234671</int>
+	    <int name="nPointsShaded" description="Points in grid groups">116722</int>
 	    <int name="nPointsRedicedShaded" description="Rediced and reshaded points">0</int>
 	    <histogram name="dicedGridHist" description="Histogram of the size of diced grids">
 		<bin label="2">0</bin>
-		<bin label="4">0</bin>
-		<bin label="8">16</bin>
-		<bin label="16">125</bin>
-		<bin label="32">386</bin>
-		<bin label="64">558</bin>
-		<bin label="128">1030</bin>
-		<bin label="256">792</bin>
-		<bin label="more">48</bin>
+		<bin label="4">4</bin>
+		<bin label="8">254</bin>
+		<bin label="16">541</bin>
+		<bin label="32">48</bin>
+		<bin label="64">369</bin>
+		<bin label="128">669</bin>
+		<bin label="256">235</bin>
+		<bin label="more">0</bin>
 	    </histogram>
 	    <histogram name="shadedGridHist" description="Histogram of the size of grid groups">
 		<bin label="2">0</bin>
 		<bin label="4">0</bin>
-		<bin label="8">2</bin>
-		<bin label="16">23</bin>
-		<bin label="32">89</bin>
-		<bin label="64">175</bin>
-		<bin label="128">738</bin>
-		<bin label="256">732</bin>
-		<bin label="more">89</bin>
+		<bin label="8">27</bin>
+		<bin label="16">72</bin>
+		<bin label="32">22</bin>
+		<bin label="64">182</bin>
+		<bin label="128">562</bin>
+		<bin label="256">274</bin>
+		<bin label="more">10</bin>
 	    </histogram>
 	    <histogram name="nGprimsInQuadTreeHist" description="Histogram of the gprim counts at each quadtree depth">
-		<bin label="1">1468</bin>
-		<bin label="2">1109</bin>
-		<bin label="3">2551</bin>
-		<bin label="4">3489</bin>
-		<bin label="5">2129</bin>
-		<bin label="6">573</bin>
-		<bin label="7">202</bin>
+		<bin label="1">2052</bin>
+		<bin label="2">1958</bin>
+		<bin label="3">2279</bin>
+		<bin label="4">4191</bin>
+		<bin label="5">2440</bin>
+		<bin label="6">917</bin>
+		<bin label="7">1217</bin>
 		<bin label="8">0</bin>
 		<bin label="9">0</bin>
 		<bin label="10">0</bin>
 		<bin label="more">0</bin>
 	    </histogram>
 	    <timer name="bucketTimer" description="Bucket management time">
-		<elapsed>0.030947</elapsed>
+		<elapsed>0.029904</elapsed>
 	    </timer>
 	    <int name="quadTreeMaxDepth" description="Maximum depth of quad tree">7</int>
 	</stats>
 	<stats name="hider" description="Hider statistics" kind="section">
-	    <int name="gprimsOccCulled" description="Gprims occlusion culled">5918</int>
-	    <int name="mpsOccCulled" description="Micro-polygons occlusion culled">4762</int>
-	    <int name="mpCount" description="Micro-polygons created">1129508</int>
+	    <int name="gprimsOccCulled" description="Gprims occlusion culled">1884</int>
+	    <int name="mpsOccCulled" description="Micro-polygons occlusion culled">1251</int>
+	    <int name="mpCount" description="Micro-polygons created">541083</int>
 	    <int name="mpsChopped" description="Micro-polygons needing to be split">0</int>
-	    <int name="mpsFrustumCulled" description="Micro-polygons frustum culled">291978</int>
+	    <int name="mpsFrustumCulled" description="Micro-polygons frustum culled">160697</int>
 	    <int name="mpsBackFaceCulled" description="Micro-polygons back faced culled">0</int>
 	    <int name="mpsTrimCulled" description="Micro-polygons trim culled">0</int>
-	    <int name="vpsOccCulled" description="Visible points occlusion culled">1153338</int>
-	    <int name="vpsOpacityCulled" description="Visible points opacity culled">162066</int>
+	    <int name="vpsOccCulled" description="Visible points occlusion culled">387452</int>
+	    <int name="vpsOpacityCulled" description="Visible points opacity culled">62733</int>
 	    <int name="vpsWrongDetail" description="Visible points with wrong LOD">0</int>
 	    <range name="vpCount" description="Visible points contributing to image">
-		<current>4760577</current>
-		<total>4760577</total>
+		<current>3039850</current>
+		<total>3039850</total>
 		<min>0</min>
-		<max>4760577</max>
+		<max>3039850</max>
 		<average>1</average>
-		<count>4760577</count>
+		<count>3039850</count>
 	    </range>
 	    <int name="deferredvpsCreated" description="Deferred visible points created">0</int>
 	    <int name="deferredvpsCompressed" description="Deferred visible points compressed">0</int>
 	    <int name="deferredvpsKept" description="Deferred visible points kept">0</int>
-	    <int name="sampleHitCount" description="Samples that hit a micro-polygon">4922643</int>
-	    <int name="sampleMissCount" description="Samples that missed a micro-polygon">4083117</int>
+	    <int name="sampleHitCount" description="Samples that hit a micro-polygon">3102583</int>
+	    <int name="sampleMissCount" description="Samples that missed a micro-polygon">2444978</int>
 	    <histogram name="vpDepthComplexity" description="Histogram of the depth of visible points">
-		<bin label="2">4760577</bin>
+		<bin label="2">3039850</bin>
 		<bin label="4">0</bin>
 		<bin label="8">0</bin>
 		<bin label="16">0</bin>
@@ -884,40 +884,40 @@
 		<bin label="more">0</bin>
 	    </histogram>
 	    <memory name="vpMemory" description="Visible points storage">
-		<peak>748800</peak>
+		<peak>1996800</peak>
 		<current>0</current>
 	    </memory>
 	    <timer name="tentativeHideTimer" description="Tentative hiding time">
-		<elapsed>0.004781</elapsed>
+		<elapsed>0.002725</elapsed>
 	    </timer>
 	    <timer name="preHideTimer" description="Opaque prehiding time">
-		<elapsed>0.093392</elapsed>
+		<elapsed>0.096748</elapsed>
 	    </timer>
 	    <timer name="regularHideTimer" description="Regular hiding time">
-		<elapsed>0.204904</elapsed>
+		<elapsed>0.198424</elapsed>
 	    </timer>
 	    <timer name="shadedHideTimer" description="Preshaded hiding time">
-		<elapsed>0.416592</elapsed>
+		<elapsed>0.377672</elapsed>
 	    </timer>
 	    <timer name="vpProcessingTimer" description="VP processing time">
-		<elapsed>0.469704</elapsed>
+		<elapsed>0.470339</elapsed>
 	    </timer>
 	    <timer name="compositeTimer" description="VP sort and composite time">
-		<elapsed>0.113563</elapsed>
+		<elapsed>0.109887</elapsed>
 	    </timer>
 	    <timer name="resolveTimer" description="VP resolve and filter time">
-		<elapsed>0.267825</elapsed>
+		<elapsed>0.243836</elapsed>
 	    </timer>
 	    <timer name="vpDisplayTimer" description="VP display time">
-		<elapsed>0.036664</elapsed>
+		<elapsed>0.034221</elapsed>
 	    </timer>
 	    <timer name="dtexMatteInitTimer" description="Deep texture matte init time">
-		<elapsed>0.000161</elapsed>
+		<elapsed>0.000125</elapsed>
 	    </timer>
 	    <timer name="dtexPixelMatteTimer" description="Deep texture matte time">
 		<elapsed>0.000000</elapsed>
 	    </timer>
-	    <float name="Sample test efficiency">0.55</float>
+	    <float name="Sample test efficiency">0.56</float>
 	</stats>
 	<stats name="vpshade" description="Visible point shading" kind="section">
 	    <memory name="vpShadeMem" description="VP shading memory">
@@ -934,35 +934,35 @@
 	</stats>
 	<stats name="shading" description="Shading statistics" kind="section">
 	    <memory name="defMem" description="Shader definition storage">
-		<peak>837610</peak>
-		<current>837610</current>
+		<peak>134018</peak>
+		<current>134018</current>
 	    </memory>
 	    <memory name="tagMem" description="Shader tag storage">
-		<peak>1848</peak>
-		<current>1232</current>
+		<peak>1008</peak>
+		<current>560</current>
 	    </memory>
 	    <memory name="argMem" description="Shader argument storage">
-		<peak>17144</peak>
-		<current>16840</current>
+		<peak>4904</peak>
+		<current>4600</current>
 	    </memory>
 	    <memory name="instanceMem" description="Shader instance storage">
-		<peak>4592</peak>
-		<current>4592</current>
+		<peak>2136</peak>
+		<current>2136</current>
 	    </memory>
 	    <memory name="vertInstMem" description="Vertex instance storage">
 		<peak>0</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="objectMem" description="Shader object storage">
-		<peak>3051716</peak>
-		<current>54992</current>
+		<peak>824740</peak>
+		<current>59392</current>
 	    </memory>
 	    <memory name="localMem" description="Local storage (non-array)">
-		<peak>14198552</peak>
-		<current>14197264</current>
+		<peak>14616376</peak>
+		<current>14616376</current>
 	    </memory>
 	    <memory name="localArrayMem" description="Local array storage">
-		<peak>288</peak>
+		<peak>0</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="sampleMem" description="Sample storage">
@@ -974,7 +974,7 @@
 		<current>0</current>
 	    </memory>
 	    <timer name="defCacheTimer" description="Shader definition cache timer">
-		<elapsed>0.012927</elapsed>
+		<elapsed>0.001933</elapsed>
 	    </timer>
 	    <int name="defCacheHitRatio" description="Shader definition cache hit ratio">0</int>
 	    <int name="defCacheMisses" description="Shader definition cache misses">8</int>
@@ -982,23 +982,23 @@
 	    <stats name="shadingContext" description="Shading context" kind="pulldown">
 		<stats name="allShading" description="All shading" kind="section">
 		    <timer name="shadingTimer" description="All shading">
-			<elapsed>9.305397</elapsed>
+			<elapsed>0.192007</elapsed>
 		    </timer>
 		    <range name="bopSize" description="Points shaded (and gridding)">
-			<current>2148</current>
-			<total>596879</total>
+			<current>2919</current>
+			<total>197488</total>
 			<min>0</min>
-			<max>5846</max>
-			<average>214.473</average>
-			<count>2783</count>
+			<max>9006</max>
+			<average>119.835</average>
+			<count>1648</count>
 		    </range>
 		    <int name="pointsTrimmed" description="Points trimmed">0</int>
 		    <memory name="localMem" description="Local storage (non-array)">
-			<peak>14198552</peak>
-			<current>14197264</current>
+			<peak>14616376</peak>
+			<current>14616376</current>
 		    </memory>
 		    <memory name="localArrayMem" description="Local array storage">
-			<peak>288</peak>
+			<peak>0</peak>
 			<current>0</current>
 		    </memory>
 		    <memory name="sampleMem" description="Sample storage">
@@ -1006,7 +1006,7 @@
 			<current>0</current>
 		    </memory>
 		    <timer name="setupTimer" description="Shading setup time">
-			<elapsed>0.042066</elapsed>
+			<elapsed>0.011136</elapsed>
 		    </timer>
 		    <timer name="displaceTimer" description="Displacement shading time">
 			<elapsed>0.000000</elapsed>
@@ -1015,16 +1015,16 @@
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="surfaceTimer" description="Surface shading time">
-			<elapsed>0.593151</elapsed>
+			<elapsed>0.180871</elapsed>
 		    </timer>
 		    <timer name="lightTimer" description="Light shading time">
-			<elapsed>8.600583</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="atmosTimer" description="Atmosphere shading time">
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="methodTimer" description="Time spent in shader methods">
-			<elapsed>0.069597</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="imagerTimer" description="Imager shading time">
 			<elapsed>0.000000</elapsed>
@@ -1044,7 +1044,7 @@
 		    <int name="estimateRays" description="Areashadow estimate rays">0</int>
 		    <int name="prunedRays" description="Areashadow pruned rays">0</int>
 		    <int name="lightCacheHits" description="Light cache hits">0</int>
-		    <int name="lightCacheMisses" description="Light cache misses">5100</int>
+		    <int name="lightCacheMisses" description="Light cache misses">0</int>
 		    <int name="directLightingLightSamples" description="Samples taken by directlighting">0</int>
 		    <range name="percentageConstantPdf" description="Percentage Lighting pdfs compression (directlighting)">
 			<current>0</current>
@@ -1069,23 +1069,23 @@
 		</stats>
 		<stats name="reyesShading" description="Reyes shading" kind="section">
 		    <timer name="shadingTimer" description="Reyes shading">
-			<elapsed>3.481055</elapsed>
+			<elapsed>0.148569</elapsed>
 		    </timer>
 		    <range name="bopSize" description="Points shaded (and gridding)">
-			<current>537</current>
-			<total>234671</total>
+			<current>1428</current>
+			<total>116722</total>
 			<min>0</min>
-			<max>866</max>
-			<average>126.986</average>
-			<count>1848</count>
+			<max>2112</max>
+			<average>101.586</average>
+			<count>1149</count>
 		    </range>
 		    <int name="pointsTrimmed" description="Points trimmed">0</int>
 		    <memory name="localMem" description="Local storage (non-array)">
-			<peak>2756076</peak>
-			<current>2755892</current>
+			<peak>4131496</peak>
+			<current>4131496</current>
 		    </memory>
 		    <memory name="localArrayMem" description="Local array storage">
-			<peak>96</peak>
+			<peak>0</peak>
 			<current>0</current>
 		    </memory>
 		    <memory name="sampleMem" description="Sample storage">
@@ -1093,7 +1093,7 @@
 			<current>0</current>
 		    </memory>
 		    <timer name="setupTimer" description="Shading setup time">
-			<elapsed>0.021466</elapsed>
+			<elapsed>0.007225</elapsed>
 		    </timer>
 		    <timer name="displaceTimer" description="Displacement shading time">
 			<elapsed>0.000000</elapsed>
@@ -1102,16 +1102,16 @@
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="surfaceTimer" description="Surface shading time">
-			<elapsed>0.389050</elapsed>
+			<elapsed>0.141345</elapsed>
 		    </timer>
 		    <timer name="lightTimer" description="Light shading time">
-			<elapsed>3.041482</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="atmosTimer" description="Atmosphere shading time">
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="methodTimer" description="Time spent in shader methods">
-			<elapsed>0.029057</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="imagerTimer" description="Imager shading time">
 			<elapsed>0.000000</elapsed>
@@ -1131,7 +1131,7 @@
 		    <int name="estimateRays" description="Areashadow estimate rays">0</int>
 		    <int name="prunedRays" description="Areashadow pruned rays">0</int>
 		    <int name="lightCacheHits" description="Light cache hits">0</int>
-		    <int name="lightCacheMisses" description="Light cache misses">3361</int>
+		    <int name="lightCacheMisses" description="Light cache misses">0</int>
 		    <int name="directLightingLightSamples" description="Samples taken by directlighting">0</int>
 		    <range name="percentageConstantPdf" description="Percentage Lighting pdfs compression (directlighting)">
 			<current>0</current>
@@ -1156,23 +1156,23 @@
 		</stats>
 		<stats name="rayHitShading" description="Ray hit shading" kind="section">
 		    <timer name="shadingTimer" description="Ray hit shading">
-			<elapsed>5.824342</elapsed>
+			<elapsed>0.043438</elapsed>
 		    </timer>
 		    <range name="bopSize" description="Points shaded (and gridding)">
-			<current>1611</current>
-			<total>362208</total>
+			<current>1491</current>
+			<total>80766</total>
 			<min>0</min>
-			<max>4980</max>
-			<average>387.388</average>
-			<count>935</count>
+			<max>6894</max>
+			<average>161.856</average>
+			<count>499</count>
 		    </range>
 		    <int name="pointsTrimmed" description="Points trimmed">0</int>
 		    <memory name="localMem" description="Local storage (non-array)">
-			<peak>11442476</peak>
-			<current>11441372</current>
+			<peak>10484880</peak>
+			<current>10484880</current>
 		    </memory>
 		    <memory name="localArrayMem" description="Local array storage">
-			<peak>192</peak>
+			<peak>0</peak>
 			<current>0</current>
 		    </memory>
 		    <memory name="sampleMem" description="Sample storage">
@@ -1180,7 +1180,7 @@
 			<current>0</current>
 		    </memory>
 		    <timer name="setupTimer" description="Shading setup time">
-			<elapsed>0.020601</elapsed>
+			<elapsed>0.003912</elapsed>
 		    </timer>
 		    <timer name="displaceTimer" description="Displacement shading time">
 			<elapsed>0.000000</elapsed>
@@ -1189,16 +1189,16 @@
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="surfaceTimer" description="Surface shading time">
-			<elapsed>0.204101</elapsed>
+			<elapsed>0.039526</elapsed>
 		    </timer>
 		    <timer name="lightTimer" description="Light shading time">
-			<elapsed>5.559101</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="atmosTimer" description="Atmosphere shading time">
 			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="methodTimer" description="Time spent in shader methods">
-			<elapsed>0.040539</elapsed>
+			<elapsed>0.000000</elapsed>
 		    </timer>
 		    <timer name="imagerTimer" description="Imager shading time">
 			<elapsed>0.000000</elapsed>
@@ -1218,7 +1218,7 @@
 		    <int name="estimateRays" description="Areashadow estimate rays">0</int>
 		    <int name="prunedRays" description="Areashadow pruned rays">0</int>
 		    <int name="lightCacheHits" description="Light cache hits">0</int>
-		    <int name="lightCacheMisses" description="Light cache misses">1739</int>
+		    <int name="lightCacheMisses" description="Light cache misses">0</int>
 		    <int name="directLightingLightSamples" description="Samples taken by directlighting">0</int>
 		    <range name="percentageConstantPdf" description="Percentage Lighting pdfs compression (directlighting)">
 			<current>0</current>
@@ -1247,66 +1247,30 @@
 	    <stats name="displacement" description="displacement shaders" kind="shaders">
 	    </stats>
 	    <stats name="surface" description="surface shaders" kind="shaders">
-		<stats name="ice" description="shaders/ice">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.368985</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">171522</int>
-		</stats>
-		<stats name="lambert3_rfm" description="renderman/cornell/shaders/lambert3_rfm">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.029281</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">53719</int>
-		</stats>
 		<stats name="lambert5_rfm" description="renderman/cornell/shaders/lambert5_rfm">
 		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.065976</elapsed>
+			<elapsed>0.026138</elapsed>
 		    </timer>
-		    <int name="pointsShaded" description="Points shaded">92836</int>
+		    <int name="pointsShaded" description="Points shaded">34916</int>
 		</stats>
-		<stats name="lambert4_rfm" description="renderman/cornell/shaders/lambert4_rfm">
+		<stats name="defaultsurface" description="defaultsurface">
 		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.025392</elapsed>
+			<elapsed>0.003705</elapsed>
 		    </timer>
-		    <int name="pointsShaded" description="Points shaded">44240</int>
+		    <int name="pointsShaded" description="Points shaded">127870</int>
 		</stats>
-		<stats name="lambert2_rfm" description="renderman/cornell/shaders/lambert2_rfm">
+		<stats name="ice" description="shaders/ice">
 		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.103517</elapsed>
+			<elapsed>0.151028</elapsed>
 		    </timer>
-		    <int name="pointsShaded" description="Points shaded">234562</int>
+		    <int name="pointsShaded" description="Points shaded">34702</int>
 		</stats>
 	    </stats>
 	    <stats name="volume" description="volume shaders" kind="shaders">
 	    </stats>
 	    <stats name="light" description="light shaders" kind="shaders">
-		<stats name="volumeLightShape1_rfm" description="renderman/cornell/shaders/volumeLightShape1_rfm">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.121243</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">937860</int>
-		</stats>
-		<stats name="areaLightShape1_rfm" description="renderman/cornell/shaders/areaLightShape1_rfm">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>8.548937</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">1193888</int>
-		</stats>
 	    </stats>
 	    <stats name="method" description="method shaders" kind="shaders">
-		<stats name="volumeLightShape1_rfm" description="renderman/cornell/shaders/volumeLightShape1_rfm">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>0.121243</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">937860</int>
-		</stats>
-		<stats name="areaLightShape1_rfm" description="renderman/cornell/shaders/areaLightShape1_rfm">
-		    <timer name="shaderTimer" description="Total time">
-			<elapsed>8.548937</elapsed>
-		    </timer>
-		    <int name="pointsShaded" description="Points shaded">1193888</int>
-		</stats>
 	    </stats>
 	    <stats name="imager" description="imager shaders" kind="shaders">
 	    </stats>
@@ -1354,7 +1318,7 @@
 		    <elapsed>0.000000</elapsed>
 		</timer>
 		<timer name="_rfm_placetexture2d" description="void _rfm_placetexture2d(float s, float t,float[2] coverage, float[2] translateFrame, float rotateFrame, float mirrorU, float mirrorV, float stagger, float wrapU, float wrapV, float[2] repeatUV, float[2] offset, float rotateUV, float[2] noiseUV, output float[2] outUV, output float valid)">
-		    <elapsed>0.003170</elapsed>
+		    <elapsed>0.001783</elapsed>
 		</timer>
 		<timer name="_rfm_noise2" description="float _rfm_noise2(float x, float y)">
 		    <elapsed>0.000000</elapsed>
@@ -1363,7 +1327,7 @@
 		    <elapsed>0.000000</elapsed>
 		</timer>
 		<timer name="_rfm_cramp" description="color _rfm_cramp(float,float[],color[],float[])">
-		    <elapsed>0.010318</elapsed>
+		    <elapsed>0.000000</elapsed>
 		</timer>
 		<timer name="_rfm_projection_concentric" description="point _rfm_projection_concentric(point Q)">
 		    <elapsed>0.000000</elapsed>
@@ -1399,28 +1363,27 @@
 	</stats>
 	<stats name="rayAccel" description="Ray accelerator stats" kind="section">
 	    <int name="initialRTPrims" description="Initial gprims">14</int>
-	    <int name="finalRTPrims" description="All gprims after splits">6105</int>
-	    <int name="raysShot" description="Total rays">10198016</int>
-	    <int name="bboxTests" description="BBox tests">321765296</int>
-	    <int name="rprimBBoxTests" description="Prim BBox tests">3047047</int>
-	    <int name="gprimBBoxTests" description="Gprim BBox tests">48014464</int>
-	    <int name="primTests" description="Primitive tests">7836467</int>
-	    <int name="primHits" description="Primitive hits">2829216</int>
+	    <int name="finalRTPrims" description="All gprims after splits">2531</int>
+	    <int name="raysShot" description="Total rays">27865</int>
+	    <int name="bboxTests" description="BBox tests">1664104</int>
+	    <int name="rprimBBoxTests" description="Prim BBox tests">369112</int>
+	    <int name="gprimBBoxTests" description="Gprim BBox tests">421000</int>
+	    <int name="primTests" description="Primitive tests">78413</int>
+	    <int name="primHits" description="Primitive hits">27121</int>
 	    <stats name="primTestsByType" description="Primitive tests by type">
-		<int name="catmarkface" description="">1039124</int>
-		<int name="bsplinepatch" description="">3394149</int>
-		<int name="hedronsplit" description="">3403194</int>
+		<int name="catmarkface" description="">8161</int>
+		<int name="bsplinepatch" description="">46349</int>
+		<int name="hedronsplit" description="">23903</int>
 	    </stats>
 	    <stats name="primHitsByType" description="Primitive hits by type">
-		<int name="catmarkface" description="">497029</int>
-		<int name="bsplinepatch" description="">1559025</int>
-		<int name="hedronsplit" description="">773162</int>
+		<int name="catmarkface" description="">1080</int>
+		<int name="bsplinepatch" description="">5760</int>
+		<int name="hedronsplit" description="">20281</int>
 	    </stats>
 	    <int name="rayContinuations" description="Ray continuations">0</int>
 	    <int name="transmissionRayContinuations" description="Transmission ray continuations">0</int>
 	    <stats name="raysByType" description="Rays by type">
-		<int name="specular" description="">138210</int>
-		<int name="transmission" description="">10059806</int>
+		<int name="specular" description="">27865</int>
 	    </stats>
 	    <int name="transmissionBeforeCull" description="Transmission Rays before Culling">0</int>
 	    <timer name="cameraTime" description="Time tracing camera rays">
@@ -1430,13 +1393,13 @@
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="specularTime" description="Time tracing specular rays">
-		<elapsed>0.208268</elapsed>
+		<elapsed>0.101283</elapsed>
 	    </timer>
 	    <timer name="diffuseTime" description="Time tracing diffuse rays">
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="transmissionTime" description="Time tracing transmission rays">
-		<elapsed>4.356773</elapsed>
+		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="indirectTime" description="Time tracing indirect rays">
 		<elapsed>0.000000</elapsed>
@@ -1445,16 +1408,16 @@
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="splitTime" description="Time splitting prims">
-		<elapsed>0.038025</elapsed>
+		<elapsed>0.031311</elapsed>
 	    </timer>
 	    <timer name="resplitTime" description="Time re-splitting prims">
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="buildTime" description="Time building hierarchy">
-		<elapsed>0.006204</elapsed>
+		<elapsed>0.001876</elapsed>
 	    </timer>
 	    <timer name="subAccelBuildTime" description="Time building sub-acceleration data structures">
-		<elapsed>0.023480</elapsed>
+		<elapsed>0.008304</elapsed>
 	    </timer>
 	    <timer name="subAccelDispTime" description="Time displacing sub-acceleration data structures">
 		<elapsed>0.000000</elapsed>
@@ -1462,24 +1425,24 @@
 	    <int name="objectUnloads" description="Num Object Unloads">0</int>
 	    <int name="objectReloads" description="Num Object Reloads">0</int>
 	    <int name="objectUnloadsCanceled" description="Num Canceled Object Unloads">0</int>
-	    <int name="rebuilds" description="Tree Rebuilds">20</int>
+	    <int name="rebuilds" description="Tree Rebuilds">6</int>
 	    <memory name="scratchMem" description="Scratch">
-		<peak>4433680</peak>
-		<current>4433680</current>
+		<peak>9711076</peak>
+		<current>9711076</current>
 	    </memory>
 	    <memory name="primSetMem" description="PrimSet">
-		<peak>5208</peak>
+		<peak>2856</peak>
 		<current>0</current>
 	    </memory>
 	    <memory name="gvarMem" description="TraceVariableMemory">
-		<peak>3317472</peak>
-		<current>3317472</current>
+		<peak>8846592</peak>
+		<current>8846592</current>
 	    </memory>
 	    <histogram name="rayDepthHistogram" description="Ray depth histogram">
 		<bin label="0">0</bin>
-		<bin label="1">6451730</bin>
-		<bin label="2">2601990</bin>
-		<bin label="3">1144296</bin>
+		<bin label="1">21025</bin>
+		<bin label="2">6840</bin>
+		<bin label="3">0</bin>
 		<bin label="4">0</bin>
 		<bin label="5">0</bin>
 		<bin label="6">0</bin>
@@ -1489,19 +1452,19 @@
 		<bin label="more">0</bin>
 	    </histogram>
 	    <memory name="acceleratorMem" description="Ray accelerator memory">
-		<peak>805824</peak>
-		<current>7392</current>
+		<peak>294592</peak>
+		<current>3168</current>
 	    </memory>
 	    <memory name="rprimMem" description="Traceable prim memory">
-		<peak>635840</peak>
+		<peak>737840</peak>
 		<current>0</current>
 	    </memory>
 	</stats>
 	<stats name="rayGprim" description="Ray gprim stats" kind="section">
 	    <int name="hemisphereSamplings" description="Hemisphere samplings">0</int>
 	    <int name="storedHSRs" description="Stored HSRs">0</int>
-	    <int name="triTests" description="Triangle hit tests">2326845</int>
-	    <int name="triHits" description="Triangle hits">2059055</int>
+	    <int name="triTests" description="Triangle hit tests">25414</int>
+	    <int name="triHits" description="Triangle hits">6840</int>
 	    <int name="flatQuadTests" description="Flat BLP hit tests">0</int>
 	    <int name="flatQuadHits" description="Flat BLP hits">0</int>
 	    <int name="curvedQuadTests" description="Curved BLP hit tests">0</int>
@@ -1509,7 +1472,7 @@
 	    <int name="oneSidedRejects" description="Rejected hits due to Sides 1">0</int>
 	    <int name="nurbsHitTotal" description="NURB hits">0</int>
 	    <int name="nurbsHitTrimmed" description="NURB hits that were trimmed">0</int>
-	    <int name="catmarkGridCacheHits" description="Catmark grid cache hits">496676</int>
+	    <int name="catmarkGridCacheHits" description="Catmark grid cache hits">924</int>
 	    <int name="catmarkGridCacheMisses" description="Catmark grid cache misses">0</int>
 	    <int name="gutDisplacementShaded" description="Displacement shaded points during tessellation">0</int>
 	    <int name="gutRadiosityShaded" description="Surface shaded points during radiosity caching">0</int>
@@ -1520,34 +1483,34 @@
 		</memory>
 	    </stats>
 	    <timer name="gutFirstTimeToFill" description="Tessellation (GUT) cache creating entries (compulsory misses)">
-		<elapsed>0.013138</elapsed>
+		<elapsed>0.006611</elapsed>
 	    </timer>
 	    <timer name="gutOtherTimeToFill" description="Tessellation (GUT) cache creating entries (capacity misses)">
-		<elapsed>0.002874</elapsed>
+		<elapsed>0.000652</elapsed>
 	    </timer>
 	    <stats name="gutCacheLookups" description="Tessellation (GUT) cache lookups">
-		<int name="coarse" description="">2964</int>
-		<int name="medium" description="">411815</int>
-		<int name="fine" description="">4018494</int>
+		<int name="coarse" description="">45</int>
+		<int name="medium" description="">10309</int>
+		<int name="fine" description="">44156</int>
 	    </stats>
 	    <stats name="gutCacheHits" description="Tessellation (GUT) cache hits">
-		<int name="coarse" description="">2819</int>
-		<int name="medium" description="">411219</int>
-		<int name="fine" description="">4017756</int>
+		<int name="coarse" description="">41</int>
+		<int name="medium" description="">9967</int>
+		<int name="fine" description="">43873</int>
 	    </stats>
 	    <stats name="gutCacheMisses" description="Tessellation (GUT) cache misses">
-		<int name="coarse" description="">145</int>
-		<int name="medium" description="">596</int>
-		<int name="fine" description="">738</int>
+		<int name="coarse" description="">4</int>
+		<int name="medium" description="">342</int>
+		<int name="fine" description="">283</int>
 	    </stats>
 	    <stats name="gutCacheL1Misses" description="Tessellation (GUT) cache L1 misses">
 		<int name="coarse" description="">0</int>
-		<int name="medium" description="">1635</int>
-		<int name="fine" description="">2183</int>
+		<int name="medium" description="">813</int>
+		<int name="fine" description="">1052</int>
 	    </stats>
 	    <memory name="gutCacheMem" description="Tessellation (GUT) cache">
-		<peak>24313864</peak>
-		<current>9437184</current>
+		<peak>22216712</peak>
+		<current>5242880</current>
 	    </memory>
 	    <timer name="radioTimeToFill" description="Radiosity cache creating entries">
 		<elapsed>0.000000</elapsed>
@@ -1571,8 +1534,8 @@
 		<int name="constant" description="">0</int>
 	    </stats>
 	    <memory name="radioCacheMem" description="Radiosity cache">
-		<peak>10846216</peak>
-		<current>10846216</current>
+		<peak>8749064</peak>
+		<current>8749064</current>
 	    </memory>
 	    <memory name="radioCachePathMem" description="Radiosity cache paths">
 		<peak>1048600</peak>
@@ -1598,8 +1561,8 @@
 	<stats name="texture" description="texture" kind="section">
 	    <stats name="textureTileCache" description="Texture cache" kind="section">
 		<memory name="size" description="Cache size">
-		    <peak>41953760</peak>
-		    <current>41953760</current>
+		    <peak>50351368</peak>
+		    <current>50351368</current>
 		</memory>
 		<int name="maxTiles" description="Max tiles">419430</int>
 		<int name="tilesUsed" description="Num tiles used">0</int>
@@ -1739,8 +1702,8 @@
 	    </stats>
 	    <stats name="deepShadowTileCache" description="Deep shadow cache" kind="section">
 		<memory name="size" description="Cache size">
-		    <peak>47016</peak>
-		    <current>47016</current>
+		    <peak>67496</peak>
+		    <current>67496</current>
 		</memory>
 		<int name="initialTiles" description="Initial tiles">1000</int>
 		<int name="tilesUsed" description="Num tiles used">0</int>
@@ -1862,7 +1825,7 @@
 	    <int name="nBrickCacheElems" description="Brick slots in brick caches">758</int>
 	    <memory name="brickCacheActualMem" description="Actual memory used by brick caches">
 		<peak>60656</peak>
-		<current>4096</current>
+		<current>2048</current>
 	    </memory>
 	    <timer name="texture3DBrickmapTime" description="Total brickmap texture3d()">
 		<elapsed>0.000000</elapsed>
@@ -1889,8 +1852,8 @@
 	    <int name="nPointCacheMisses" description="Point cache misses">0</int>
 	    <int name="nPointCacheElems" description="Point cache num slots">1575</int>
 	    <memory name="pointCacheActualMem" description="Point cache memory">
-		<peak>178936</peak>
-		<current>178936</current>
+		<peak>183032</peak>
+		<current>183032</current>
 	    </memory>
 	    <int name="nReadNodes" description="Octree nodes read">0</int>
 	    <int name="nNodeCacheLookups" description="Octree node cache lookups">0</int>
@@ -1898,8 +1861,8 @@
 	    <int name="nNodeCacheMisses" description="Octree node cache misses">0</int>
 	    <int name="nNodeCacheElems" description="Octree node cache num slots">17246</int>
 	    <memory name="nodeCacheActualMem" description="Octree node cache memory">
-		<peak>1890176</peak>
-		<current>1890176</current>
+		<peak>1922944</peak>
+		<current>1922944</current>
 	    </memory>
 	    <timer name="texture3DPointcloudTime" description="Total pointcloud texture3d()">
 		<elapsed>0.000000</elapsed>
@@ -1911,7 +1874,7 @@
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="occlusionTime" description="Total point-based occlusion()">
-		<elapsed>0.000003</elapsed>
+		<elapsed>0.000002</elapsed>
 	    </timer>
 	    <timer name="indirectdiffuseTime" description="Total point-based indirectdiffuse()">
 		<elapsed>0.000002</elapsed>
@@ -1923,7 +1886,7 @@
 		<elapsed>0.000000</elapsed>
 	    </timer>
 	    <timer name="buildOctreesTime" description="Octrees building time">
-		<elapsed>0.000005</elapsed>
+		<elapsed>0.000004</elapsed>
 	    </timer>
 	    <timer name="traverseOctreesTime" description="Octrees traversal time">
 		<elapsed>0.000000</elapsed>
@@ -1934,19 +1897,19 @@
 	</stats>
 	<stats name="system" description="System stats" kind="section">
 	    <timer name="totaltime" description="Total time">
-		<elapsed>5.332915</elapsed>
-		<user>12.091288</user>
-		<system>0.183068</system>
+		<elapsed>0.689558</elapsed>
+		<user>2.110877</user>
+		<system>0.109388</system>
 	    </timer>
 	    <set name="fileLog" description="Files accessed">
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/areaLightShape1_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/lambert2_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/lambert3_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/lambert4_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/lambert5_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///renderman/cornell/shaders/volumeLightShape1_rfm.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project///shaders/ice.slo</member>
-		<member>/home/tom/rman/RSL-IceShader/project/renderman/cornell/rib/0001/perspShape_Preview.0001.rib</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/areaLightShape1_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/lambert2_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/lambert3_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/lambert4_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/lambert5_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///renderman/cornell/shaders/volumeLightShape1_rfm.slo</member>
+		<member>/home/tom/rman/iceproject/project///shaders/ice.slo</member>
+		<member>/home/tom/rman/iceproject/project/renderman/cornell/rib/0001/perspShape_Preview.0001.rib</member>
 		<member>/opt/pixar/RenderManProServer-19.0/lib/shaders//defaultsurface.slo</member>
 		<member>/opt/pixar/RenderManStudio-19.0-maya2014//lib/rif///RLFInjector</member>
 		<member>/opt/pixar/RenderManStudio-19.0-maya2014/lib/shaders/RfMShadeops.so</member>
@@ -1956,19 +1919,19 @@
 	    <int name="filesReclaimed" description="Files reclaimed">0</int>
 	    <int name="filesOpenError" description="Files not successfully opened">0</int>
 	    <string name="osName" description="OS name">Linux</string>
-	    <string name="osRelease" description="OS release">3.18.7-200.fc21.x86_64</string>
-	    <string name="osVersion" description="OS version">#1 SMP Wed Feb 11 21:53:17 UTC 2015</string>
+	    <string name="osRelease" description="OS release">3.19.3-100.fc20.x86_64</string>
+	    <string name="osVersion" description="OS version">#1 SMP Fri Mar 27 16:53:47 UTC 2015</string>
 	    <string name="arch" description="System architecture">x86_64</string>
-	    <string name="hostname" description="Host name">localhost.home</string>
+	    <string name="hostname" description="Host name">localhost.localdomain</string>
 	</stats>
 	<stats name="options" description="General Information" kind="section">
 	    <string name="copyright">copyright (c) 1988-2015 Pixar.</string>
 	    <string name="version">Pixar PhotoRealistic RenderMan 19.0</string>
 	    <string name="linkTime">linked Tue Apr 07 21:16:47 2015 PDT @1468883</string>
 	    <string name="build">build linuxRHEL6_x86-64_gcc44icc121_external_release</string>
-	    <string name="licenseDigest">  @  @|60g&lt;Tc67iQ06|20L9XC98=X158:bDDIKS528?P6FI9b99|58IMRE499e9A?IT5369PEB:NU4D&gt;@YC0|8279TE169c46?MfEA98S7B6;fA8G=TB0</string>
-	    <string name="timestamp">Sun May 03 12:12:04 BST 2015</string>
-	    <int name="threads">3</int>
+	    <string name="licenseDigest">  @  @|00?8+5fh&gt;P41|92L8b19:IV92&gt;Ld20L?bE0;LbB2&lt;;T0F|4FL:V667&gt;XB8J9X7D:?PAC:=W2C9=f26|89&gt;&gt;eA5?KeA5LLf296;e2FG=QA6ILd46</string>
+	    <string name="timestamp">Tue May 05 22:14:45 BST 2015</string>
+	    <int name="threads">8</int>
 	    <int name="xRes">960</int>
 	    <int name="yRes">540</int>
 	    <int name="xSamples">3</int>
@@ -2029,19 +1992,19 @@
   <int name="Scope begins"> 1 </int>
   <int name="Scope ends"> 1 </int>
   <timer name="RLF Loading">
-      <elapsed>0.000262</elapsed>
+      <elapsed>0.000197</elapsed>
   </timer>
   <int name="edit rules executed"> 0 </int>
   <int name="edit rules match"> 0 </int>
   <int name="static edits applied"> 0 </int>
   <timer name="Edit Rule Execution">
-      <elapsed>0.000091</elapsed>
+      <elapsed>0.000076</elapsed>
   </timer>
   <int name="injection rules executed"> 0 </int>
   <int name="injection rules matched"> 0 </int>
   <int name="static injections"> 5 </int>
   <timer name="Injection Rule Execution">
-      <elapsed>0.000008</elapsed>
+      <elapsed>0.000007</elapsed>
   </timer>
 </stats>
 

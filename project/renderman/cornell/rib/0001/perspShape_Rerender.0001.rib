@@ -1,15 +1,11 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-<<<<<<< HEAD
-#Mon May 04 22:00:51 BST 2015
-=======
-#Sun May 03 12:13:10 BST 2015
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+#Wed May 06 23:07:49 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
 IfBegin "!defined(RMSPROJ_FROM_ENV)" 
-Option "user" "string RMSPROJ" ["/home/tom/rman/RSL-IceShader/project/"]
+Option "user" "string RMSPROJ" ["/home/tom/rman/iceproject/project/"]
 IfEnd 
 IfBegin "!defined(RMSTREE)" 
 Option "user" "string RMSTREE" ["/opt/pixar/RenderManStudio-19.0-maya2014/"]
@@ -55,21 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-<<<<<<< HEAD
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 55252 -context \"_preview\" -notes \"(Mon May 04 22:00:51 BST 2015)\""]
-=======
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" itOpenHandler {::ice::startTimer;};;; itCloseHandler {::ice::endTimer %arglist; };;; dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 47237 -context \"_preview\" -notes \"(Sun May 03 12:13:10 BST 2015)\""]
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 34070 -context \"_preview\" -notes \"(Wed May 06 23:07:49 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-<<<<<<< HEAD
-ConcatTransform [ 0.99863 -0.0057786 -0.0520176 -7.23304e-11  -9.98641e-09 0.993887 -0.110399 4.78514e-09  -0.052336 -0.110248 -0.992525 -1.38012e-09  0.226878 -9.97325 57.9128 1 ]
-=======
-ConcatTransform [ 0.998629 0.00304821 0.0522506 -2.79866e-08  2.01096e-08 0.998303 -0.0582324 -8.21522e-09  0.0523359 -0.0581524 -0.996935 -1.3983e-09  -0.951302 -9.09505 43.7003 1 ]
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+ConcatTransform [ 0.938493 0.0237162 0.344482 -3.3958e-09  4.55663e-10 0.997639 -0.0686831 1.41799e-11  0.345298 -0.0644586 -0.936277 -1.02995e-09  -2.44741 -9.38067 41.9956 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -91,6 +79,10 @@ Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere
 Attribute "volume" "float depthrelativeshadingrate" [3] "string depthinterpolation" ["constant"]
 Attribute "stochastic" "int sigma" [1]
 Attribute "photon" "string causticmap" [""] "string globalmap" [""]
+Attribute "user" "string irRenderCam" ["false,-11.9474,12.2429,39.5599"]
+Attribute "user" "string irRenderCamFOV" ["54.4322"]
+Attribute "user" "string irRenderCamXform" ["0.938493,0,0.345298,0,0.0237162,0.997639,-0.0644586,0,-0.344483,0.0686831,0.936277,0,-11.9474,12.2429,39.5599,1"]
+Attribute "user" "string irRenderCamRatio" ["1"]
 AttributeBegin 
 Attribute "identifier" "string name" ["volumeLightShape1"]
 Transform [ 22.2641 0 -0 0  -0 4.94363e-15 -22.2641 0  0 22.2641 4.94363e-15 0  -5.20417e-18 12.5004 -5.55112e-17 1 ]
@@ -105,12 +97,28 @@ Attribute "identifier" "string name" ["areaLightShape1"]
 Transform [ 5.03297 0 -0 0  -0 1.11754e-15 -5.03297 0  0 5.03297 1.11754e-15 0  -5.20417e-18 23.9366 -5.55112e-17 1 ]
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 LightSource "renderman/cornell/shaders/areaLightShape1_rfm" "areaLightShape1" "float rman__ALSampleLightColor" [0] "string rman__dmaprl0" [""] "string rman__dmaprl1" [""] "string rman__dmaprl2" [""] "string rman__dmaprl3" [""] "float rman__ShadowMapGapBias" [0.1] "float rman__ShadowMapBias" [1.1236] "float rman__ShadowMapSamples" [32] "float dmapBias" [0.001] "float decayRate" [1] "float emitDiffuse" [1] "float emitSpecular" [1] "color cl" [1 1 1] 
-"float intensity" [2] "float useRayTraceShadows" [1] "color shadowColor" [0 0 0] "float shadowRays" [40] "float rayDepthLimit" [10] "string rman__TransmissionSubset" ["shadow"] "string __category" ["area,nonstd,"] "__instanceid" ["renderman/cornell/shaders/areaLightShape1_rfm_0"]
+"float intensity" [0.4] "float useRayTraceShadows" [1] "color shadowColor" [0 0 0] "float shadowRays" [40] "float rayDepthLimit" [10] "string rman__TransmissionSubset" ["shadow"] "string __category" ["area,nonstd,"] "__instanceid" ["renderman/cornell/shaders/areaLightShape1_rfm_0"]
 Attribute "user" "int shader_bindingstrength" [0]
 IfEnd 
 AttributeEnd 
 Illuminate "areaLightShape1" 1
 AttributeBegin 
+Attribute "identifier" "string name" ["spotLightShape1"]
+Transform [ 0.689898 0 -0.723907 0  -0.433325 0.801054 -0.412967 0  0.579889 0.598592 0.552646 0  7.84355 14.6606 12.6484 1 ]
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+LightSource "renderman/cornell/shaders/spotLightShape1_rfm" "spotLightShape1" "float coneAngle" [1.13384] "float penumbraAngle" [0.279253] "float dropoff" [0] "float barnDoors" [0] "float leftBarnDoor" [0.349066] "float rightBarnDoor" [0.349066] "float topBarnDoor" [0.349066] "float bottomBarnDoor" [0.349066] "float useDecayRegions" [0] "float startDistance1" [1] "float endDistance1" [2] "float startDistance2" [3] 
+"float endDistance2" [6] "float startDistance3" [8] "float endDistance3" [10] "float fogSpread" [1] "string rman__dmap" [""] "string rman__CausticMap" [""] "float rman__CausticEstimator" [100] "color rman__CausticFilter" [1 1 1] "float rman__CausticMult" [1] "float lightRadius" [0] "float dmapFilterSize" [1] 
+"float dmapBias" [0.001] "float decayRate" [0] "float emitDiffuse" [1] "float emitSpecular" [1] "color cl" [1 1 1] "float intensity" [0.4] "float useRayTraceShadows" [1] "color shadowColor" [0 0 0] 
+"float shadowRays" [1] "float rayDepthLimit" [3] "float centerOfIllumination" [5] "float fogIntensity" [1] "float fogShadowIntensity" [1] "string __category" ["std,pxcLight,"] "__instanceid" ["renderman/cornell/shaders/spotLightShape1_rfm_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+AttributeEnd 
+Illuminate "spotLightShape1" 1
+AttributeBegin 
+Attribute "identifier" "string name" ["groundPlane_transform"]
+ConcatTransform [ 12 0 0 0  0 2.66454e-15 12 0  0 -1 2.22045e-16 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["Manipulator1"]
@@ -250,7 +258,7 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphere1"]
-ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 5.54355 3.81338 1 ]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 7.38364 3.81338 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphereShape1"]
@@ -261,9 +269,9 @@ Attribute "user" "int receivesShadows" [1]
 Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
 Attribute "shade" "string transmissionhitmode" ["shader"]
 Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
-##RLF Inject SurfaceShading -attribute sets@,RenderManShader1SG,
+##RLF Inject SurfaceShading -attribute sets@,lambert6SG,
 TransformBegin 
-Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/0001/deformingGeoCache.0001.zip!renderman/cornell/rib/0001/pSphereShape1.0001.rib"] "float[6] bound" [-5.65017 5.41995 -5.42788 3.85107 -5.45118 5.39889] "int __immediatesubdivide" [0]
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/0001/deformingGeoCache.0001.zip!renderman/cornell/rib/0001/pSphereShape1.0001.rib"] "float[6] bound" [-5.11126 5.22726 -5.14269 5.14269 -5.07752 5.08022] "int __immediatesubdivide" [0]
 TransformEnd 
 AttributeEnd 
 AttributeEnd 
@@ -308,21 +316,30 @@ TransformBegin
 ReadArchive "renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_2_attr.job.rib" 
 Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/polySurfaceShape14_2.job.rib"] "float[6] bound" [-11.938 11.938 0.101689 23.9777 -11.938 21.0803] "int __immediatesubdivide" [0]
 TransformEnd 
-<<<<<<< HEAD
-=======
 AttributeEnd 
 AttributeEnd 
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["spotLight1"]
+ConcatTransform [ 0.689898 0 -0.723907 0  -0.433325 0.801054 -0.412967 0  0.579889 0.598592 0.552646 0  7.84355 14.6606 12.6484 1 ]
+AttributeBegin 
+AttributeEnd 
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["ffd1Lattice"]
-ConcatTransform [ 9.24956 -0.529899 -4.46699 0  0.597964 10.268 0.0201293 0  4.45839 -0.277801 9.26471 0  0.609323 5.27741 3.81338 1 ]
+ConcatTransform [ 10.2854 0 0 0  0 10.2854 0 0  0 0 10.2854 0  0.609323 7.38364 3.81338 1 ]
 AttributeBegin 
 AttributeEnd 
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["ffd1Base"]
-ConcatTransform [ 10.2854 0 0 0  0 10.2854 0 0  0 0 10.2854 0  0.609323 5.54355 3.81338 1 ]
+ConcatTransform [ 10.2854 0 0 0  0 10.2854 0 0  0 0 10.2854 0  0.609323 7.38364 3.81338 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["Manipulator2"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
 AttributeBegin 
 AttributeEnd 
 AttributeEnd 
@@ -333,9 +350,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-<<<<<<< HEAD
-##streammarker 130
-=======
-##streammarker 957
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+##streammarker 1309
 FrameEnd 

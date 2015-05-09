@@ -1,13 +1,13 @@
 shader_obj 6.1 1 0
 lambert3_rfm 696 30 148 232 591 0 11 11 0 11 13 1
-104 2044
+104 2038
 rgb
 current
 world
 !!anyspace!!
-/home/tom/rman/RSL-IceShader/project/renderman/cornell/shaders
+/home/tom/rman/iceproject/project/renderman/cornell/shaders
 .::/opt/pixar/RenderManStudio-19.0-maya2014//lib/shaders:/opt/pixar/RenderManStudio-19.0-maya2014//lib/slim/pxCoreV1:/opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl
-/home/tom/rman/RSL-IceShader/project/renderman/cornell/shaders/lambert3_rfm.sl
+/home/tom/rman/iceproject/project/renderman/cornell/shaders/lambert3_rfm.sl
 /opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl/mayaNodes/geomNormal.h
 /opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl/mayaNodes/_rfmUtils.h
 /opt/pixar/RenderManStudio-19.0-maya2014//lib/rfm/rsl/mayaNodes/_rfmShadingUtils.h
@@ -104,11 +104,7 @@ diffuseIllum
 bake
 $meta_1900
 $meta___PRMAN_RELEASE__1900
-<<<<<<< HEAD
-$meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Mon May  4 03:34:51 2015
-=======
-$meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Sun May  3 11:44:08 2015
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+$meta_Creator RfM 5.5 (@1468883 Apr  7 2015)\nFor tom\nCreationDate Wed May  6 05:53:02 2015
 30
 0
 1

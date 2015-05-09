@@ -1,0 +1,15 @@
+Tomorrow ToDo
+
+Shader
+ 1) Surface scratches
+ 	 - Surface shader (look at marble shader)
+ 	 - Displacement shader ^
+ 2) General shape
+ 	 - Large lumps and bumps
+ 	 - Big noise
+ 3) Frost Effect
+     - Noise? Fresnel? Atmosphere shader?
+     - Tied to refraction/reflection/spec
+ 4) Refraction
+ 5) Reflection
+ 6) Specular/phong highlights tied to the frost

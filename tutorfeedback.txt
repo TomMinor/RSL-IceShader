@@ -1,0 +1,20 @@
+- Look at marble
+  Noise to a power
+
+- Superquad displacement shader
+  Crease subdiv
+
+- Report : Talk about stuff we don't already know
+  Used subdiv rather than polys
+  Used displacement shader rather than modeling
+  Focused on particles not fluids
+  ~Decisions~ Why did you make the decision?
+  Focus on interesting bits -> Tried & failed etc
+  Part 4 -> Analysis/Results
+   Performance
+   Improvement
+   etc
+  "I should have done" don't put it at the end/conclusion, put in analysis
+  Short conclusion at the end, focus on positives, no new stuff mentioned
+
+ Show things in video that can't be shown in report, big ideas

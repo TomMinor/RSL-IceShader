@@ -1,11 +1,11 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 03 12:11:59 BST 2015
+#Tue May 05 22:14:44 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
 IfBegin "!defined(RMSPROJ_FROM_ENV)" 
-Option "user" "string RMSPROJ" ["/home/tom/rman/RSL-IceShader/project/"]
+Option "user" "string RMSPROJ" ["/home/tom/rman/iceproject/project/"]
 IfEnd 
 IfBegin "!defined(RMSTREE)" 
 Option "user" "string RMSTREE" ["/opt/pixar/RenderManStudio-19.0-maya2014/"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "hidden" "int jitter" [1] "int sigma" [0] "float sigmablur" [1] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" itOpenHandler {::ice::startTimer;};;; itCloseHandler {::ice::endTimer %arglist; };;; dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 47237 -context \"renderman/cornell/images/cornell\" -notes \"(Sun May 03 12:11:59 BST 2015)\""]
+Display "renderman/cornell/images/cornell" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 55252 -context \"renderman/cornell/images/cornell\" -notes \"(Tue May 05 22:14:44 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.999848 -0.00370648 0.0170543 5.51751e-11  3.83761e-08 0.977188 0.212376 -1.5069e-08  0.0174524 0.212344 -0.977039 -3.16098e-09  -0.949095 -7.95357 29.2828 1 ]
+ConcatTransform [ 0.99863 -0.0057786 -0.0520176 -7.23304e-11  -9.98641e-09 0.993887 -0.110399 4.78514e-09  -0.052336 -0.110248 -0.992525 -1.38012e-09  0.226878 -9.97325 57.9128 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -99,6 +99,10 @@ IfEnd
 AttributeEnd 
 Illuminate "areaLightShape1" 1
 AttributeBegin 
+Attribute "identifier" "string name" ["groundPlane_transform"]
+ConcatTransform [ 12 0 0 0  0 2.66454e-15 12 0  0 -1 2.22045e-16 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["Manipulator1"]
@@ -139,7 +143,7 @@ ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["polySurfaceShape10"]
-Attribute "identifier" "float id" [13]
+Attribute "identifier" "float id" [11]
 Sides 2
 ShadingInterpolation "smooth"
 Attribute "user" "int receivesShadows" [1]
@@ -202,7 +206,7 @@ ConcatTransform [ 1.34944 0 0.653126 0  -0 1.38608 0 0  -0.419061 -0 0.865835 0 
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["pCubeShape1"]
-Attribute "identifier" "float id" [2]
+Attribute "identifier" "float id" [1]
 Sides 2
 ShadingInterpolation "smooth"
 Attribute "user" "int receivesShadows" [1]
@@ -222,7 +226,7 @@ ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 0.641623 0  -0.237783 10.2185 -9.18663 1
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["pHelixShape1"]
-Attribute "identifier" "float id" [3]
+Attribute "identifier" "float id" [2]
 Sides 2
 ShadingInterpolation "smooth"
 Attribute "user" "int receivesShadows" [1]
@@ -238,11 +242,11 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphere1"]
-ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 5.54355 3.81338 1 ]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0.609324 7.38364 3.81338 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["pSphereShape1"]
-Attribute "identifier" "float id" [4]
+Attribute "identifier" "float id" [3]
 Sides 2
 ShadingInterpolation "smooth"
 Attribute "user" "int receivesShadows" [1]
@@ -251,11 +255,9 @@ Attribute "shade" "string transmissionhitmode" ["shader"]
 Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
 ##RLF Inject SurfaceShading -attribute sets@,RenderManShader1SG,
 TransformBegin 
-Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/0001/deformingGeoCache.0001.zip!renderman/cornell/rib/0001/pSphereShape1.0001.rib"] "float[6] bound" [-4.51669 4.5824 -5.14269 4.20162 -4.58241 4.48052] "int __immediatesubdivide" [0]
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/cornell/rib/job/staticGeoCache.job.zip!renderman/cornell/rib/job/pSphereShape1.job.rib"] "float[6] bound" [-5.14269 5.14269 -5.14269 5.14269 -5.1427 5.14269] "int __immediatesubdivide" [0]
 TransformEnd 
 AttributeEnd 
-AttributeEnd 
-AttributeBegin 
 AttributeEnd 
 AttributeEnd 
 AttributeBegin 
@@ -276,7 +278,7 @@ ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["polySurfaceShape14"]
-Attribute "identifier" "float id" [17]
+Attribute "identifier" "float id" [15]
 Sides 2
 ShadingInterpolation "smooth"
 Attribute "user" "int receivesShadows" [1]
@@ -300,29 +302,11 @@ AttributeEnd
 AttributeEnd 
 AttributeEnd 
 AttributeBegin 
-Attribute "identifier" "string name" ["ffd1Lattice"]
-ConcatTransform [ 10.2854 0 0 0  0 10.2854 0 0  0 0 10.2854 0  0.609323 5.54355 3.81338 1 ]
-AttributeBegin 
-AttributeEnd 
-AttributeEnd 
-AttributeBegin 
-Attribute "identifier" "string name" ["ffd1Base"]
-ConcatTransform [ 10.2854 0 0 0  0 10.2854 0 0  0 0 10.2854 0  0.609323 5.54355 3.81338 1 ]
-AttributeBegin 
-AttributeEnd 
-AttributeEnd 
-AttributeBegin 
-Attribute "identifier" "string name" ["Manipulator2"]
-ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
-AttributeBegin 
-AttributeEnd 
-AttributeEnd 
-AttributeBegin 
 Attribute "identifier" "string name" ["CubeCompass"]
 ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
 AttributeEnd 
 ##RLF ScopeEnd -name perspShape_Preview
 WorldEnd 
 ResourceEnd 
-##streammarker 799
+##streammarker 163
 FrameEnd 

@@ -1,0 +1,32 @@
+#include "extranoise.h"
+#include "noises.h"
+
+
+displacement
+superquad (
+	float east=1;
+	float north=1;
+	)
+{
+ 	float uu,vv;
+	float cv,cu;
+	float sv,su;
+
+	uu=(u-0.5)*2*PI;
+	vv=(v-0.5)*PI;
+	cu=cos(uu);
+	cu=(cu<0)? -pow(-cu,east) : pow(cu,east);
+	
+	cv=cos(vv);
+	cv=(cv<0)? -pow(-cv,north) : pow(cv,north);
+	
+	su=sin(uu);
+	su=(su<0)? -pow(-su,east) : pow(su,east);
+	
+	sv=sin(vv);
+	sv=(sv<0)? -pow(-sv,north) : pow(sv,north);
+	
+	P = point (cu*cv,su*cv,sv);
+
+	N = calculatenormal(P);
+}

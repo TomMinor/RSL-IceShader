@@ -1,7 +1,19 @@
-<<<<<<< HEAD
-=======
 ##RenderMan RIB
 version 3.04
 Option "rerender" "int[2] lodrange" [0 3]
-##streammarker958
->>>>>>> c8ed4e6e0141ab897f89797ba1d1a75280edfa4c
+##streammarker1310
+EditBegin "attribute" "string scopename" ["pSphereShape1"]
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Surface "/home/tom/rman/arman/shaders/cel" "float Ka" [1] "float Kd" [1] "float Ks" [0.5] "float roughness" [0.25] "float outlinethickness" [1] "__instanceid" ["/home/tom/rman/arman/shaders/cel_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker1311
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Surface "shaders/ice" "float Ka" [1] "float Kd" [0.5] "float Ks" [1] "float Kr" [0.5] "float Kt" [0.5] "float roughness" [0.05] "float shinyness" [50] "float ior" [1.5] "color specularColor" [1 1 1] "color opacity" [1 1 1] 
+"__instanceid" ["shaders/ice_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker1312
