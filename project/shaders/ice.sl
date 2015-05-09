@@ -46,14 +46,17 @@ float vignette(
 
 #define inverseVignette(Nn, falloff, edgeScale) (1 - vignette(Nn, falloff, edgeScale))
 
-color 
-glassrefr (
+void 
+calculateReflectRefract (
 	normal Nn;
 	float Kr;         	/* ideal (mirror) reflection multiplier */
 	float Kt;         	/* ideal refraction multiplier */
 	float ior;      	/* index of refraction */
 	float Ks;         	/* specular reflection coeff. */
-	float shinyness) 	/* Phong exponent */
+	float shinyness; 	/* Phong exponent */
+	output color refraction; // Refracted value around point
+	output color reflection; // Reflected value about point
+	)
 {
         vector In = normalize(I);
         normal Nf = faceforward(Nn, In, Nn);
@@ -78,7 +81,13 @@ glassrefr (
         if (Kt * kt > 0)
         	result += Kt * kt * trace(P, refrDir) * Cs;	
         
-        return result;
+        refraction = result;
+
+	    /* Calculate the reflection color */
+		if (Kr > 0.001) 
+		{
+			reflection = Kr * trace (P, reflDir) * pow(shinyness, -1); // Get the colour traced in the reflected direction
+		}
 }
 
 /* http://nccastaff.bournemouth.ac.uk/jmacey/Renderman/slides/RendermanShaders1.pdf */
@@ -234,12 +243,10 @@ surface icecube(
 	// 		float (0.8)
 	// 	);
 
-	/* use color spline to compute basic color */
-
+	/* ------------------------- Specular Terms ------------------------- */
 	// Tie roughness to the melting?
 	color orenNayer = LocIllumOrenNayar(Nn, V, 0.0);
-
-	/* ------------------------- Specular Term ------------------------- */
+	
 	float phongStrength = 1;
 	float phongNoiseStrength = 1;
 	float phongNoise = layerNoise(6, 8);
@@ -247,38 +254,40 @@ surface icecube(
 
 	/* ------------------------- Frost Term ------------------------- */
 	//color frostTerm = exp(fBm(Pt, filterwidthp(Pt), 3, 4, 2));
-	float frostDensity = 1;
+	float frostDensity = 0;
 	float frostMask = inverseVignette(Nn, 5, 0.25);
 	frostMask = pow(frostMask, 4); // Make the mask more pronounced
 	frostMask = clamp(frostMask, 0.1, 0.95);
 	frostMask = mix(0, frostMask, frostDensity);
 
-	/* ------------------------- Refraction Term ------------------------- */
-	float reflectionFrostSoftness = 0.4;
-	float reflectionTermFrost = layerNoise(3, frostAmount * 8);
-	reflectionTermFrost = mix(turbulence(8, 1, 2, 1.937), layerNoise(5, 16), 1 - reflectionFrostSoftness);
+	/* ------------------------- Refraction/Reflection Terms ------------------------- */
+	float refractionFrostSoftness = 0.4;
+	float refractionTermFrost = layerNoise(3, frostAmount * 8);
+	refractionTermFrost = mix(turbulence(8, 1, 2, 1.937), layerNoise(5, 16), 1 - refractionFrostSoftness);
 
-	color reflectionTerm = glassrefr(Nn, 1, 1, ior, 1, 50);
+	color refractionTerm = 0;
+	color reflectionTerm = 0;
+	calculateReflectRefract(Nn, 1, 1, ior, 1, 50, refractionTerm, reflectionTerm);
 	
 	// Make the refraction rougher ( param : refractionRoughness )
 	float i;
 	float jitterCount = 1;
 	float randomScale = 0.5;
-	color reflectionBlur = 0;
+	color refractionBlur = 0;
 	float blurAmount = 0.3;
+
+	color tmpReflection = 0;
 	for(i = 0; i < jitterCount; i+=1)
 	{
-		normal refractionJitter = Nn + normal reflectionTermFrost + (randomScale * random());
-		reflectionBlur += glassrefr(refractionJitter, 1, 1, ior, 1, 50);
+		normal refractionJitter = Nn + normal refractionTermFrost + (randomScale * random());
+		color blurRefraction = 0;
+		calculateReflectRefract(refractionJitter, 1, 1, ior, 1, 50, blurRefraction, tmpReflection);
+		refractionBlur += blurRefraction;
 	}
-	reflectionBlur /= jitterCount;
-	reflectionTerm = mix(reflectionTerm, reflectionBlur, blurAmount);
+	refractionBlur /= jitterCount;
+	refractionTerm = mix(refractionTerm, refractionBlur, blurAmount);
 
 	//reflectionTermFrost = (reflectionTermFrost * 0.5) + 0.5; // Make the noise difference subtle using a half lambert effect
-
-	/* ------------------------- Reflection Term ------------------------- */
-	// TODO
-
 
 
 	/* ------------------------- Surface Scratches ------------------------- */
@@ -299,7 +308,7 @@ surface icecube(
 		0.5
 	);
 
-	scratchMask *= 0.01;
+	scratchMask *= 0.1;
 
 	 
 	/* ------------------------- Final Result ------------------------- */
@@ -309,11 +318,8 @@ surface icecube(
 	// Ci = Os * (Ci + specularcolor * Ks * specular(Nf,V,roughness));
 
 	//Ci = Os * diffuse(Nn);
-	//Ci = Os * mix(diffuse(Nn), reflectionTerm, cmi);
-	//Ci = Os * reflectionTerm;
-	
-	float distance = length(E - P);
-	distance = distance * (1/200);
+	//Ci = Os * mix(diffuse(Nn), refractionTerm, cmi);
+	//Ci = Os * refractionTerm;
 
 	float mindistance = 0, maxdistance = 0.0025;
 	float silhouetteMaskAmbient = 1;
@@ -321,12 +327,22 @@ surface icecube(
 	silhouetteMask = clamp(silhouetteMaskAmbient + (silhouetteMask - mindistance) / (maxdistance - mindistance), 0.0, 1.0);
 	silhouetteMask = silhouetteMask * 0.5; // Increase the contrast a little
 
-	//Ci = test;
-	Ci = ka + (kd * colourTint * silhouetteMask * (phongTerm + mix(frostTint * color reflectionTermFrost, reflectionTerm, frostMask)));
 
-	//Ci = reflectionTermFrost;
+	color ambientLayer = ka;
+	color frostLayer = frostTint * color refractionTermFrost * orenNayer;
+	color refractionLayer = mix(frostLayer, refractionTerm, frostMask);
+	color reflectionLayer = mix(frostLayer, reflectionTerm, frostMask);
+	color phongLayer = mix(phongTerm, phongTerm, frostMask);
 
-	//Ci = refractionJitter;
+	Ci = refractionLayer; 
+ /*
+	Frost - refraction mixed with white, rough oren nayer shading, low phong
+	No frost - clear refraction mixed with reflections, smooth oren nayer, high phong
+	Both - Ambient + Diffuse * Slightly darkened backplate
+
+ */
+	
+	//Ci = ka + (kd * colourTint * silhouetteMask * (phongTerm + mix(frostTint * color refractionTermFrost, refractionTerm, frostMask)));
 }
 
 // surface

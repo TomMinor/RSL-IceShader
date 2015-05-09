@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sat May 09 04:09:02 BST 2015
+#Sat May 09 05:56:43 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,7 +51,7 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sat May 09 04:09:02 BST 2015)\""]
+Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sat May 09 05:56:43 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
@@ -244,5 +244,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-##streammarker 2954
+##streammarker 2978
 FrameEnd 
