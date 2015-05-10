@@ -1,16 +1,122 @@
 ##RenderMan RIB
 version 3.04
 Option "rerender" "int[2] lodrange" [0 3]
-##streammarker7090
+##streammarker7392
+EditBegin "option" 
+Identity 
+#Camera perspShape
+Clipping 0.1 10000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.5625 0.5625
+Shutter 0 0
+ConcatTransform [ 0.995562 0.0113685 0.0934199 -3.03696e-11  3.95867e-09 0.992677 -0.120801 -1.0563e-09  0.0941083 -0.120265 -0.988271 3.21275e-10  -0.0707795 -7.29191 41.1444 1 ]
+Camera "world" "float[2] shutteropening" [0 1]
+EditEnd 
+##streammarker7393
+EditBegin "option" 
+Identity 
+#Camera perspShape
+Clipping 0.1 10000
+Projection "perspective" "fov" [54.4322]
+ScreenWindow -1 1 -0.5625 0.5625
+Shutter 0 0
+ConcatTransform [ 0.995562 0.0113685 0.0934199 -3.03696e-11  3.95867e-09 0.992677 -0.120801 -1.0563e-09  0.0941083 -0.120265 -0.988271 3.21275e-10  -0.0707795 -7.29191 41.1444 1 ]
+Camera "world" "float[2] shutteropening" [0 1]
+EditEnd 
+##streammarker7394
 EditBegin "instance" 
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 Attribute "displacementbound" "float sphere" [4]
-Surface "shaders/icecube" "float frostAmount" [32] "float cornerRoundness" [0.6] "float displacementAmount" [1] "float scratchDeepness" [0.15] "float surfaceBumpyness" [0.125] "float ior" [1.3] "color colourTint" [1 1 1] "color frostTint" [0.784 0.9098 0.8941] 
-"__instanceid" ["shaders/icecube_0"]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0.5] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
 Attribute "user" "int shader_bindingstrength" [0]
 IfEnd 
 EditEnd 
-##streammarker7091
-EditBegin "option" 
+##streammarker7395
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0.5] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
 EditEnd 
-##streammarker7092
+##streammarker7396
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [1] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7397
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [4] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7398
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [3] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7399
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0.15] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7400
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7401
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.281879] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7402
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0.0268456] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7403
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker7404
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [1.3] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [0] "float cornerRoundness" [0.8] "float displacementAmount" [1] "float surfaceBumpyness" [0.125] "float scratchDeepness" [0] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.75] "float specularStrength" [0] "__instanceid" ["shaders/icecube_0"]
+Attribute "u

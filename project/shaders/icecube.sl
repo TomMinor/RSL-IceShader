@@ -116,26 +116,24 @@ point superquad (
 //----------------------- Ice Cube Shader Object -----------------------
 
 class icecube(
-	float frostAmount = 1.0;
-	// 1 = low reflection, low refraction
-	// 0 = medium reflection, high refraction
+	uniform color iceTint = color "rgb" (1, 1, 1);
+	uniform float ior = 1.3;
+	uniform color frostTint = color "rgb" (0.784, 0.9098, 0.8941);
+	uniform float frostDensity = 0.3;
 
-	float cornerRoundness = 0.5;
-	float displacementAmount = 1.0;
-	float scratchDeepness = 0.5;
-	float surfaceBumpyness = 0.1;
+	uniform float cornerRoundness = 0.5,  displacementAmount = 1.0, surfaceBumpyness = 0.1;
+	uniform float scratchDeepness = 0.5, scratchDensityMin = 0.25, scratchDensityMax = 0.5;
+	uniform float silhouetteAmount = 0.25;
+	uniform float specularStrength = 0.5;
 
-	float ior = 1.3;
-
-	color colourTint = color "rgb" (1, 1, 1);
-	color frostTint = color "rgb" (0.784, 0.9098, 0.8941);
 	)
 {
 	varying normal Nn = 0;
 	varying float scratchDetail = 0;
 	varying float frostMask = 0;
+	varying float silhouetteMask = 0;
 
-	// Produce a fresnel effect modified to allow a thick 'edge' in addition to the smooth fresnel effect
+	/* Produce a fresnel effect modified to allow a thick 'edge' in addition to the smooth fresnel effect */
 	private float vignette(
 		float falloff;
 		float edgeScale;
@@ -149,44 +147,47 @@ class icecube(
 
 	#define inverseVignette(falloff, edgeScale) (1 - vignette(falloff, edgeScale))
 
+
 	public void begin() 
 	{
 		// ---------------------- Create Scratches ----------------------
-		uniform float scratchDensityMin = 0.25; // @param
-		uniform float scratchDensityMax = 0.5;
-
 		scratchDetail = turbulence(4, 0.25, 2, 8);
 		scratchDetail = abs(scratchDetail - 0.5); 		// Replace highlights with dark patches
 		scratchDetail = pow(scratchDetail, 3) * 8; 		
 		scratchDetail = smoothstep(scratchDensityMin, scratchDensityMax, scratchDetail);
 		
 		// Remap the values
-		scratchDetail=spline(scratchDetail,
-							0,
-							0.1,
-							0.3,
-							0.35,
-							0.4,
-							1.0
-							);
-
+		scratchDetail=spline(scratchDetail, 0, 0.1, 0.3, 0.35, 0.4, 1.0);
 		scratchDetail *= 0.1; // Make it subtle
 	}
 
+
 	public void displacement(output point P; output normal N) 
 	{
-		// Set the shape to the superquad primitive
-	    P = superquad(cornerRoundness, cornerRoundness);
-		N = calculatenormal(P);
+		/* Don't change the shape of the object if corner roundness is disabled
+		   (The 100% square superquad is fairly useless anyway, a very low value of 0.001 can be used if the
+		   user really wants something like it it) */
+		if(cornerRoundness > 0.0)
+		{	
+			// Set the shape to the superquad primitive
+			P = superquad(cornerRoundness, cornerRoundness);
+			N = calculatenormal(P);	
+		}
+
 		Nn = normalize(N);
 
-		// point Pt = transform("shader", P);
-		// float frostNoise = pow(noise(Pt), 8);
-		float frostDensity = 0.3;
-		frostMask = inverseVignette(1.01, 0.9 + ( (1 - frostDensity) * 0.1 )); // @param
-		// frostMask = (mix(0, frostMask, frostDensity) + (frostNoise));
+		// ----------------------- Masks -----------------------
+		/* These work better when calculated before the bumps are added to the surface, 
+		   they are later used in the surface shader */
+
+		// Frost density has to be VERY low to have any effect here, so let's divide it to make user tweaking easier
+		frostMask = inverseVignette(1.01, 0.9 + ( (1 - (frostDensity / 10)) * 0.1)); // @param
 		frostMask = 1 - frostMask;
 
+		silhouetteMask = pow(normalize(-I).normalize(N), 2);
+		silhouetteMask = (silhouetteMask * silhouetteAmount) + (1 - silhouetteAmount);
+		//silhouetteMask = pow(silhouetteMask, 2);
+		//silhouetteMask = clamp((silhouetteAmount) + silhouetteMask, 0, 1);
 
 		// ----------------------- Large Bumps ----------------------------
 		float surfaceBump = layerNoise(3, 1);
@@ -204,12 +205,8 @@ class icecube(
 		N = calculatenormal(P);
 
 		Nn = normalize(N);
-
-		// 		float frostDensity = 0.3;
-		// frostMask = inverseVignette(1.01, 0.9 + ( (1 - frostDensity) * 0.1 )); // @param
-		// // frostMask = (mix(0, frostMask, frostDensity) + (frostNoise));
-		// frostMask = 1 - frostMask;
 	}
+
 
 	public void surface(
 		output color Ci, Oi) 
@@ -254,7 +251,7 @@ class icecube(
 
 		/* ------------------------- Refraction/Reflection Terms ------------------------- */
 		float refractionFrostSoftness = 0.4;
-		float refractionTermFrost = layerNoise(3, frostAmount * 8) * 3;
+		float refractionTermFrost = layerNoise(3, frostDensity * 8) * 3;
 		refractionTermFrost = mix(turbulence(8, 1, 2, 1.937), layerNoise(5, 16), 1 - refractionFrostSoftness);
 
 		float reflectionScale = 1; /* ideal (mirror) reflection multiplier */
@@ -300,26 +297,23 @@ class icecube(
 
 		 
 		/* ------------------------- Final Result ------------------------- */
-		float mindistance = 0, maxdistance = 0.002; // Lazy hack, has to be tweaked per object
-		float silhouetteMaskAmbient = 0;
-		float silhouetteMask = depth(transform("world", P));
-		silhouetteMask = clamp(silhouetteMaskAmbient + (silhouetteMask - mindistance) / (maxdistance - mindistance), 0.0, 1.0);
-		silhouetteMask = ((((silhouetteMask) - 0.5) * 3.0) + 0.5); // Increase contrast
-		silhouetteMask = abs(silhouetteMask);
-		silhouetteMask = (silhouetteMask * 0.5) + 0.5;
+		// VIDEO : Mention this original approach
+		// float mindistance = 0, maxdistance = 0.002; // Lazy hack, has to be tweaked per object
+		// float silhouetteMaskAmbient = 0;
+		// float silhouetteMask = depth(transform("world", P));
+		// silhouetteMask = clamp(silhouetteMaskAmbient + (silhouetteMask - mindistance) / (maxdistance - mindistance), 0.0, 1.0);
+		// silhouetteMask = ((((silhouetteMask) - 0.5) * 3.0) + 0.5); // Increase contrast
+		// silhouetteMask = abs(silhouetteMask);
+		// silhouetteMask = (silhouetteMask * 0.5) + 0.5;
 
-		color ambient = ambient();
-
-		color frostLayer = frostTint * refractionTermFrost + (refractionTerm);// * orenNayer; //pow(refractionTermFrost, orenNayer) ;
-		
+		color frostLayer = frostTint * refractionTermFrost + (refractionTerm);		
 		// Fade in the frost layer 
 		color refraction = refractionTerm + (0.5 * mix(color 0, frostLayer, frostMask));
 
-		// Add a subtle amount of reflection to the whole object, but primarily focus it along the highlights
-		//color reflection = (reflectionTerm * 0.025) + (reflectionTerm * phongTerm);
-		color reflection = reflectionTerm + (phongTerm * 0.5);
+		color reflection = reflectionTerm + (phongTerm * specularStrength);
 
 		Oi = Os;
-		Ci = Oi * ambient + mix(color 0, (orenNayer * (refraction + reflection)), ceil(silhouetteMask));
+		Ci = Oi * ambient() + mix(color 0, (orenNayer * (refraction + reflection)), silhouetteMask);
+		//Ci = silhouetteMask;
 	}
 }
