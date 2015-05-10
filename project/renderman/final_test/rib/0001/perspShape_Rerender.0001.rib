@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 10 02:49:02 BST 2015
+#Sun May 10 07:40:17 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sun May 10 02:49:02 BST 2015)\""]
+Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sun May 10 07:40:17 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.999507 0.00346774 0.0312188 -6.15913e-11  4.96423e-09 0.993887 -0.1104 -2.31437e-09  0.0314108 -0.110345 -0.993397 1.95987e-09  -0.776733 -7.01301 45.6224 1 ]
+ConcatTransform [ 0.992546 0.0185145 0.120455 -5.80113e-09  3.39015e-08 0.988392 -0.151923 -6.52757e-09  0.121869 -0.15079 -0.981025 -9.87085e-10  -0.995864 -7.75567 50.4563 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -81,9 +81,9 @@ Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere
 Attribute "volume" "float depthrelativeshadingrate" [3] "string depthinterpolation" ["constant"]
 Attribute "stochastic" "int sigma" [1]
 Attribute "photon" "string causticmap" [""] "string globalmap" [""]
-Attribute "user" "string irRenderCam" ["false,-0.623605,12.0068,44.5717"]
+Attribute "user" "string irRenderCam" ["false,-4.94566,15.3311,48.4508"]
 Attribute "user" "string irRenderCamFOV" ["54.4322"]
-Attribute "user" "string irRenderCamXform" ["0.999507,-2.1684e-19,0.0314108,0,0.00346774,0.993887,-0.110345,0,-0.0312188,0.1104,0.993397,0,-0.623605,12.0068,44.5717,1"]
+Attribute "user" "string irRenderCamXform" ["0.992546,-1.73472e-18,0.121869,0,0.0185147,0.988392,-0.15079,0,-0.120455,0.151922,0.981025,0,-4.94566,15.3311,48.4508,1"]
 Attribute "user" "string irRenderCamRatio" ["1"]
 AttributeBegin 
 Attribute "identifier" "string name" ["volumeLightShape1"]
@@ -106,7 +106,7 @@ AttributeEnd
 Illuminate "areaLightShape1" 1
 AttributeBegin 
 Attribute "identifier" "string name" ["spotLightShape1"]
-Transform [ 0.772494 0.0941187 -0.628008 0  -0.433325 0.801054 -0.412967 0  0.464201 0.591146 0.659594 0  5.5407 11 15.2145 1 ]
+Transform [ 0.958935 0.155521 -0.237185 0  -0.22075 0.934315 -0.279866 0  0.17808 0.320732 0.930279 0  3.396 11 16.4646 1 ]
 IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
 LightSource "renderman/final_test/shaders/spotLightShape1_rfm" "spotLightShape1" "float coneAngle" [1.47463] "float penumbraAngle" [0.279253] "float dropoff" [0] "float barnDoors" [0] "float leftBarnDoor" [0.349066] "float rightBarnDoor" [0.349066] "float topBarnDoor" [0.349066] "float bottomBarnDoor" [0.349066] "float useDecayRegions" [0] "float startDistance1" [1] "float endDistance1" [2] "float startDistance2" [3] 
 "float endDistance2" [6] "float startDistance3" [8] "float endDistance3" [10] "float fogSpread" [1] "string rman__dmap" [""] "string rman__CausticMap" [""] "float rman__CausticEstimator" [100] "color rman__CausticFilter" [1 1 1] "float rman__CausticMult" [1] "float lightRadius" [0] "float dmapFilterSize" [1] 
@@ -172,7 +172,7 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["spotLight1"]
-ConcatTransform [ 0.772494 0.0941187 -0.628008 0  -0.433325 0.801054 -0.412967 0  0.464201 0.591146 0.659594 0  5.5407 11 15.2145 1 ]
+ConcatTransform [ 0.958935 0.155521 -0.237185 0  -0.22075 0.934315 -0.279866 0  0.17808 0.320732 0.930279 0  3.396 11 16.4646 1 ]
 AttributeBegin 
 AttributeEnd 
 AttributeEnd 
@@ -224,9 +224,9 @@ Attribute "user" "int receivesShadows" [1]
 Attribute "visibility" "int camera" [1] "int specular" [1] "int diffuse" [1] "int transmission" [1]
 Attribute "shade" "string transmissionhitmode" ["shader"]
 Attribute "grouping" "string membership" ["+reflection,refraction,shadow"]
-##RLF Inject SurfaceShading -attribute sets@,RenderManShader1SG,
+##RLF Inject SurfaceShading -attribute sets@,RenderManShaderObject1SG,
 TransformBegin 
-Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_test/rib/job/staticGeoCache.job.zip!renderman/final_test/rib/job/nurbsSphereShape1.job.rib"] "float[6] bound" [-5 5 -5 5 -5 5] "int __immediatesubdivide" [0]
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_test/rib/job/staticGeoCache.job.zip!renderman/final_test/rib/job/nurbsSphereShape1.job.rib"] "float[6] bound" [-1 1 -1 1 -1 1] "int __immediatesubdivide" [0]
 TransformEnd 
 AttributeEnd 
 AttributeEnd 
@@ -234,6 +234,8 @@ AttributeEnd
 AttributeBegin 
 Attribute "identifier" "string name" ["Manipulator2"]
 ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["CubeCompass"]
@@ -242,5 +244,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-##streammarker 4706
+##streammarker 5084
 FrameEnd 
