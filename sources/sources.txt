@@ -32,3 +32,7 @@ http://www.cs.unc.edu/~olano/s2001c24/ch01.html
 http://renderman.pixar.com/view/pixar-ratatouille-shading-food
 http://www.sfdm.scad.edu/faculty/mkesson/vsfx755/wip/best/winter2010/daniel_bollwerk/Fog.html
 http://www.larrygritz.com/arman/materials.html
+
+// Talk about how PBR is the next thing I could try
+http://kevin-george-2n3x.squarespace.com/blog/2014/5/25/rsl-20-shader-objects
+http://www.sfdm.scad.edu/faculty/mkesson/vsfx755/wip/best/spring2012/kevin_george/final/index.html

@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 10 12:20:45 BST 2015
+#Sun May 10 20:15:44 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "raytrace" "int adaptall" [0] "int jitter" [1] "string integrationmode" ["path"] "int incremental" [0] "string samplemode" [""] "int minsamples" [0] "int maxsamples" [4]
 Format 960 540 1
-Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sun May 10 12:20:45 BST 2015)\""]
+Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"_preview\" -notes \"(Sun May 10 20:15:44 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.945519 0.0523979 -0.321324 9.5945e-10  -9.65715e-09 0.986964 0.160943 -7.95682e-10  -0.325568 0.152175 -0.933192 2.13639e-09  2.85669 -6.84378 25.9318 1 ]
+ConcatTransform [ 0.995562 0.0113685 0.0934199 -3.03696e-11  3.95867e-09 0.992677 -0.120801 -1.0563e-09  0.0941083 -0.120265 -0.988271 3.21275e-10  -0.0707795 -7.29191 41.1444 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -209,7 +209,7 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["nurbsSphere1"]
-ConcatTransform [ -3.90649 0.0323254 1.92481 0  -1.92474 0.016915 -3.90663 0  -0.0364727 -4.35492 -0.000886423 0  5.79963e-18 5 7 1 ]
+ConcatTransform [ -4.23506 0.0352624 1.01471 0  -1.01467 0.00936 -4.23521 0  -0.0364727 -4.35492 -0.000886423 0  5.79963e-18 5 7 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["nurbsSphereShape1"]
@@ -240,5 +240,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Rerender
 WorldEnd 
 ResourceEnd 
-##streammarker 5626
+##streammarker 7089
 FrameEnd 

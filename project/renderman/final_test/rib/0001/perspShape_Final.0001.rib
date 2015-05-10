@@ -1,6 +1,6 @@
 ##RenderMan RIB
 #Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
-#Sun May 10 07:55:12 BST 2015
+#Sun May 10 20:09:43 BST 2015
 version 3.04
 Option "ribparse" "string varsubst" [""]
 Option "ribparse" "string varsubst" ["$"]
@@ -51,13 +51,13 @@ Option "photon" "string lifetime" ["transient"]
 Option "photon" "int emit" [0]
 Hider "hidden" "int jitter" [1] "int sigma" [0] "float sigmablur" [1] "int minsamples" [0] "int maxsamples" [9]
 Format 960 540 1
-Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"renderman/final_test/images/final_test\" -notes \"(Sun May 10 07:55:12 BST 2015)\""]
+Display "renderman/final_test/images/final_test" "it" "rgba" "string filter" ["gaussian"] "float[2] filterwidth" [2 2] "int[4] quantize" [0 0 0 0] "float dither" [0] "float[2] exposure" [1 1] "float[3] remap" [0 0 0] "int merge" [0] "string connection" ["-launchURI /opt/pixar/RenderManStudio-19.0-maya2014/bin/it"] "string dspyParams" [" dspyRender -renderer preview -time 1 -crop 0 1 0 1 -port 50369 -context \"renderman/final_test/images/final_test\" -notes \"(Sun May 10 20:09:43 BST 2015)\""]
 #Camera perspShape
 Clipping 0.1 10000
 Projection "perspective" "fov" [54.4322]
 ScreenWindow -1 1 -0.5625 0.5625
 Shutter 0 0
-ConcatTransform [ 0.999263 0.00423734 0.0381538 -1.67792e-12  -1.01544e-09 0.993887 -0.110399 -1.38281e-10  0.0383878 -0.110318 -0.993155 4.36812e-11  0.137683 -6.01097 30.3451 1 ]
+ConcatTransform [ 0.995562 0.0113685 0.0934199 -3.03696e-11  3.95867e-09 0.992677 -0.120801 -1.0563e-09  0.0941083 -0.120265 -0.988271 3.21275e-10  -0.0707795 -7.29191 41.1444 1 ]
 Camera "world" "float[2] shutteropening" [0 1]
 Option "user" "color camera_bg" [0 0 0] "float camera_bga" [0]
 Imager "background" "color color" [0 0 0] "float alpha" [0]
@@ -81,10 +81,6 @@ Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere
 Attribute "volume" "float depthrelativeshadingrate" [3] "string depthinterpolation" ["constant"]
 Attribute "stochastic" "int sigma" [1]
 Attribute "photon" "string causticmap" [""] "string globalmap" [""]
-Attribute "user" "string irRenderCam" ["false,-1.26987,9.32432,29.469"]
-Attribute "user" "string irRenderCamFOV" ["54.4322"]
-Attribute "user" "string irRenderCamXform" ["0.999263,0,0.0383878,0,0.004238,0.993887,-0.110318,0,-0.0381532,0.1104,0.993155,0,-1.26987,9.32432,29.469,1"]
-Attribute "user" "string irRenderCamRatio" ["1"]
 AttributeBegin 
 Attribute "identifier" "string name" ["volumeLightShape1"]
 Transform [ 22.2641 0 -0 0  -0 4.94363e-15 -22.2641 0  0 22.2641 4.94363e-15 0  -5.20417e-18 12.5004 -5.55112e-17 1 ]
@@ -213,7 +209,7 @@ AttributeEnd
 AttributeEnd 
 AttributeBegin 
 Attribute "identifier" "string name" ["nurbsSphere1"]
-ConcatTransform [ -3.90649 0.0323254 1.92481 0  -1.92474 0.016915 -3.90663 0  -0.0364727 -4.35492 -0.000886423 0  5.79963e-18 5 7 1 ]
+ConcatTransform [ -4.23506 0.0352624 1.01471 0  -1.01467 0.00936 -4.23521 0  -0.0364727 -4.35492 -0.000886423 0  5.79963e-18 5 7 1 ]
 AttributeBegin 
 AttributeBegin 
 Attribute "identifier" "string name" ["nurbsSphereShape1"]
@@ -244,5 +240,5 @@ AttributeEnd
 ##RLF ScopeEnd -name perspShape_Final
 WorldEnd 
 ResourceEnd 
-##streammarker 5126
+##streammarker 7038
 FrameEnd 
