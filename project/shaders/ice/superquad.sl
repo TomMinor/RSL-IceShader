@@ -65,7 +65,7 @@ displacement icecubeDisp(
 	P = PP;
 	N = calculatenormal(P);
 
-	// ---------------------- Scra tches ----------------------
+	// ---------------------- Scratches ----------------------
 
 	float scratchMask = 0;
 	scratchMask = turbulence(4, 0.25, 2, 8);
@@ -74,7 +74,7 @@ displacement icecubeDisp(
 	scratchMask *= 8;
 	scratchMask = smoothstep(0.25 * s, 0.3 * t, scratchMask);
 
-	float tmp=spline(scratchMask,
+	scratchMask=spline(scratchMask,
 		0,
 		0.1,
 		0.3,
@@ -83,6 +83,13 @@ displacement icecubeDisp(
 		0.5
 	);
 
-	P = P - (tmp * NN * 0.1);
+	// ---------------------- Small Bumpyness ----------------------
+
+	float smallBumps = layerNoise(6, 4); 
+	smallBumps = pow(1 - smallBumps, 4);
+
+	float result = ((1 - smallBumps) * scratchMask) + smallBumps;
+
+	P = P - (result * NN * 0.1); // TODO parameterise this
 	N = calculatenormal(P);
 }

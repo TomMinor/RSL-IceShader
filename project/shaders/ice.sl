@@ -144,7 +144,7 @@ surface icecube(
 	// reflection should be masked by a fresnel effect
 	normal Nn = normalize(N);
 	vector incidentRay = normalize(I);      /* normalized incident vector */
-	vector V = normalize(faceforward(-I, Nn));
+	vector V = normalize(faceforward(Nn, -I));
 
 	color ka = ambient();
 	color kd = (diffuse(Nn) * 0.5) + 0.5; // Half Lambert, since we never really want 100% black in our diffuse
@@ -170,8 +170,6 @@ surface icecube(
 	//Ct = random(); 							// Random colour noise
 	//Ct = turbulence(6, 4, 0.5, 1.9132);	 		// Cool looking mountains or cell outlines
 
-
-	Oi = Os;
 	//Ci = Os * (ka + kd);
 	// Ci = Os * mix(reflectionTerm * 0.25, reflectionTerm, fresnalMask);
 
@@ -244,23 +242,28 @@ surface icecube(
 	// 	);
 
 	/* ------------------------- Specular Terms ------------------------- */
-	// Tie roughness to the melting?
-	color orenNayer = LocIllumOrenNayar(Nn, V, 0.0);
+	// // Tie roughness to the melting?
+	color orenNayer = LocIllumOrenNayar(Nn, V, 1.0);
 	
-	float phongStrength = 1;
+	float phongStrength = 24; // Strong highlight
 	float phongNoiseStrength = 1;
-	float phongNoise = layerNoise(6, 8);
-	color phongTerm = colorPow(phong(Nn, V, phongNoise), 16) * phongStrength;
+	color phongTerm = 0;
+	{
+		// Temp normals/incident vectors, TODO : Clean up at the end
+		normal Nn = normalize(N);
+		vector V = normalize(faceforward(Nn, I));
+		phongTerm = phong(Nn, V, phongStrength);
+	}
 
-	/* ------------------------- Frost Term ------------------------- */
-	//color frostTerm = exp(fBm(Pt, filterwidthp(Pt), 3, 4, 2));
-	float frostDensity = 0;
-	float frostMask = inverseVignette(Nn, 5, 0.25);
-	frostMask = pow(frostMask, 4); // Make the mask more pronounced
-	frostMask = clamp(frostMask, 0.1, 0.95);
-	frostMask = mix(0, frostMask, frostDensity);
+	// /* ------------------------- Frost Term ------------------------- */
+	// //color frostTerm = exp(fBm(Pt, filterwidthp(Pt), 3, 4, 2));
+	// float frostDensity = 0;
+	// float frostMask = inverseVignette(Nn, 5, 0.25);
+	// frostMask = pow(frostMask, 4); // Make the mask more pronounced
+	// frostMask = clamp(frostMask, 0.1, 0.95);
+	// frostMask = mix(0, frostMask, frostDensity);
 
-	/* ------------------------- Refraction/Reflection Terms ------------------------- */
+	// /* ------------------------- Refraction/Reflection Terms ------------------------- */
 	float refractionFrostSoftness = 0.4;
 	float refractionTermFrost = layerNoise(3, frostAmount * 8);
 	refractionTermFrost = mix(turbulence(8, 1, 2, 1.937), layerNoise(5, 16), 1 - refractionFrostSoftness);
@@ -287,54 +290,55 @@ surface icecube(
 	refractionBlur /= jitterCount;
 	refractionTerm = mix(refractionTerm, refractionBlur, blurAmount);
 
-	//reflectionTermFrost = (reflectionTermFrost * 0.5) + 0.5; // Make the noise difference subtle using a half lambert effect
+	// //reflectionTermFrost = (reflectionTermFrost * 0.5) + 0.5; // Make the noise difference subtle using a half lambert effect
 
 
-	/* ------------------------- Surface Scratches ------------------------- */
+	// /* ------------------------- Surface Scratches ------------------------- */
 
-	float scratchMask = 0;
-	scratchMask = turbulence(4, 0.25, 2, 8);
-	scratchMask = abs(scratchMask - 0.5); // Replace highlights with dark patches
-	scratchMask = pow(scratchMask, 3);
-	scratchMask *= 8;
-	scratchMask = smoothstep(0.25 * s, 0.3 * t, scratchMask);
+	// float scratchMask = 0;
+	// scratchMask = turbulence(4, 0.25, 2, 8);
+	// scratchMask = abs(scratchMask - 0.5); // Replace highlights with dark patches
+	// scratchMask = pow(scratchMask, 3);
+	// scratchMask *= 8;
+	// scratchMask = smoothstep(0.25 * s, 0.3 * t, scratchMask);
 
-	scratchMask = float spline(scratchMask,
-		0,
-		0.1,
-		0.3,
-		0.35,
-		0.4,
-		0.5
-	);
+	// scratchMask = float spline(scratchMask,
+	// 	0,
+	// 	0.1,
+	// 	0.3,
+	// 	0.35,
+	// 	0.4,
+	// 	0.5
+	// );
 
-	scratchMask *= 0.1;
+	// scratchMask *= 0.1;
 
 	 
-	/* ------------------------- Final Result ------------------------- */
+	// /* ------------------------- Final Result ------------------------- */
+	// //Ci = diffusecolor * (Ka*ambient() + Kd*diffuse(Nf));
+	// /* add in specular component */	
+	// // Ci = Os * (Ci + specularcolor * Ks * specular(Nf,V,roughness));
+
+	// //Ci = Os * diffuse(Nn);
+	// //Ci = Os * mix(diffuse(Nn), refractionTerm, cmi);
+	// //Ci = Os * refractionTerm;
+
+	// float mindistance = 0, maxdistance = 0.0025;
+	// float silhouetteMaskAmbient = 1;
+	// float silhouetteMask = depth(transform("world", P));
+	// silhouetteMask = clamp(silhouetteMaskAmbient + (silhouetteMask - mindistance) / (maxdistance - mindistance), 0.0, 1.0);
+	// silhouetteMask = silhouetteMask * 0.5; // Increase the contrast a little
+
+
+	// color ambientLayer = ka;
+	// color frostLayer = frostTint * color refractionTermFrost * orenNayer;
+	// color refractionLayer = mix(frostLayer, refractionTerm, frostMask);
+	// color reflectionLayer = mix(frostLayer, reflectionTerm, frostMask);
+	// color phongSpecularLayer = phongTerm;
+
 	Oi = Os;
-	//Ci = diffusecolor * (Ka*ambient() + Kd*diffuse(Nf));
-	/* add in specular component */	
-	// Ci = Os * (Ci + specularcolor * Ks * specular(Nf,V,roughness));
+	Ci = Oi * refractionTerm;
 
-	//Ci = Os * diffuse(Nn);
-	//Ci = Os * mix(diffuse(Nn), refractionTerm, cmi);
-	//Ci = Os * refractionTerm;
-
-	float mindistance = 0, maxdistance = 0.0025;
-	float silhouetteMaskAmbient = 1;
-	float silhouetteMask = depth(transform("world", P));
-	silhouetteMask = clamp(silhouetteMaskAmbient + (silhouetteMask - mindistance) / (maxdistance - mindistance), 0.0, 1.0);
-	silhouetteMask = silhouetteMask * 0.5; // Increase the contrast a little
-
-
-	color ambientLayer = ka;
-	color frostLayer = frostTint * color refractionTermFrost * orenNayer;
-	color refractionLayer = mix(frostLayer, refractionTerm, frostMask);
-	color reflectionLayer = mix(frostLayer, reflectionTerm, frostMask);
-	color phongLayer = mix(phongTerm, phongTerm, frostMask);
-
-	Ci = refractionLayer; 
  /*
 	Frost - refraction mixed with white, rough oren nayer shading, low phong
 	No frost - clear refraction mixed with reflections, smooth oren nayer, high phong

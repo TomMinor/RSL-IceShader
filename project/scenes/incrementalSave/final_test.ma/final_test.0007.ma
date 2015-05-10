@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: final_test.ma
-//Last modified: Sun, May 10, 2015 02:42:19 am
+//Last modified: Sun, May 10, 2015 02:42:02 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -2429,7 +2429,7 @@ createNode RenderManDisplacement -n "RenderManDisplacement1";
 	setAttr -k on ".rman__riattr__displacementbound_sphere" 4;
 	setAttr ".rman__riattr__displacementbound_coordinatesystem" -type "string" "";
 	setAttr -k on ".rman__riattr__trace_displacements" 1;
-	setAttr -k on ".cornerRoundness" 0.64999997615814209;
+	setAttr -k on ".cornerRoundness" 0.34999999403953552;
 createNode shadingEngine -n "RenderManDisplacement1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;

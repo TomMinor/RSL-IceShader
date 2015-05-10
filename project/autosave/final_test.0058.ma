@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
-//Name: final_test.ma
-//Last modified: Sun, May 10, 2015 02:42:19 am
+//Name: final_test.0058.ma
+//Last modified: Sun, May 10, 2015 02:20:16 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -110,6 +110,7 @@ requires -nodeType "RenderMan" -nodeType "RenderManEnvLightShape" -nodeType "Ren
 		 -nodeType "rmanWorleyTexture" -nodeType "PxrFractalize" -nodeType "PxrHSL" -nodeType "PxrFlakes"
 		 "RenderMan_for_Maya" "5.5";
 currentUnit -l centimeter -a degree -t film;
+fileInfo "exportedFrom" "/home/tom/rman/iceproject/project/scenes/final_test.ma";
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2014";
 fileInfo "version" "2014";
@@ -118,13 +119,13 @@ fileInfo "osv" "Linux 3.19.5-100.fc20.x86_64 #1 SMP Mon Apr 20 19:51:16 UTC 2015
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.6236045980373327 12.006835458019948 44.571666204354095 ;
-	setAttr ".r" -type "double3" -6.3383527296486903 -361.79999999978884 -4.97207010624095e-17 ;
+	setAttr ".t" -type "double3" -0.38242456999246532 14.122739109189979 35.54614769464402 ;
+	setAttr ".r" -type "double3" -15.938352729648605 -359.39999999978971 2.4849445959823341e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 40.715221822914764;
+	setAttr ".coi" 32.591867479062273;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -298,7 +299,7 @@ createNode mesh -n "polySurfaceShape16" -p "polySurface14";
 	setAttr ".bck" 3;
 createNode transform -n "nurbsSphere1";
 	setAttr ".t" -type "double3" 5.7996345898501944e-18 5 7 ;
-	setAttr ".r" -type "double3" 89.986999451754301 206.22963354900551 -0.47409870319055636 ;
+	setAttr ".r" -type "double3" 90.052740393865832 -77.225257753683366 -0.53127946138941839 ;
 	setAttr ".s" -type "double3" 4.3550707169539065 4.3550707169539065 4.3550707169539065 ;
 createNode nurbsSurface -n "nurbsSphereShape1" -p "nurbsSphere1";
 	addAttr -ci true -k true -sn "rman__torattr___subdivScheme" -ln "rman__torattr___subdivScheme" 
@@ -2429,7 +2430,7 @@ createNode RenderManDisplacement -n "RenderManDisplacement1";
 	setAttr -k on ".rman__riattr__displacementbound_sphere" 4;
 	setAttr ".rman__riattr__displacementbound_coordinatesystem" -type "string" "";
 	setAttr -k on ".rman__riattr__trace_displacements" 1;
-	setAttr -k on ".cornerRoundness" 0.64999997615814209;
+	setAttr -k on ".cornerRoundness" 1;
 createNode shadingEngine -n "RenderManDisplacement1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -2708,7 +2709,6 @@ connectAttr ":rmanRerenderGlobals.msg" ":renderManGlobals.p" -na;
 connectAttr ":rmanPreviewOutputGlobals0.msg" ":rmanPreviewGlobals.d" -na;
 connectAttr "RenderManShader_Ice.oc" "RenderManShader1SG.ss";
 connectAttr "nurbsSphereShape1.iog" "RenderManShader1SG.dsm" -na;
-connectAttr "RenderManDisplacement1.oc" "RenderManShader1SG.ds";
 connectAttr "RenderManShader1SG.msg" "materialInfo9.sg";
 connectAttr "RenderManShader_Ice.msg" "materialInfo9.m";
 connectAttr "RenderManShader_Ice.msg" "materialInfo9.t" -na;
@@ -2834,4 +2834,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "volumeLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "spotLight1.iog" ":defaultLightSet.dsm" -na;
-// End of final_test.ma
+// End of final_test.0058.ma
