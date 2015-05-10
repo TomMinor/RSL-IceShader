@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
-//Name: final_test.ma
-//Last modified: Sun, May 10, 2015 08:36:20 am
+//Name: final_test.0072.ma
+//Last modified: Sun, May 10, 2015 08:22:19 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -110,6 +110,7 @@ requires -nodeType "RenderMan" -nodeType "RenderManEnvLightShape" -nodeType "Ren
 		 -nodeType "rmanWorleyTexture" -nodeType "PxrFractalize" -nodeType "PxrHSL" -nodeType "PxrFlakes"
 		 "RenderMan_for_Maya" "5.5";
 currentUnit -l centimeter -a degree -t film;
+fileInfo "exportedFrom" "/home/tom/rman/iceproject/project/scenes/final_test.ma";
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2014";
 fileInfo "version" "2014";
@@ -2564,11 +2565,7 @@ createNode RenderManShaderObject -n "RenderManShaderObject1";
 	addAttr -ci true -k true -sn "DMult" -ln "DMult" -smn 0 -smx 100 -at "float";
 	addAttr -ci true -k true -sn "cornerRoundness" -ln "cornerRoundness" -dv 0.5 -smn 
 		0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "displacementAmount" -ln "displacementAmount" -dv 1 
-		-smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "scratchDeepness" -ln "scratchDeepness" -dv 0.5 -smn 
-		0 -smx 1000 -at "float";
-	addAttr -ci true -k true -sn "frostAmount" -ln "frostAmount" -dv 1 -smn 0 -smx 100 
+	addAttr -ci true -k true -sn "frostAmount" -ln "frostAmount" -dv 1 -smn 0 -smx 1 
 		-at "float";
 	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.2999999523162842 -smn 0 -smx 10 -at "float";
 	addAttr -ci true -uac -k true -sn "colourTint" -ln "colourTint" -at "float3" -nc 
@@ -2584,12 +2581,10 @@ createNode RenderManShaderObject -n "RenderManShaderObject1";
 	addAttr -ci true -k true -sn "frostTintb" -ln "frostTintB" -dv 0.89410001039505005 -at "float" 
 		-p "frostTint";
 	setAttr ".sn" -type "string" "shaders/icecube.slo";
-	setAttr ".si" -type "string" "float texfreq -default {1}\nfloat DMult -default {0.01}\nfloat cornerRoundness -default {0.5}\nfloat displacementAmount -default {1}\nfloat scratchDeepness -default {0.5}\nfloat frostAmount -default {1}\nfloat ior -default {1.3}\ncolor colourTint -default {1  1  1}\ncolor frostTint -default {0.784  0.9098  0.8941}\n";
+	setAttr ".si" -type "string" "float texfreq -default {1}\nfloat DMult -default {0.01}\nfloat cornerRoundness -default {0.5}\nfloat frostAmount -default {1}\nfloat ior -default {1.3}\ncolor colourTint -default {1  1  1}\ncolor frostTint -default {0.784  0.9098  0.8941}\n";
 	setAttr -k on ".rman__riattr__displacementbound_sphere" 4;
 	setAttr -k on ".texfreq" 16;
 	setAttr -k on ".DMult" -2;
-	setAttr -k on ".scratchDeepness" 1;
-	setAttr -k on ".frostAmount" 32;
 createNode shadingEngine -n "RenderManShaderObject1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -2874,4 +2869,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "volumeLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "spotLight1.iog" ":defaultLightSet.dsm" -na;
-// End of final_test.ma
+// End of final_test.0072.ma

@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
 //Name: final_test.ma
-//Last modified: Sun, May 10, 2015 08:36:20 am
+//Last modified: Sun, May 10, 2015 02:42:19 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -118,13 +118,13 @@ fileInfo "osv" "Linux 3.19.5-100.fc20.x86_64 #1 SMP Mon Apr 20 19:51:16 UTC 2015
 fileInfo "license" "student";
 createNode transform -s -n "persp";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -1.2698692586322813 9.3243154583223316 29.468991097197236 ;
-	setAttr ".r" -type "double3" -6.3383527296550213 -362.19999999978126 -4.9732824146391924e-17 ;
+	setAttr ".t" -type "double3" -0.6236045980373327 12.006835458019948 44.571666204354095 ;
+	setAttr ".r" -type "double3" -6.3383527296486903 -361.79999999978884 -4.97207010624095e-17 ;
 createNode camera -s -n "perspShape" -p "persp";
 	setAttr -k off ".v" no;
 	setAttr ".ovr" 1.3;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 20.884021270923721;
+	setAttr ".coi" 40.715221822914764;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -233,8 +233,8 @@ createNode volumeLight -n "volumeLightShape1" -p "volumeLight2";
 	setAttr ".crg[1].crgi" 1;
 	setAttr -s 2 ".pen[0:1]"  0 0 1 1 1 1;
 createNode transform -n "spotLight1";
-	setAttr ".t" -type "double3" 3.3960013162805263 11 16.464561682225373 ;
-	setAttr ".r" -type "double3" -16.743425181745675 13.720437840122282 9.2120624687213244 ;
+	setAttr ".t" -type "double3" 5.540697435330463 11 15.214477565882847 ;
+	setAttr ".r" -type "double3" -32.05038697688417 38.903314461278839 6.9465309383664113 ;
 createNode spotLight -n "spotLightShape1" -p "spotLight1";
 	setAttr -k off ".v";
 	setAttr ".ca" 84.490146643855795;
@@ -313,9 +313,9 @@ createNode nurbsSurface -n "nurbsSphereShape1" -p "nurbsSphere1";
 	setAttr ".tw" yes;
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
-	setAttr ".dvu" 3;
-	setAttr ".dvv" 3;
-	setAttr ".cpr" 15;
+	setAttr ".dvu" 0;
+	setAttr ".dvv" 0;
+	setAttr ".cpr" 4;
 	setAttr ".cps" 4;
 	setAttr ".nufa" 4.5;
 	setAttr ".nvfa" 4.5;
@@ -468,8 +468,8 @@ createNode mentalrayOptions -s -n "miDefaultOptions";
 	setAttr ".stringOptions[44].type" -type "string" "string";
 createNode mentalrayFramebuffer -s -n "miDefaultFramebuffer";
 createNode lightLinker -s -n "lightLinker1";
-	setAttr -s 19 ".lnk";
-	setAttr -s 19 ".slnk";
+	setAttr -s 17 ".lnk";
+	setAttr -s 17 ".slnk";
 createNode displayLayerManager -n "layerManager";
 createNode displayLayer -n "defaultLayer";
 createNode renderLayerManager -n "renderLayerManager";
@@ -2292,10 +2292,26 @@ createNode RenderMan -s -n "rmanPreviewOutputGlobals0";
 	setAttr -k on ".rman__riopt__Display_exposure" -type "float2" 1 1 ;
 	setAttr -k on ".rman__riopt__Display_remap" -type "float3" 0 0 0 ;
 createNode RenderManShader -n "RenderManShader_Ice";
-	addAttr -ci true -k true -sn "texfreq" -ln "texfreq" -dv 1 -smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "DMult" -ln "DMult" -dv 0.0099999997764825821 -smn 0 -smx 0.01 -at "float";
+	addAttr -ci true -k true -sn "frostAmount" -ln "frostAmount" -dv 1 -smn 0 -smx 
+		1 -at "float";
+	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.2999999523162842 -smn 0 -smx 10 -at "float";
+	addAttr -ci true -uac -k true -sn "colourTint" -ln "colourTint" -at "float3" -nc 
+		3;
+	addAttr -ci true -k true -sn "colourTintr" -ln "colourTintR" -dv 1 -at "float" -p "colourTint";
+	addAttr -ci true -k true -sn "colourTintg" -ln "colourTintG" -dv 1 -at "float" -p "colourTint";
+	addAttr -ci true -k true -sn "colourTintb" -ln "colourTintB" -dv 1 -at "float" -p "colourTint";
+	addAttr -ci true -uac -k true -sn "frostTint" -ln "frostTint" -at "float3" -nc 3;
+	addAttr -ci true -k true -sn "frostTintr" -ln "frostTintR" -dv 0.7839999794960022 -at "float" 
+		-p "frostTint";
+	addAttr -ci true -k true -sn "frostTintg" -ln "frostTintG" -dv 0.90979999303817749 -at "float" 
+		-p "frostTint";
+	addAttr -ci true -k true -sn "frostTintb" -ln "frostTintB" -dv 0.89410001039505005 -at "float" 
+		-p "frostTint";
 	setAttr ".sn" -type "string" "shaders/icecube.slo";
-	setAttr ".si" -type "string" "float texfreq -default {1}\nfloat DMult -default {0.01}\n";
+	setAttr ".si" -type "string" "float frostAmount -default {1}\nfloat ior -default {1.3}\ncolor colourTint -default {0.784  0.9098  0.8941}\ncolor frostTint -default {0.784  0.9098  0.8941}\n";
+	setAttr -k on ".ior" 1.0499999523162842;
+	setAttr -k on ".colourTint" -type "float3" 0.93798733 1 0.99224842 ;
+	setAttr -k on ".frostTint" -type "float3" 0.86172277 1 0.98274207 ;
 createNode shadingEngine -n "RenderManShader1SG";
 	setAttr ".ihi" 0;
 	setAttr ".ro" yes;
@@ -2305,7 +2321,7 @@ createNode partition -n "mtorPartition";
 	addAttr -ci true -sn "sd" -ln "slimData" -dt "string";
 	addAttr -ci true -sn "sr" -ln "slimRIB" -dt "string";
 	addAttr -ci true -sn "rd" -ln "rlfData" -dt "string";
-	setAttr ".sd" -type "string" "#\n# generated by slim for tom at Sun May 10 06:44:46 BST 2015\n#\nslim 2 TOR slim {\n}\n";
+	setAttr ".sd" -type "string" "#\n# generated by slim for tom at Sat May 09 02:35:24 BST 2015\n#\nslim 2 TOR slim {\n}\n";
 	setAttr ".sr" -type "string" "";
 createNode script -n "uiConfigurationScriptNode";
 	setAttr ".b" -type "string" (
@@ -2552,59 +2568,17 @@ createNode polyPlanarProj -n "polyPlanarProj8";
 	setAttr ".ps" -type "double2" 23.991157276366195 33.812822191975421 ;
 	setAttr ".cam" -type "matrix" 1 0 0 0 0 1 0 0
 		 0 0 1 0 0 0 0 1;
-createNode lambert -n "lambert7";
-createNode shadingEngine -n "lambert7SG";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo16";
-createNode RenderManShaderObject -n "RenderManShaderObject1";
-	addAttr -ci true -k true -sn "rman__riattr__displacementbound_sphere" -ln "rman__riattr__displacementbound_sphere" 
-		-dv -1 -smn 0 -smx 10 -at "float";
-	addAttr -ci true -k true -sn "texfreq" -ln "texfreq" -dv 1 -smn 0 -smx 100 -at "float";
-	addAttr -ci true -k true -sn "DMult" -ln "DMult" -smn 0 -smx 100 -at "float";
-	addAttr -ci true -k true -sn "cornerRoundness" -ln "cornerRoundness" -dv 0.5 -smn 
-		0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "displacementAmount" -ln "displacementAmount" -dv 1 
-		-smn 0 -smx 1 -at "float";
-	addAttr -ci true -k true -sn "scratchDeepness" -ln "scratchDeepness" -dv 0.5 -smn 
-		0 -smx 1000 -at "float";
-	addAttr -ci true -k true -sn "frostAmount" -ln "frostAmount" -dv 1 -smn 0 -smx 100 
-		-at "float";
-	addAttr -ci true -k true -sn "ior" -ln "ior" -dv 1.2999999523162842 -smn 0 -smx 10 -at "float";
-	addAttr -ci true -uac -k true -sn "colourTint" -ln "colourTint" -at "float3" -nc 
-		3;
-	addAttr -ci true -k true -sn "colourTintr" -ln "colourTintR" -dv 1 -at "float" -p "colourTint";
-	addAttr -ci true -k true -sn "colourTintg" -ln "colourTintG" -dv 1 -at "float" -p "colourTint";
-	addAttr -ci true -k true -sn "colourTintb" -ln "colourTintB" -dv 1 -at "float" -p "colourTint";
-	addAttr -ci true -uac -k true -sn "frostTint" -ln "frostTint" -at "float3" -nc 3;
-	addAttr -ci true -k true -sn "frostTintr" -ln "frostTintR" -dv 0.7839999794960022 -at "float" 
-		-p "frostTint";
-	addAttr -ci true -k true -sn "frostTintg" -ln "frostTintG" -dv 0.90979999303817749 -at "float" 
-		-p "frostTint";
-	addAttr -ci true -k true -sn "frostTintb" -ln "frostTintB" -dv 0.89410001039505005 -at "float" 
-		-p "frostTint";
-	setAttr ".sn" -type "string" "shaders/icecube.slo";
-	setAttr ".si" -type "string" "float texfreq -default {1}\nfloat DMult -default {0.01}\nfloat cornerRoundness -default {0.5}\nfloat displacementAmount -default {1}\nfloat scratchDeepness -default {0.5}\nfloat frostAmount -default {1}\nfloat ior -default {1.3}\ncolor colourTint -default {1  1  1}\ncolor frostTint -default {0.784  0.9098  0.8941}\n";
-	setAttr -k on ".rman__riattr__displacementbound_sphere" 4;
-	setAttr -k on ".texfreq" 16;
-	setAttr -k on ".DMult" -2;
-	setAttr -k on ".scratchDeepness" 1;
-	setAttr -k on ".frostAmount" 32;
-createNode shadingEngine -n "RenderManShaderObject1SG";
-	setAttr ".ihi" 0;
-	setAttr ".ro" yes;
-createNode materialInfo -n "materialInfo17";
 select -ne :time1;
 	setAttr ".o" 1;
 	setAttr ".unw" 1;
 select -ne :renderPartition;
-	setAttr -s 19 ".st";
+	setAttr -s 17 ".st";
 select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
 select -ne :defaultShaderList1;
-	setAttr -s 19 ".s";
+	setAttr -s 17 ".s";
 select -ne :defaultTextureList1;
 	setAttr -s 2 ".tx";
 select -ne :lightList1;
@@ -2670,8 +2644,6 @@ relationship "link" ":lightLinker1" "lambert4SG.message" ":defaultLightSet.messa
 relationship "link" ":lightLinker1" "lambert5SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "RenderManDisplacement1SG.message" ":defaultLightSet.message";
 relationship "link" ":lightLinker1" "lambert6SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "lambert7SG.message" ":defaultLightSet.message";
-relationship "link" ":lightLinker1" "RenderManShaderObject1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialShadingGroup.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" ":initialParticleSE.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "PxrDisney1SG.message" ":defaultLightSet.message";
@@ -2689,8 +2661,6 @@ relationship "shadowLink" ":lightLinker1" "lambert4SG.message" ":defaultLightSet
 relationship "shadowLink" ":lightLinker1" "lambert5SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "RenderManDisplacement1SG.message" ":defaultLightSet.message";
 relationship "shadowLink" ":lightLinker1" "lambert6SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "lambert7SG.message" ":defaultLightSet.message";
-relationship "shadowLink" ":lightLinker1" "RenderManShaderObject1SG.message" ":defaultLightSet.message";
 connectAttr "layerManager.dli[0]" "defaultLayer.id";
 connectAttr "renderLayerManager.rlmi[0]" "defaultRenderLayer.rlid";
 connectAttr ":rmanFinalGlobals.msg" ":renderManRISGlobals.p" -na;
@@ -2737,6 +2707,8 @@ connectAttr ":rmanPreviewGlobals.msg" ":renderManGlobals.p" -na;
 connectAttr ":rmanRerenderGlobals.msg" ":renderManGlobals.p" -na;
 connectAttr ":rmanPreviewOutputGlobals0.msg" ":rmanPreviewGlobals.d" -na;
 connectAttr "RenderManShader_Ice.oc" "RenderManShader1SG.ss";
+connectAttr "nurbsSphereShape1.iog" "RenderManShader1SG.dsm" -na;
+connectAttr "RenderManDisplacement1.oc" "RenderManShader1SG.ds";
 connectAttr "RenderManShader1SG.msg" "materialInfo9.sg";
 connectAttr "RenderManShader_Ice.msg" "materialInfo9.m";
 connectAttr "RenderManShader_Ice.msg" "materialInfo9.t" -na;
@@ -2821,14 +2793,6 @@ connectAttr "polyPlanarProj6.out" "polyPlanarProj7.ip";
 connectAttr "polySurfaceShape15.wm" "polyPlanarProj7.mp";
 connectAttr "polyPlanarProj7.out" "polyPlanarProj8.ip";
 connectAttr "polySurfaceShape15.wm" "polyPlanarProj8.mp";
-connectAttr "lambert7.oc" "lambert7SG.ss";
-connectAttr "lambert7SG.msg" "materialInfo16.sg";
-connectAttr "lambert7.msg" "materialInfo16.m";
-connectAttr "RenderManShaderObject1.oc" "RenderManShaderObject1SG.ss";
-connectAttr "nurbsSphereShape1.iog" "RenderManShaderObject1SG.dsm" -na;
-connectAttr "RenderManShaderObject1SG.msg" "materialInfo17.sg";
-connectAttr "RenderManShaderObject1.msg" "materialInfo17.m";
-connectAttr "RenderManShaderObject1.msg" "materialInfo17.t" -na;
 connectAttr "PxrDisney1SG.pa" ":renderPartition.st" -na;
 connectAttr "PxrDisney2SG.pa" ":renderPartition.st" -na;
 connectAttr "PxrDisney3SG.pa" ":renderPartition.st" -na;
@@ -2844,8 +2808,6 @@ connectAttr "lambert4SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert5SG.pa" ":renderPartition.st" -na;
 connectAttr "RenderManDisplacement1SG.pa" ":renderPartition.st" -na;
 connectAttr "lambert6SG.pa" ":renderPartition.st" -na;
-connectAttr "lambert7SG.pa" ":renderPartition.st" -na;
-connectAttr "RenderManShaderObject1SG.pa" ":renderPartition.st" -na;
 connectAttr "PxrDisneyWhite.msg" ":defaultShaderList1.s" -na;
 connectAttr "PxrDisneyRed.msg" ":defaultShaderList1.s" -na;
 connectAttr "PxrDisneyBlue.msg" ":defaultShaderList1.s" -na;
@@ -2861,8 +2823,6 @@ connectAttr "lambert4.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert5.msg" ":defaultShaderList1.s" -na;
 connectAttr "RenderManDisplacement1.msg" ":defaultShaderList1.s" -na;
 connectAttr "lambert6.msg" ":defaultShaderList1.s" -na;
-connectAttr "lambert7.msg" ":defaultShaderList1.s" -na;
-connectAttr "RenderManShaderObject1.msg" ":defaultShaderList1.s" -na;
 connectAttr "checker1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "file1.msg" ":defaultTextureList1.tx" -na;
 connectAttr "areaLightShape1.ltd" ":lightList1.l" -na;

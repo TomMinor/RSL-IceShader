@@ -1,6 +1,6 @@
 //Maya ASCII 2014 scene
-//Name: final_test.ma
-//Last modified: Sun, May 10, 2015 08:36:20 am
+//Name: final_test.0073.ma
+//Last modified: Sun, May 10, 2015 08:32:29 am
 //Codeset: UTF-8
 requires maya "2014";
 requires -nodeType "mentalrayFramebuffer" -nodeType "mentalrayOutputPass" -nodeType "mentalrayRenderPass"
@@ -110,6 +110,7 @@ requires -nodeType "RenderMan" -nodeType "RenderManEnvLightShape" -nodeType "Ren
 		 -nodeType "rmanWorleyTexture" -nodeType "PxrFractalize" -nodeType "PxrHSL" -nodeType "PxrFlakes"
 		 "RenderMan_for_Maya" "5.5";
 currentUnit -l centimeter -a degree -t film;
+fileInfo "exportedFrom" "/home/tom/rman/iceproject/project/scenes/final_test.ma";
 fileInfo "application" "maya";
 fileInfo "product" "Maya 2014";
 fileInfo "version" "2014";
@@ -2588,7 +2589,7 @@ createNode RenderManShaderObject -n "RenderManShaderObject1";
 	setAttr -k on ".rman__riattr__displacementbound_sphere" 4;
 	setAttr -k on ".texfreq" 16;
 	setAttr -k on ".DMult" -2;
-	setAttr -k on ".scratchDeepness" 1;
+	setAttr -k on ".scratchDeepness" 128;
 	setAttr -k on ".frostAmount" 32;
 createNode shadingEngine -n "RenderManShaderObject1SG";
 	setAttr ".ihi" 0;
@@ -2874,4 +2875,4 @@ connectAttr "defaultRenderLayer.msg" ":defaultRenderingList1.r" -na;
 connectAttr "areaLight1.iog" ":defaultLightSet.dsm" -na;
 connectAttr "volumeLight2.iog" ":defaultLightSet.dsm" -na;
 connectAttr "spotLight1.iog" ":defaultLightSet.dsm" -na;
-// End of final_test.ma
+// End of final_test.0073.ma
