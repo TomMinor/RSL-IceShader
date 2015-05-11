@@ -1,0 +1,217 @@
+##RenderMan RIB
+#Created by RenderMan for Maya 5.5 (@1468883 Apr  7 2015)
+#Mon May 11 00:49:41 BST 2015
+version 3.04
+Option "ribparse" "string varsubst" [""]
+Option "ribparse" "string varsubst" ["$"]
+IfBegin "!defined(RMSPROJ_FROM_ENV)" 
+Option "user" "string RMSPROJ" ["/home/tom/rman/iceproject/project/"]
+IfEnd 
+IfBegin "!defined(RMSTREE)" 
+Option "user" "string RMSTREE" ["/opt/pixar/RenderManStudio-19.0-maya2014/"]
+IfEnd 
+Option "searchpath" "string resource" ["${RMSPROJ}:@"]
+Option "searchpath" "string archive" ["${RMSPROJ}:."]
+Option "searchpath" "string display" ["${RMSTREE}/bin:@"]
+Option "searchpath" "string shader" ["${RMSPROJ}:${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string texture" ["${RMSPROJ}:${RMSTREE}/lib/textures/:@"]
+Option "searchpath" "string rixplugin" ["${RMSTREE}/lib/shaders/:@"]
+Option "searchpath" "string dirmap" [""]
+Option "searchpath" "string rifilter" ["${RMSTREE}/lib/rif/:${RMANTREE}/etc:@"]
+Option "searchpath" "string procedural" ["${RMSTREE}/lib/plugins/:${RMSTREE}/lib/plugins:${RMANTREE}/etc:@"]
+##rifcontrol insert begin -rif RLFInjector -rifend
+FrameBegin 118
+Identity 
+Option "user" "string pass_id" ["areaLightShape1rl1_MinMaxShadow"] "string pass_phase" ["/Job/Frames/Maps/Shadow"] "string pass_class" ["MinMaxShadow"] "string pass_flavor" [""] "string pass_crew" [""] "string pass_camera_name" ["areaLightShape1"] "string pass_camera_flavor" ["rl1"] "string pass_layer" ["defaultRenderLayer"] "string renderer" ["Reyes"] "int pass_features_trace" [0] "int input_color_profile" [0]
+Option "trace" "int maxdepth" [10]
+PixelVariance 0.005
+Option "bucket" "string order" ["horizontal"]
+Option "limits" "int[2] bucketsize" [16 16]
+Option "limits" "int gridsize" [256]
+Option "trace" "float decimationrate" [1]
+Option "hair" "float minwidth" [0]
+Option "statistics" "int level" [1]
+Option "statistics" "string filename" ["stdout"]
+Option "statistics" "string xmlfilename" ["renderman/final_render/rib/0118/areaLightShape1rl1_MinMaxShadow.0118.xml"]
+Option "limits" "color zthreshold" [0.5 0.5 0.5]
+Option "limits" "color othreshold" [0.996 0.996 0.996]
+Option "limits" "int texturememory" [2097152]
+Option "limits" "int geocachememory" [2097152]
+Option "limits" "int proceduralmemory" [0]
+Option "limits" "int deepshadowtiles" [1000]
+Option "limits" "int deepshadowmemory" [102400]
+Option "limits" "int radiositycachememory" [102400]
+Option "limits" "int brickmemory" [10240]
+Option "shading" "int directlightingsamples" [8]
+Option "limits" "float vprelativeshadingrate" [1]
+PixelSamples 1 1
+VolumePixelSamples 1 1
+Hider "hidden" "int jitter" [0] "int sigma" [0] "float sigmablur" [1] "int minsamples" [0] "int maxsamples" [9]
+Format 1024 1024 1
+Display "renderman/final_render/data/0118/final_render_areaLightShape1rl1_MinMaxShadow.0118.tex" "shadow" "z" "int minmax" [1]
+#Camera areaLightShape1
+Clipping 0.1 10000
+Projection "perspective" "fov" [92.5]
+ScreenWindow -1 1 -1 1
+Shutter 0 0
+Translate -1 1 0
+ConcatTransform [ 1 0 0 0  0 2.22045e-16 -1 0  -3.58732e-43 -1 -2.22045e-16 0  5.20417e-18 -1.97922e-14 88.8861 1 ]
+Camera "world" "float[2] shutteropening" [0 1]
+ResourceBegin 
+WorldBegin 
+##RLF ScopeBegin -name areaLightShape1rl1_MinMaxShadow -localbinding 1 -rlffilename renderman/final_render/rib/0118/areaLightShape1rl1_MinMaxShadow.0118.rlf -namespace 
+ScopedCoordinateSystem "world_ref"
+Attribute "user" "float[17] place2dTexture1" [1 1 0 0 0
+0 0 0 1 1 4 4 0 0 0 0 0]
+Attribute "user" "float[17] place2dTexture2" [1 1 0 0 0
+0 0 0 1 1 1 1 0 0 0 0 0]
+Attribute "user" "float[17] place2dTexture3" [1 1 0 0 0
+0 0 0 1 1 4 4 0 0 0 0 0]
+Attribute "user" "float[17] place2dTexture4" [1 1 0 0 0
+0 0 0 1 1 4 4 0 0 0 0 0]
+Attribute "visibility" "int transmission" [0] "int specular" [0] "int diffuse" [0]
+Surface "null" 
+Attribute "user" "int shader_bindingstrength" [0]
+Attribute "trace" "int maxdiffusedepth" [4] "int maxspeculardepth" [4] "int samplemotion" [1] "float autobias" [1] "float bias" [0.1] "int displacements" [2]
+Attribute "dice" "string referencecamera" ["worldcamera"]
+ShadingRate 1
+GeometricApproximation "motionfactor" 3
+GeometricApproximation "focusfactor" 3
+Attribute "displacementbound" "string coordinatesystem" ["shader"] "float sphere" [0]
+Attribute "volume" "float depthrelativeshadingrate" [1] "string depthinterpolation" ["constant"]
+Attribute "stochastic" "int sigma" [1]
+AttributeBegin 
+Attribute "identifier" "string name" ["groundPlane_transform"]
+ConcatTransform [ 12 0 0 0  0 2.66454e-15 12 0  0 -1 2.22045e-16 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["Manipulator1"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["UniversalManip"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["areaLight1"]
+ConcatTransform [ 54.1863 0 -0 0  -0 1.20318e-14 -54.1863 0  0 54.1863 1.20318e-14 0  -5.20417e-18 88.8861 -5.55112e-17 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["volumeLight2"]
+ConcatTransform [ 95.1572 0 -0 0  -0 2.11291e-14 -95.1572 0  0 33.8824 7.52339e-15 0  -5.20417e-18 31.1534 8.2495 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["spotLight1"]
+ConcatTransform [ 0.93853 -0.28607 0.1932 0  0.333699 0.608602 -0.719895 0  0.0883584 0.740113 0.666652 0  3.396 41.4724 36.0147 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["nurbsSphere1"]
+ConcatTransform [ -4.23506 0.0352624 1.01471 0  -1.01467 0.00936 -4.23521 0  -0.0364727 -4.35492 -0.000886423 0  -1.13926e-18 5.62768 1.95156e-18 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["nurbsSphereShape1"]
+Attribute "identifier" "float id" [2]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "visibility" "int camera" [1] "int specular" [0] "int diffuse" [0]
+##RLF Inject SurfaceShading -attribute sets@,RenderManShaderObject1SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/nurbsSphereShape1.job.rib"] "float[6] bound" [-1.66001 1.66001 -1 1 -1.66001 1.66001] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pCube1"]
+ConcatTransform [ 112.512 0 0 0  0 28.2004 0 0  0 0 112.512 0  0.401813 15.2764 6.39601 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["pCubeShape1"]
+Attribute "identifier" "float id" [3]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "visibility" "int camera" [1] "int specular" [0] "int diffuse" [0]
+##RLF Inject SurfaceShading
+TransformBegin 
+ReadArchive "renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_0_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_0.job.rib"] "float[6] bound" [-0.5 0.5 -0.5 0.5 -0.5 0.5] "int __immediatesubdivide" [0]
+TransformEnd 
+TransformBegin 
+ReadArchive "renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_1_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_1.job.rib"] "float[6] bound" [-0.5 0.5 -0.5 0.5 -0.5 0.5] "int __immediatesubdivide" [0]
+TransformEnd 
+TransformBegin 
+ReadArchive "renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_2_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_2.job.rib"] "float[6] bound" [-0.5 0.5 -0.5 0.5 -0.5 0.5] "int __immediatesubdivide" [0]
+TransformEnd 
+TransformBegin 
+ReadArchive "renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_3_attr.job.rib" 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pCubeShape1_3.job.rib"] "float[6] bound" [-0.5 0.5 -0.5 0.5 -0.5 0.5] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["pPlane1"]
+ConcatTransform [ -19.3352 0 11.9223 0  0 22.7154 0 0  -11.9223 0 -19.3352 0  0 1.72931 0 1 ]
+AttributeBegin 
+AttributeBegin 
+Attribute "identifier" "string name" ["pPlaneShape1"]
+Attribute "identifier" "float id" [4]
+Sides 2
+ShadingInterpolation "smooth"
+Attribute "visibility" "int camera" [1] "int specular" [0] "int diffuse" [0]
+##RLF Inject SurfaceShading -attribute sets@,lambert6SG,
+TransformBegin 
+Procedural2 "DelayedReadArchive2" "SimpleBound" "string filename" ["renderman/final_render/rib/job/staticGeoCache.job.zip!renderman/final_render/rib/job/pPlaneShape1.job.rib"] "float[6] bound" [-0.5 0.5 -1.11022e-16 1.11022e-16 -0.5 0.5] "int __immediatesubdivide" [0]
+TransformEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["camera1_group"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+Attribute "identifier" "string name" ["camera1"]
+ConcatTransform [ -0.759946 1.47015e-08 -0.649986 0  -0.106046 0.986601 0.123986 0  0.641277 0.163151 -0.749764 0  22.4407 9.56552 -26.2371 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["camera1_aim"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  1.93268e-12 3.85625 8.37774e-13 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["Manipulator2"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeBegin 
+AttributeEnd 
+AttributeEnd 
+AttributeBegin 
+Attribute "identifier" "string name" ["CubeCompass"]
+ConcatTransform [ 1 0 0 0  0 1 0 0  0 0 1 0  0 0 0 1 ]
+AttributeEnd 
+##RLF ScopeEnd -name areaLightShape1rl1_MinMaxShadow
+WorldEnd 
+ResourceEnd 
+##streammarker 556
+FrameEnd 

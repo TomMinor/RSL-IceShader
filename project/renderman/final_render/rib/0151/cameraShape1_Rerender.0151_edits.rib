@@ -1,0 +1,13 @@
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker612
+EditBegin "instance" 
+IfBegin "!defined(user:shader_bindingstrength) || $user:shader_bindingstrength <= 0" 
+Attribute "displacementbound" "float sphere" [4]
+Surface "shaders/icecube" "color iceTint" [1 1 1] "float ior" [0.9] "color frostTint" [0.784 0.9098 0.8941] "float frostDensity" [2] "float cornerRoundness" [0.6] "float displacementAmount" [1.1] "float surfaceBumpyness" [0.3] "float scratchDeepness" [0.359551] 
+"float scratchDensityMin" [0.25] "float scratchDensityMax" [0.5] "float silhouetteAmount" [0.6] "float specularStrength" [0.269663] "__instanceid" ["shaders/icecube_0"]
+Attribute "user" "int shader_bindingstrength" [0]
+IfEnd 
+EditEnd 
+##streammarker613

@@ -220,7 +220,7 @@ class icecube(
 		// REPORT : Talk about how I planned to use a half lambert diffuse because i wanted soft shading, but decided on oren instead
 		//color kd = (diffuse(Nn) * 0.5) + 0.5; 
 		
-		point Pt = transform("shader", P);
+		//point Pt = transform("shader", P);
 
 		//Ct = layerNoise(6); 						// LayerNoise - Looks very rough and mountain like 
 		//Ct = filteredsnoise(Pt, 0.25); 			// snoise - Very smooth, harsh edges, looks like camo

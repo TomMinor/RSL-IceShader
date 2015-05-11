@@ -1,0 +1,14 @@
+##RenderMan RIB
+version 3.04
+Option "rerender" "int[2] lodrange" [0 3]
+##streammarker16
+##streammarker17
+##streammarker18
+##streammarker19
+##streammarker20
+##streammarker21
+##streammarker22
+EditBegin "attribute" 
+Attribute "trace" "float bias" [0.1]
+EditEnd 
+##streammarker23
